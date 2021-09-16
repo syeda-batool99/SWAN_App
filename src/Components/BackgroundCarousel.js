@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   circleDiv: {
     position: "absolute",
-    bottom: '22%',
+    bottom: '24%',
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   },
   textStyle:{
     position: "absolute",
-    bottom: '25%',
+    bottom: '27%',
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
