@@ -1,25 +1,21 @@
 import React, {useEffect, useState} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
- import SplashScreen from 'react-native-splash-screen'
+import { StyleSheet, } from 'react-native'
+import {NavigationContainer } from '@react-navigation/native';
+ import RNBootSplash from 'react-native-bootsplash';
+
 import MainNavigatior from './src/Navigation/index';
 import RegisterationStack from './src/Navigation/StackScreen/RegisterationStack';
 
 const App = () => {
-
-  // const theme = {
-  //   ...DefaultTheme,
-  //   colors:{
-  //     ...DefaultTheme.colors,
-  //     border: "transparent",
-  //   }
-  // }
-
-  // useEffect(()=>{
-  //   SplashScreen.hide()
-  // },[])
-
+ 
   const [isUser,setIsUser] = useState(false)
+
+  
+  useEffect(() => {
+    RNBootSplash.hide({fade: true});
+  }, []);
+
+
   if (isUser){
   return (
     <NavigationContainer>
