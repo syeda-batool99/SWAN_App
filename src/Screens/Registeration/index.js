@@ -5,7 +5,8 @@ import { BLUE,PEACH,WHITE } from './../../Assets/Colors/index';
 import { Icon } from 'react-native-elements';
 import {TextInput} from 'react-native-paper'
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (props) => {
+    const {navigation} = props
     const [visible, setVisible] = useState(false)
 
     return (
@@ -56,7 +57,7 @@ const WelcomeScreen = () => {
                         <View>
                             <Text style = {{fontSize:12, color:'#878381', textAlign:'center'}}>We'll send you an SMS verification code.</Text>
                         </View>
-                        <TouchableOpacity style={{height:40, width:'100%', backgroundColor:'lightblue', alignItems:'center', justifyContent:'center', borderRadius:10, marginTop:15}}>
+                        <TouchableOpacity style={styles.nextBtn} onPress = {()=>navigation.navigate('FindContactScreen')}>
                             <Text style = {{fontSize:15, color:WHITE}}>Next</Text>
                         </TouchableOpacity>
                     </View>
@@ -116,4 +117,6 @@ const styles = StyleSheet.create({
         paddingHorizontal:25, 
         paddingVertical: 20
     },
+    nextBtn:{height:40, width:'100%', backgroundColor:'lightblue', alignItems:'center', justifyContent:'center', borderRadius:10, marginTop:15}
+    
 })
