@@ -5,14 +5,15 @@ import AppHeader from '../../Components/AppHeader'
 import { TEXT_BLACK, BLUE } from './../../Assets/Colors/index';
 import CustomAlertModal from '../../Components/CustomAlertModal';
 
-const FindContact = (props) => {
+const FindFacebookContact = (props) => {
     const {navigation} = props;
     const [modalVisible,setModalVisible] = useState(false)
     return (
         <View style= {styles.container}>
-            <AppHeader title='Find Contacts' />
-            <CustomAlertModal modalVisible = {modalVisible} 
-                onPressBtn1 = {()=>{navigation.navigate('ContactListScreen')}} 
+            <AppHeader title='Find Friends' />
+            <CustomAlertModal modalVisible = {modalVisible}
+                alertText = 'Allow Swan to access your facebook friends list?' 
+                onPressBtn1 = {()=>{navigation.navigate('FacebookFriendListScreen')}} 
                 onPressBtn2 = {()=>(setModalVisible(!modalVisible))}/>
 
             <View style = {{marginVertical:'25%'}}>
@@ -20,8 +21,8 @@ const FindContact = (props) => {
                     <Image source = {require('../../Assets/Images/RegisterationCarousel/Rectangle66.png')} />
                 </View>
                 <View style = {{alignItems:'center', marginTop:20}}>
-                    <Text style = {{fontSize:22, color:TEXT_BLACK}}>See who is on Swan</Text>
-                    <Text style = {{fontSize:14, marginTop:15,width:'60%', textAlign:'center'}}>See which of your friends are already on swan & choose who to follow.</Text>
+                    <Text style = {{fontSize:22, color:TEXT_BLACK}}>Find Facebook Friends</Text>
+                    <Text style = {{fontSize:14, marginTop:15,width:'60%', textAlign:'center'}}>You choose which friends to follow. We will never post to facebook withoutyour permission.</Text>
                 </View>
             </View>
             <View style = {{position:'absolute',width:'100%',bottom:0, alignItems:'center', flexDirection:'column'}}>
@@ -29,7 +30,7 @@ const FindContact = (props) => {
                     <TouchableOpacity 
                         onPress = {()=>setModalVisible(!modalVisible)}
                         style = {{flex:1, justifyContent:'center',height:'100%',width:'100%', backgroundColor:BLUE, borderRadius:10}} >
-                        <Text style = {{color:WHITE, textAlign:'center'}}>Search Your Contacts</Text>
+                        <Text style = {{color:WHITE, textAlign:'center'}}>Continue to Facebook</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{height:50, width:'90%'}}>
@@ -43,7 +44,7 @@ const FindContact = (props) => {
     )
 }
 
-export default FindContact
+export default FindFacebookContact
 
 const styles = StyleSheet.create({
     container:{
