@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
  import SplashScreen from 'react-native-splash-screen'
@@ -19,12 +19,22 @@ const App = () => {
   //   SplashScreen.hide()
   // },[])
 
+  const [isUser,setIsUser] = useState(false)
+  if (isUser){
   return (
     <NavigationContainer>
-      {/* <MainNavigatior /> */}
-      <RegisterationStack />
+      <MainNavigatior />
+      {/* <RegisterationStack /> */}
     </NavigationContainer>
   )
+}else{
+    return (
+      <NavigationContainer>
+        {/* <MainNavigatior /> */}
+        <RegisterationStack />
+      </NavigationContainer>
+    )}
+
 }
 
 export default App
