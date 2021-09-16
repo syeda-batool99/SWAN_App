@@ -1,8 +1,15 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react'
 import WelcomeScreen from './../../Screens/Registeration/index';
+ RegisterationFlow
+import FindContact from './../../Screens/Registeration/FindContact';
+import FacebookFriendList from './../../Screens/Registeration/FacebookFriendList';
+import PhoneContactList from './../../Screens/Registeration/PhoneContactList';
+import FindFacebookContact from './../../Screens/Registeration/FindFacebookContact';
+
 import PhoneNumber from '../../Screens/Registeration/PhoneNumber';
 import VerifyCode from '../../Screens/Registeration/VerifyCode';
+master
 
 const RegisterationStack = () => {
 
@@ -13,10 +20,19 @@ const RegisterationStack = () => {
         headerShown:false
     }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+RegisterationFlow
+        <Stack.Screen name="FindContactScreen" component={FindContact} />
+        <Stack.Screen name="FindFacebookFriendScreen" component={FindFacebookContact} />
+        <Stack.Screen name="FacebookFriendListScreen" component={FacebookFriendList} />
+        <Stack.Screen name="ContactListScreen" component={PhoneContactList} />
+
+
         <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
         <Stack.Screen name="VerifyCode" component={VerifyCode} />
+master
     </Stack.Navigator>
     )
 }
 
 export default RegisterationStack
+FacebookFriendList
