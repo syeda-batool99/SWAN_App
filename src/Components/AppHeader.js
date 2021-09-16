@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import { PEACH } from '../Assets/Colors';
 
 const AppHeader = (props) => {
-    const {title} = props;
+    const {title, onPress} = props;
     
     return (
         <View style = {styles.container}>
