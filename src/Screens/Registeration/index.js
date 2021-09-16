@@ -1,45 +1,71 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import BackgroundCarousel from './../../Components/BackgroundCarousel';
-import { BLUE,WHITE } from './../../Assets/Colors/index';
+import { BLUE,PEACH,WHITE } from './../../Assets/Colors/index';
+import { Icon } from 'react-native-elements';
+import {TextInput} from 'react-native-paper'
 
 const WelcomeScreen = () => {
+    const [visible, setVisible] = useState(false)
 
     return (
         <View style = {styles.container}>
             <BackgroundCarousel />
-            <View style={{ backgroundColor:'white', height:178, position:'absolute', bottom:0, width:400, borderTopLeftRadius:32, borderTopRightRadius:32, paddingHorizontal:35, paddingVertical: 30}}>
-            <View style = {{width:'70%'}}>
-                <Text style={{fontSize: 22, }}>Welcome on Swan App Sign in or Join now</Text>
+
+            <View style = {styles.box}>
+                {!visible?(
+                <View style={styles.welcomeBox}>
+                    <View style = {{width:'80%'}}>
+                        <Text style={{fontSize: 22, }}>Welcome on Swan App Sign in or Join now</Text>
+                    </View>
+
+                    <View style = {styles.btnContainer}>
+                        <TouchableOpacity style = {[{ borderWidth:2},styles.btn]}>
+                            <View>
+                                <Text>Sign in</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity  style = {[{backgroundColor:BLUE, borderWidth:0},styles.btn]} onPress= {()=>{setVisible(!visible)}}>
+                            <View>
+                            <Text style = {{color:WHITE}} >Join Now</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    
+                </View>
+                
+                ):(
+                    <View style={styles.PhoneBox}>
+                    <View style = {{flex:1, flexDirection:'row'}}>
+                        <TouchableOpacity onPress = {()=>setVisible(!visible)} 
+                            style = {{marginRight:10, marginTop:2}}>
+                            <Icon name = 'arrowleft' type = 'antdesign' size = {25}/>
+                        </TouchableOpacity>
+                        <View >
+                            <Text style = {{fontSize:20}}>Phone Number</Text>
+                        </View>                        
+                    </View>
+                    <View style = {{marginTop:10}}>
+                        <View>
+                            <Text style = {{fontSize:14}}>Please verify your phone number so we know you are a real person.</Text>
+                        </View>
+                        <View>
+                            <TextInput       
+                                label="Phone number" />
+                        </View>
+                        <View>
+                            <Text style = {{fontSize:12, color:'#878381', textAlign:'center'}}>We'll send you an SMS verification code.</Text>
+                        </View>
+                        <TouchableOpacity style={{height:40, width:'100%', backgroundColor:'lightblue', alignItems:'center', justifyContent:'center', borderRadius:10, marginTop:15}}>
+                            <Text style = {{fontSize:15, color:WHITE}}>Next</Text>
+                        </TouchableOpacity>
+                    </View>
+                    
+                </View>
+                )}
+
             </View>
 
-            {/* btn boxes */}
-            <View style = {styles.btnContainer}>
-                <TouchableOpacity style = {[{ borderWidth:2},styles.btn]}>
-                    <View>
-                        <Text>Sign in</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity  style = {[{backgroundColor:BLUE, borderWidth:0},styles.btn]}>
-                    <View>
-                    <Text style = {{color:WHITE}} >Join Now</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            {/* <View style={{width:324, height:80, backgroundColor:'white', marginVertical: 10, borderRadius: 12, flexDirection:'row', justifyContent:'space-between', padding:10}}>
-                <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-                    <Image source={require('../../Assets/Images/Progress_Pie/Jungle_Book.png')}/>
-                    <View style={{flexDirection:'column'}}>
-                    <Text style={{marginLeft: 10, marginTop:5, fontSize: 14, color:'#272D37'}}>The Jungle Book (1984)</Text>
-                    <Text style={{marginLeft: 10, marginTop:10, fontSize: 12, color:'#8F9CA9'}}>Rudyard Kipling</Text>
-                    </View>
-                </View>
-                <View>
-                <Progress.Circle size={50} indeterminate={false} progress={0.70} color={'#563AD7'} unfilledColor={'#D3D3D3'} borderColor={'white'} showsText={true} formatText={()=> <Text>75%</Text>} />
-                </View>
-            </View> */}
-            
-            </View>
         </View>
     )
 }
@@ -66,6 +92,28 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         marginTop:15,
         justifyContent:'space-between'
-
-    }
+    },
+    welcomeBox:{ 
+        backgroundColor:WHITE,  
+        width:'100%',
+        height:'100%',
+        borderTopLeftRadius:32, 
+        borderTopRightRadius:32, 
+        paddingHorizontal:35, 
+        paddingVertical: 30
+    },
+    box:{
+        position:'absolute', 
+        bottom:0,
+        width:'100%',
+    },
+    PhoneBox:{ 
+        backgroundColor:PEACH,  
+        width:'100%',
+        height:'100%',
+        borderTopLeftRadius:32, 
+        borderTopRightRadius:32, 
+        paddingHorizontal:25, 
+        paddingVertical: 20
+    },
 })
