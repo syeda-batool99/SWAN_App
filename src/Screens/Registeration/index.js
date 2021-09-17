@@ -35,7 +35,7 @@ const WelcomeScreen = props => {
               </View>
             </TouchableOpacity>
           </View>
-master
+
         </View>
 
         
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
 });
-master
+
