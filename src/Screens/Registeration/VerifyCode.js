@@ -96,7 +96,7 @@ const VerifyCode = props => {
                 props.navigation.navigate('FindContactScreen');
                 // props.navigation.navigate('InputBio');
 
-              >
+              }}>
               <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
             </TouchableOpacity>
             <View style={{flexDirection: 'row'}}>
