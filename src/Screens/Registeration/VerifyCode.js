@@ -91,9 +91,11 @@ const VerifyCode = props => {
           <View style={{alignItems: 'center'}}>
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
+
               onPress={() => {
                 props.navigation.navigate('FindContactScreen');
-              }}
+                // props.navigation.navigate('InputBio');
+
               >
               <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
             </TouchableOpacity>

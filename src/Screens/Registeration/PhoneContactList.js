@@ -101,31 +101,31 @@ const PhoneContactList = (props) => {
     return (
         <View style= {styles.container}>
 
-            <AppHeader title='Contact List' />
+            <AppHeader title='Contact List' {...props} skip = {true}/>
 
             <View style = {{width:'90%', alignSelf:'center'}}>
                 <View style = {{marginBottom:10}}>
                     <Text style = {{color : TEXT_BLACK}}>3 Friends are on Swan</Text>
                 </View>
-
+            </View>
+            <View style = {{height:'30%'}}>
                 <FlatList 
-                data = {LIST}
-                keyExtractor = {(item,index)=> (index.toString())}
-                renderItem = {renderItem} />
-
+                    data = {LIST}
+                    keyExtractor = {(item,index)=> (index.toString())}
+                    renderItem = {renderItem} />
             </View>
 
             <View style = {{width:'90%', alignSelf:'center'}}>
                 <View style = {{marginBottom:10}}>
                     <Text style = {{color : TEXT_BLACK}}>Invite to Swan</Text>
                 </View>
-
+            </View>
+            <View style = {{height:'49%'}}>
                 <FlatList 
-                data = {FRIENDS_LIST}
-                keyExtractor = {(item,index)=> (index.toString())}
-                renderItem = {renderItem} />
-
-            </View>   
+                    data = {FRIENDS_LIST}
+                    keyExtractor = {(item,index)=> (index.toString())}
+                    renderItem = {renderItem} />
+            </View>
 
                 <TouchableOpacity 
                 onPress = {()=>navigation.navigate('FindFacebookFriendScreen')}

@@ -10,7 +10,9 @@ const FindContact = (props) => {
     const [modalVisible,setModalVisible] = useState(false)
     return (
         <View style= {styles.container}>
-            <AppHeader title='Find Contacts' onPress='VerifyCode' />
+
+            <AppHeader title='Find Contacts' {...props}/>
+
             <CustomAlertModal modalVisible = {modalVisible} 
                 onPressBtn1 = {()=>{navigation.navigate('ContactListScreen')}} 
                 onPressBtn2 = {()=>(setModalVisible(!modalVisible))}/>

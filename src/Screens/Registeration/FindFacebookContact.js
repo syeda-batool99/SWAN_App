@@ -10,7 +10,7 @@ const FindFacebookContact = (props) => {
     const [modalVisible,setModalVisible] = useState(false)
     return (
         <View style= {styles.container}>
-            <AppHeader title='Find Friends' />
+            <AppHeader title='Find Friends'  {...props}/>
             <CustomAlertModal modalVisible = {modalVisible}
                 alertText = 'Allow Swan to access your facebook friends list?' 
                 onPressBtn1 = {()=>{navigation.navigate('FacebookFriendListScreen')}} 

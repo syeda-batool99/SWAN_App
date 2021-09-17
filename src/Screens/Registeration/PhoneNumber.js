@@ -15,6 +15,7 @@ import {
   WHITE,
   BLACK,
   BROWN_SHADE,
+  TEXT_BLACK,
 } from './../../Assets/Colors/index';
 import {Icon} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -42,23 +43,30 @@ const PhoneNumber = props => {
           <Text style={{fontSize: 14, marginTop: 10}}>
             Please verify your phone number so we know you are a real person.
           </Text>
-          <PhoneInput
-          containerStyle={styles.phoneInputContainerStyle}
-          textContainerStyle={{
-              backgroundColor:WHITE
-          }}
-          textInputStyle={{color:BLACK}}
-            ref={phoneInput}
-            defaultValue={value}
-            defaultCode="PK"
-            onChangeFormattedText={text => {
-              setValue(text);
-            }}
-            layout='first'
-            // withDarkTheme
-            withShadow
-            autoFocus
-          />
+          <View  style = {{marginVertical:15}}>
+              <PhoneInput
+              containerStyle={styles.phoneInputContainerStyle}
+              textInputStyle={{
+                color:TEXT_BLACK,
+                marginTop:4,
+                height:30,
+              padding:0}}
+              textContainerStyle ={{
+                backgroundColor:WHITE
+              }}
+                ref={phoneInput}
+                defaultValue={value}
+                defaultCode="PK"
+                onChangeFormattedText={text => {
+                  setValue(text);
+                }}
+                layout='first'
+                // withDarkTheme
+                withShadow
+                autoFocus
+              />
+          </View>
+
           {/* <StatusBar barStyle="dark-content" />
           {showMessage && (
             <View style={styles.message}>
@@ -160,12 +168,12 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 12,
   },
   phoneInputContainerStyle: {
-    marginVertical: 20,
+    // marginVertical: 20,
     flexDirection: 'row',
     backgroundColor: WHITE,
     paddingHorizontal: 15,
     borderRadius: 12,
     height: 50,
-    width:'100%'
+    width:'100%',
   }
 });
