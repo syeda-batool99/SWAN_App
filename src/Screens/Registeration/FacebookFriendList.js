@@ -54,6 +54,26 @@ const FacebookFriendList = (props) => {
         f_name: 'Steve',
         l_name: 'Jones',
         link: '@stevejones'},
+        {
+        avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
+        f_name: 'Steve',
+        l_name: 'Jones',
+        link: '@stevejones'},
+        {
+        avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
+        f_name: 'Steve',
+        l_name: 'Jones',
+        link: '@stevejones'},
+        {
+        avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
+        f_name: 'Steve',
+        l_name: 'Jones',
+        link: '@stevejones'},
+        {
+        avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
+        f_name: 'Steve',
+        l_name: 'Jones',
+        link: '@stevejones'}
     ]
 
     const renderItem = ({item})=>{
@@ -82,19 +102,22 @@ const FacebookFriendList = (props) => {
     return (
         <View style= {styles.container}>
 
-            <AppHeader title='Facebook Friend' />
+            <AppHeader title='Facebook Friend' {...props} skip={true}/>
 
             <View style = {{width:'90%', alignSelf:'center'}}>
                 <View style = {{marginBottom:10}}>
                     <Text style = {{color : TEXT_BLACK}}>8 Friends are on Swan</Text>
                 </View>
 
-                <FlatList 
-                data = {FRIENDS_LIST}
-                keyExtractor = {(item,index)=> (index.toString())}
-                renderItem = {renderItem} />
 
-            </View>   
+
+            </View>
+            <View style= {{height:'82%'}}>
+                <FlatList
+                    data = {FRIENDS_LIST}
+                    keyExtractor = {(item,index)=> (index.toString())}
+                    renderItem = {renderItem} />
+            </View>
 
                 <TouchableOpacity style= {{height:60, width:'100%',position:'absolute',bottom:0,backgroundColor:BLUE,justifyContent:'center', alignItems:'center'}}>
                     <Text style = {{color:WHITE}}>Next</Text>
