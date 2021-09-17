@@ -14,7 +14,7 @@ const WelcomeScreen = props => {
       <View style={styles.box}>
         <View style={styles.welcomeBox}>
           <View style={{width: '80%'}}>
-            <Text style={{fontSize: 22}}>
+            <Text style={{fontSize: 22, fontFamily:'Sharp_Grotesk_SmBold_20_Regular'}}>
               Welcome on Swan App Sign in or Join now
             </Text>
           </View>

@@ -149,7 +149,7 @@ class BackgroundCarousel extends React.Component {
           ))}
         </ScrollView>
         <View style = {styles.textStyle}>
-            <Text style = {{color:'white'}}>
+            <Text style = {{color:'white', fontFamily:'Sharp_Grotesk_Book_20_Regular'}}>
                 Meet awesome people & enjoy life
             </Text>
         </View>

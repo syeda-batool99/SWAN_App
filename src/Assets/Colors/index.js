@@ -9,5 +9,7 @@ export const TEXT_BLACK = "#272D37"
 export const TEXT_GREY = "#66737F"
 
 export const BLACK = "#000000"
+export const CYAN ='#049AA9'
+export const PINK ='#F64E80'
 
 

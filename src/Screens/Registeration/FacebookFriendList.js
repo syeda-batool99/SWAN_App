@@ -1,11 +1,12 @@
 import React from 'react'
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { PEACH, TEXT_GREY, WHITE } from '../../Assets/Colors';
+import { PEACH, TEXT_GREY, WHITE  } from '../../Assets/Colors';
 import AppHeader from './../../Components/AppHeader';
 import { TEXT_BLACK, BLUE } from './../../Assets/Colors/index';
 
 const FacebookFriendList = (props) => {
     const {navigation} = props;
+    
 
     const FRIENDS_LIST = [
         {
@@ -101,6 +102,7 @@ const FacebookFriendList = (props) => {
 
     return (
         <View style= {styles.container}>
+            
 
             <AppHeader title='Facebook Friend' {...props} skip={true}/>
 
@@ -119,7 +121,8 @@ const FacebookFriendList = (props) => {
                     renderItem = {renderItem} />
             </View>
 
-                <TouchableOpacity style= {{height:60, width:'100%',position:'absolute',bottom:0,backgroundColor:BLUE,justifyContent:'center', alignItems:'center'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('NewPassword')}
+                style= {{height:60, width:'100%',position:'absolute',bottom:0,backgroundColor:BLUE,justifyContent:'center', alignItems:'center'}}>
                     <Text style = {{color:WHITE}}>Next</Text>
                 </TouchableOpacity>
         </View>

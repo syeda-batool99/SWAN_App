@@ -78,7 +78,7 @@ const VerifyCode = props => {
             verifyCodeLength={4}
             containerPaddingRight={50}
             containerBackgroundColor="transparent"
-            codeViewBorderRadius={20}
+            codeViewBorderRadius={12}
             codeViewBorderColor={BLACK}
             codeViewBorderWidth={1.5}
             focusedCodeViewBorderColor={BLUE}
@@ -93,10 +93,8 @@ const VerifyCode = props => {
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
 
               onPress={() => {
-                props.navigation.navigate('FindContactScreen');
-                // props.navigation.navigate('InputBio');
-
-              >
+                props.navigation.navigate('InputBio');
+              }}>
               <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
             </TouchableOpacity>
             <View style={{flexDirection: 'row'}}>
