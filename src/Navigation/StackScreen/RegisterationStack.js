@@ -35,4 +35,3 @@ const RegisterationStack = () => {
 }
 
 export default RegisterationStack
-FacebookFriendList
