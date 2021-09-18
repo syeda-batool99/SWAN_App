@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { DARK_PEACH, PEACH } from '../../Assets/Colors'
+import { DARK_PEACH, PEACH, WHITE } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import { TEXT_BLACK, BLUE } from './../../Assets/Colors/index';
 import { RadioButton } from 'react-native-paper';
@@ -76,9 +76,14 @@ const Permission = (props) => {
 
                 </View>
             </View>
-            <View>
-                <TouchableOpacity onPress = {()=>navigation.navigate('AddProfilePhotoScreen')}>
-                    <Text>NEXT</Text>
+            <View style={styles.button}>
+                <TouchableOpacity
+                        style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
+                        onPress={() => {
+                        props.navigation.navigate('AddProfilePhotoScreen');
+                        }}
+                        >
+                        <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
                 </TouchableOpacity>
             </View>
         
@@ -104,5 +109,20 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
         borderBottomColor:'#E6DFDB',
         paddingBottom:10
-    }
+    },
+    button: {
+        flex: 3,
+        padding: 30,
+        alignItems: 'center',
+      },
+      btn: {
+        height: 50,
+        width: '100%',
+        marginVertical: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 12,
+        position: 'absolute',
+        bottom: 0,
+      },
 })

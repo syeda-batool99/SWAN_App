@@ -14,6 +14,12 @@ import AddProfilePhoto from '../../Screens/Registeration/AddProfilePhoto';
 import ForgotPassword from './../../Screens/Registeration/ForgotPassword';
 import Verification from './../../Screens/Registeration/Verification';
 
+import  InputBio from '../../Screens/Registeration/InputBio';
+import Gender from '../../Screens/Registeration/Gender';
+import Username from '../../Screens/Registeration/Username';
+import Password from '../../Screens/Registeration/Password';
+import DateofBirth from '../../Screens/Registeration/DateofBirth';
+import NewPassword from '../../Screens/Registeration/NewPassword';
 
 const RegisterationStack = () => {
 
@@ -38,6 +44,12 @@ const RegisterationStack = () => {
 
         <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
         <Stack.Screen name="VerifyCode" component={VerifyCode} />
+        <Stack.Screen name="InputBio" component={InputBio} />
+        <Stack.Screen name="Gender" component={Gender} />
+        <Stack.Screen name="Username" component={Username} />
+        <Stack.Screen name="Password" component={Password} />
+        <Stack.Screen name="DateofBirth" component={DateofBirth} />
+        <Stack.Screen name="NewPassword" component={NewPassword} />
 
     </Stack.Navigator>
     )

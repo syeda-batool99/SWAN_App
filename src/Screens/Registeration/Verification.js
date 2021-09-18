@@ -43,7 +43,7 @@ const Verification = (props) => {
             <View style = {{position:'relative',width:'100%',top:90, alignItems:'center', flexDirection:'column'}}>
                 <View style = {{height:50, width:'90%'}}>
                     <TouchableOpacity 
-                        onPress = {()=>navigation.navigate('VerificationScreen')}
+                        onPress = {()=>navigation.navigate('NewPassword')}
                         style = {{flex:1, justifyContent:'center',height:'100%',width:'100%', backgroundColor:BLUE, borderRadius:10}} >
                         <Text style = {{color:WHITE, textAlign:'center'}}>Verify</Text>
                     </TouchableOpacity>

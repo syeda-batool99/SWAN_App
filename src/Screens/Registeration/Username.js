@@ -5,54 +5,47 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Image
 } from 'react-native';
 import {
   BLUE,
   PEACH,
   WHITE,
   BLACK,
-  BROWN_SHADE,
+  BROWN_SHADE,CYAN, PINK
 } from './../../Assets/Colors/index';
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
 
-const InputBio = props => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-
+const Username = props => {
+  const [userName, setUserName] = useState('');
+ 
   return (
     <View style={styles.container}>
-      <AppHeader title="Write your name" {...props} />
+      <AppHeader title="Pick a username" {...props} />
 
       <Subtitle title="Please enter your information below in order to login to your account." />
 
       <View style={styles.form}>
+        
         <View style={styles.formInput}>
-          <Text>Firstname</Text>
           <TextInput
-            placeholder="  Write firstname"
+            placeholder="  Write username"
             style={styles.textinput}
-            value={firstName}
-            onChangeText={setFirstName}
-          />
-        </View>
-        <View style={styles.formInput}>
-          <Text>Lastname</Text>
-          <TextInput
-            placeholder="  Write lastname"
-            style={styles.textinput}
-            value={lastName}
-            onChangeText={setLastName}
+            value={userName}
+            onChangeText={setUserName}
           />
         </View>
       </View>
 
       <View style={styles.button}>
+          
         <TouchableOpacity
           style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
           onPress={() => {
-            props.navigation.navigate('Gender');
-          }}>
+            props.navigation.navigate('Password');
+          }}
+          >
           <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
         </TouchableOpacity>
       </View>
@@ -66,15 +59,11 @@ const styles = StyleSheet.create({
     backgroundColor: PEACH,
   },
   form: {
-    flex: 2,
-    padding: 30,
+    marginVertical:150,
+    flexDirection:'row',
+    justifyContent:'space-around',
+    paddingHorizontal: 30,
     alignContent: 'center',
-  },
-  formInput: {
-    // position:'absolute',
-    bottom: 0,
-    top: 80,
-    marginVertical: 5,
   },
   textinput: {
     backgroundColor: WHITE,
@@ -96,6 +85,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
   },
+  formInput: {
+    // position:'absolute',
+    bottom: 0,
+    top: 60,
+    // marginVertical: 5,
+    width:'100%'
+  },
 });
 
-export default InputBio;
+export default Username;
