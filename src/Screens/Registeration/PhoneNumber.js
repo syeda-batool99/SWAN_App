@@ -33,7 +33,7 @@ const PhoneNumber = props => {
               <TouchableOpacity onPress={() => props.navigation.goBack()}>
               <Ionicons name={'arrow-back'} size={28} />
               </TouchableOpacity>
-            <Text style={{fontSize: 20, marginLeft: 20}}>Phone Number</Text>
+            <AppText heading textContainerStyle={{marginLeft: 8,bottom:3,}}>Phone Number</AppText>
           </View>
           <Text style={{fontSize: 14, marginTop: 10}}>
             Please verify your phone number so we know you are a real person.
@@ -86,7 +86,7 @@ const PhoneNumber = props => {
                 // setValid(checkValid ? checkValid : false);
                 props.navigation.navigate('EnterPassword')
               }}>
-              <AppText button >Next</AppText>
+              <AppText button white >Next</AppText>
             </TouchableOpacity>
           </View>
         </View>

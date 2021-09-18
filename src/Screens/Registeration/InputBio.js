@@ -15,6 +15,7 @@ import {
 } from './../../Assets/Colors/index';
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
+import AppText from './../../Components/AppText';
 
 const InputBio = props => {
   const [firstName, setFirstName] = useState('');
@@ -22,13 +23,13 @@ const InputBio = props => {
 
   return (
     <View style={styles.container}>
-      <AppHeader title="Write your name" {...props} />
+      <AppHeader back title="Write your name" {...props} />
 
       <Subtitle title="Please enter your information below in order to login to your account." />
 
       <View style={styles.form}>
         <View style={styles.formInput}>
-          <Text>Firstname</Text>
+          <AppText>Firstname</AppText>
           <TextInput
             placeholder="  Write firstname"
             style={styles.textinput}
@@ -37,7 +38,7 @@ const InputBio = props => {
           />
         </View>
         <View style={styles.formInput}>
-          <Text>Lastname</Text>
+          <AppText >Lastname</AppText>
           <TextInput
             placeholder="  Write lastname"
             style={styles.textinput}
@@ -53,7 +54,7 @@ const InputBio = props => {
           onPress={() => {
             props.navigation.navigate('Gender');
           }}>
-          <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+          <AppText button white>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

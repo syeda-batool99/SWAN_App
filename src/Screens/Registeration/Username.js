@@ -16,6 +16,7 @@ import {
 } from './../../Assets/Colors/index';
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
+import AppText from './../../Components/AppText';
 
 const Username = props => {
   const [userName, setUserName] = useState('');
@@ -46,7 +47,7 @@ const Username = props => {
             props.navigation.navigate('Password');
           }}
           >
-          <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+          <AppText white button>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

@@ -7,15 +7,15 @@ import AppText from './AppText';
 
 const AppHeader = (props) => {
 
-    const {title, skip} = props;
+    const {title, skip,back} = props;
     
     return (
         <View style = {styles.container}>
-            <TouchableOpacity style ={{position:'relative', left:15, top:17}} onPress = {()=>props.navigation.goBack()}>
+            {!back?(<TouchableOpacity style ={{position:'relative', left:15, top:17}} onPress = {()=>props.navigation.goBack()}>
                 <Icon name = 'arrowleft' type = 'antdesign' size = {25}/>
-            </TouchableOpacity>
+            </TouchableOpacity>):(null)}
             <View style={[styles.titleContainer]}>
-                <AppText heading style = {{fontSize:20}}>{title}</AppText>
+                <AppText heading size = {20}>{title}</AppText>
             </View>
             {skip?(
                 <View>

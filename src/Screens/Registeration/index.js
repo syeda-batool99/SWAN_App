@@ -25,14 +25,14 @@ const WelcomeScreen = props => {
               style={[{borderWidth: 2}, styles.btn]}
               onPress={() => props.navigation.navigate('PhoneNumber')}>
               <View>
-              <AppText button underline >Sign in</AppText>
+              <AppText button >Sign in</AppText>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
               onPress={() => props.navigation.navigate('PhoneNumber')}>
               <View>
-                <AppText button >Join Now</AppText>
+                <AppText button white>Join Now</AppText>
               </View>
             </TouchableOpacity>
           </View>
