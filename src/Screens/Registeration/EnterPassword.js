@@ -39,9 +39,9 @@ const EnterPassword = props => {
               <Text style={{fontSize: 20, marginLeft: 20}}>Password</Text>
           </View>
 
-          <Text style={{fontSize: 14, marginTop: 10}}> Please enter your information below in order to login to your account.</Text>
+          <Text style={{fontSize: 14, marginTop: 10}}>Please enter your information below in order to login to your account.</Text>
 
-          <View >
+
             
             <View style={styles.textinput}>
                 <TextInput
@@ -62,12 +62,9 @@ const EnterPassword = props => {
                 />
             </View>
           
-          </View>
 
           <View style={{alignItems: 'center'}}>
-            <Text style={{fontSize: 12, color: BROWN_SHADE, marginBottom: 2}}>
-              We'll send you an SMS verification code.
-            </Text>
+
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
               onPress={() => {
@@ -75,6 +72,14 @@ const EnterPassword = props => {
               }}>
               <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+              style={[{marginVertical:10,paddingBottom:5}]}
+              onPress={() => {
+                props.navigation.navigate('VerifyCode')
+              }}>
+              <Text style={{color: BLUE, fontSize: 15}}>Forgot Password</Text>
+            </TouchableOpacity>
+
           </View>
 
 
@@ -110,46 +115,25 @@ const styles = StyleSheet.create({
   welcomeBox: {
     backgroundColor: PEACH,
     width: '100%',
-    height: 275,
+    // height: 275,
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
     paddingHorizontal: 28,
-    paddingVertical: 30,
+    paddingTop: 30,
   },
   box: {
     position: 'absolute',
     bottom: 0,
+    // flex:2,
     width: '100%',
   },
-  PhoneBox: {
-    backgroundColor: PEACH,
-    width: '100%',
-    height: '100%',
-    borderTopLeftRadius: 32,
-    borderTopRightRadius: 32,
-    paddingHorizontal: 25,
-    paddingVertical: 20,
-  },
-  input: {
-    backgroundColor: WHITE,
-    borderTopRightRadius: 12,
-    borderTopLeftRadius: 12,
-    borderBottomLeftRadius: 12,
-    borderBottomRightRadius: 12,
-  },
-  phoneInputContainerStyle: {
-    // marginVertical: 20,
-    flexDirection: 'row',
-    backgroundColor: WHITE,
-    borderRadius: 12,
-    height: 50,
-    width:'100%',
-  },
+
   textinput: {
     flexDirection: 'row',
     backgroundColor: WHITE,
     borderRadius: 12,
-    marginVertical: 18,
+    marginVertical: 15,
     justifyContent:'space-between',
+    
   },
 });

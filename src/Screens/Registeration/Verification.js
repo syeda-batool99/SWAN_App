@@ -40,7 +40,7 @@ const Verification = (props) => {
                     />
                 
             </View>
-            <View style = {{position:'relative',width:'100%',top:90, alignItems:'center', flexDirection:'column'}}>
+            <View style = {{position:'absolute',width:'100%',bottom:0, alignItems:'center', flexDirection:'column'}}>
                 <View style = {{height:50, width:'90%'}}>
                     <TouchableOpacity 
                         onPress = {()=>navigation.navigate('NewPassword')}

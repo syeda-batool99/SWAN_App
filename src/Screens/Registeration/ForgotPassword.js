@@ -28,10 +28,10 @@ const ForgotPassword = (props) => {
                         value={text}
                         onChangeText={(text)=>setText(text)}
                     />
-        </View>
+                </View>
                 </View>
             </View>
-            <View style = {{position:'relative',width:'100%',top:60,bottom:0, alignItems:'center', flexDirection:'column'}}>
+            <View style = {{width:'100%',flex:3,alignItems:'center', flexDirection:'column'}}>
                 
                 <View style={{height:40, width:'90%'}}>
                     <View style = {{flex:1, justifyContent:'center',height:'100%',width:'100%',  borderRadius:10}}>

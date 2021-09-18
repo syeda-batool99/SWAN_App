@@ -24,7 +24,15 @@ const PhoneContactList = (props) => {
         avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
         f_name: 'Steve',
         l_name: 'Jones',
-        link: '@stevejones'
+        link: '@stevejones',
+        pressed:true
+        },
+        {
+        avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
+        f_name: 'Steve',
+        l_name: 'Jones',
+        link: '@stevejones',
+        pressed:true
         },
         {
         avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
@@ -42,13 +50,8 @@ const PhoneContactList = (props) => {
         avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
         f_name: 'Steve',
         l_name: 'Jones',
-        link: '@stevejones'
-        },
-        {
-        avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
-        f_name: 'Steve',
-        l_name: 'Jones',
-        link: '@stevejones'},
+        link: '@stevejones',
+        pressed:true},
         {
         avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
         f_name: 'Steve',
@@ -67,6 +70,7 @@ const PhoneContactList = (props) => {
             avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
             f_name: 'Steve',
             l_name: 'Jones',
+            pressed:true,
             link: '@stevejones'},
             {
             avatar:require('../../Assets/Images/RegisterationCarousel/avatar.png'),
@@ -89,10 +93,16 @@ const PhoneContactList = (props) => {
                 </View>
             </View>
             <View >
-            <TouchableOpacity style = {{height:35, width:80,paddingTop:8,backgroundColor:BLUE, flexDirection:'row', borderRadius:10,justifyContent:'space-evenly'}}>
-                    <Image source = {require('../../Assets/Images/RegisterationCarousel/addFriend.png')}/>
-                    <Text style = {{color:WHITE, height:25}}>Add</Text>
+            {!item.pressed?(
+                        <TouchableOpacity style = {{height:35, width:90,paddingTop:8,backgroundColor:BLUE, flexDirection:'row', borderRadius:10,justifyContent:'space-around'}}>
+                                <Image style={{left:5}} source = {require('../../Assets/Images/RegisterationCarousel/addFriend.png')}/>
+                                <Text style = {{color:WHITE, height:25, right:5}}>Add</Text>
+                        </TouchableOpacity>
+                ):(
+            <TouchableOpacity style = {{height:35, width:90,paddingTop:8,backgroundColor:'#B1D0FF', flexDirection:'row', borderRadius:10,justifyContent:'space-around'}}>
+                    <Text style = {{color:BLUE, height:25}}>Pending</Text>
             </TouchableOpacity>
+            )}
             </View>
         </View>)
     }
@@ -104,24 +114,26 @@ const PhoneContactList = (props) => {
             <AppHeader title='Contact List' {...props} skip = {true}/>
 
             <View style = {{width:'90%', alignSelf:'center'}}>
-                <View style = {{marginBottom:10}}>
+                <View style = {{marginVertical:5}}>
                     <Text style = {{color : TEXT_BLACK}}>3 Friends are on Swan</Text>
                 </View>
             </View>
             <View style = {{height:'30%'}}>
-                <FlatList 
+                <FlatList
+                    contentContainerStyle = {{alignSelf:'center', width:'90%'}}
                     data = {LIST}
                     keyExtractor = {(item,index)=> (index.toString())}
                     renderItem = {renderItem} />
             </View>
 
             <View style = {{width:'90%', alignSelf:'center'}}>
-                <View style = {{marginBottom:10}}>
+                <View style = {{marginVertical:5}}>
                     <Text style = {{color : TEXT_BLACK}}>Invite to Swan</Text>
                 </View>
             </View>
             <View style = {{height:'49%'}}>
                 <FlatList 
+                    contentContainerStyle = {{alignSelf:'center', width:'90%'}}
                     data = {FRIENDS_LIST}
                     keyExtractor = {(item,index)=> (index.toString())}
                     renderItem = {renderItem} />
