@@ -32,7 +32,9 @@ const DateofBirth = props => {
         <View style={styles.formInput}>
         <DatePicker 
           fadeToColor = 'none'
-          date={date} onDateChange={setDate} mode='date' />
+          date={date} onDateChange={setDate} mode='date' 
+          locale='en_DK'
+          />
         </View>
       </View>
 

@@ -5,6 +5,7 @@ import { Pressable } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { PEACH, WHITE } from '../Assets/Colors';
 import { BLUE, TEXT_BLACK } from './../Assets/Colors/index';
+import AppText from './AppText';
 
 const CustomAlertModal = (props) => {
     const {
@@ -34,7 +35,7 @@ const CustomAlertModal = (props) => {
                         </View>
                         <View style= {{width:'80%', marginVertical:20}}>
                             {/* TEXT */}
-                            <Text style = {{textAlign:'center', fontSize:18, lineHeight:27}}>{alertText?alertText:"Allow Swan to access your Contact list?"}</Text>
+                            <AppText alertText style = {{textAlign:'center', fontSize:18, lineHeight:27}}>{alertText?alertText:"Allow Swan to access your Contact list?"}</AppText>
                         </View>
                         <View style = {{position:'absolute',width:'100%',top:160, alignItems:'center', flexDirection:'column'}}>
                             <View style = {{height:50, width:'90%'}}>

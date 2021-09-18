@@ -80,6 +80,8 @@
 // })
 import * as React from "react";
 import { StyleSheet, View, ScrollView, Dimensions, Image,Text } from "react-native";
+import { WHITE } from "../Assets/Colors";
+import AppText from "./AppText";
 
 const DEVICE_WIDTH = Dimensions.get("window").width;
 
@@ -150,9 +152,9 @@ class BackgroundCarousel extends React.Component {
           ))}
         </ScrollView>
         <View style = {styles.textStyle}>
-            <Text style = {{color:'white', fontFamily:'Sharp_Grotesk_Book_20_Regular'}}>
-                Meet awesome people & enjoy life
-            </Text>
+            <AppText color={WHITE}>
+                Meet awesome people &#x26; enjoy life
+            </AppText>
         </View>
         <View style={styles.circleDiv}>
           {images.map((image, i) => (
@@ -179,7 +181,7 @@ const styles = StyleSheet.create({
   },
   circleDiv: {
     position: "absolute",
-    bottom: '24%',
+    bottom: '26%',
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -196,7 +198,7 @@ const styles = StyleSheet.create({
   },
   textStyle:{
     position: "absolute",
-    bottom: '27%',
+    bottom: '31%',
     display: "flex",
     flexDirection: "row",
     alignItems: "center",

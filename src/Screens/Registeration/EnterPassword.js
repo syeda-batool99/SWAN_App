@@ -45,7 +45,7 @@ const EnterPassword = props => {
             
             <View style={styles.textinput}>
                 <TextInput
-                placeholder="Write Password"
+                placeholder="  Write Password"
                 value={password}
                 onChangeText={setPassword}
                 type="password"
@@ -75,7 +75,7 @@ const EnterPassword = props => {
             <TouchableOpacity
               style={[{marginVertical:10,paddingBottom:5}]}
               onPress={() => {
-                props.navigation.navigate('VerifyCode')
+                props.navigation.navigate('ForgotpasswordScreen')
               }}>
               <Text style={{color: BLUE, fontSize: 15}}>Forgot Password</Text>
             </TouchableOpacity>

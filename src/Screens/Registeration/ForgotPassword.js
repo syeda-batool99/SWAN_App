@@ -18,12 +18,12 @@ const ForgotPassword = (props) => {
                 </View>
                 <View style = {{alignItems:'center', marginTop:20}}>
                     <Text style = {{fontSize:18, width:'70%', textAlign:'center'}}>Enter the email address associated with your account.</Text>
-                    <Text style = {{fontSize:18, marginTop:15,width:'70%', textAlign:'center'}}>We will email you a link to reset your password.</Text>
+                    <Text style = {{fontSize:14, marginTop:15,width:'70%', textAlign:'center'}}>We will email you a link to reset your password.</Text>
                 </View>
                 <View style = {{marginTop:20, width:'80%', alignSelf:'center'}}>
                 <View>
                     <TextInput
-                        placeholder="Enter your email address"
+                        placeholder="  Enter your email address"
                         style={styles.textinput}
                         value={text}
                         onChangeText={(text)=>setText(text)}
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     textinput: {
         backgroundColor: WHITE,
         borderRadius: 12,
+        marginTop: 20
       },
 
 })

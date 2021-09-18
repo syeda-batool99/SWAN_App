@@ -3,6 +3,7 @@ import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-nativ
 import { Icon } from 'react-native-elements';
 import { PEACH } from '../Assets/Colors';
 import { BLUE } from './../Assets/Colors/index';
+import AppText from './AppText';
 
 const AppHeader = (props) => {
 
@@ -14,7 +15,7 @@ const AppHeader = (props) => {
                 <Icon name = 'arrowleft' type = 'antdesign' size = {25}/>
             </TouchableOpacity>
             <View style={[styles.titleContainer]}>
-                <Text style = {{fontSize:20}}>{title}</Text>
+                <AppText heading style = {{fontSize:20}}>{title}</AppText>
             </View>
             {skip?(
                 <View>
