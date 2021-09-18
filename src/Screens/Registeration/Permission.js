@@ -7,7 +7,9 @@ import { RadioButton } from 'react-native-paper';
 
 const Permission = (props) => {
     const {navigation} = props;
-    const [checked, setChecked] = useState('');
+    const [checked2, setChecked2] = useState(false);
+    const [checked1, setChecked1] = useState(false);
+    const [checked3, setChecked3] = useState(false);
     return (
         <View style= {styles.container}>
             <AppHeader title='Permissions' {...props}/>
@@ -18,19 +20,19 @@ const Permission = (props) => {
             <View style = {{borderTopColor:'#E6DFDB', width:'100%', alignItems:'center',borderTopWidth:1, marginTop:20, paddingTop:20}}>
                 <View style = {styles.ItemContainer}>
 
-                <View style = {{flexDirection:'row'}}>
+                    <View style = {{flexDirection:'row'}}>
                         <Image style = {{marginRight:10, marginTop:10}} source = {require('../../Assets/Images/RegisterationCarousel/camera.png')}/>
                         <View style = {{width:'60%'}}>
                             <Text style = {{fontSize:18, color:TEXT_BLACK}}>Camera and Mic</Text>
                             <Text style = {{fontSize:14, color:TEXT_BLACK}}>So your friends can see and hear you.</Text>
                         </View>
-                        <View style = {{flex:1,justifyContent:'center', left:40}}>
-                            <RadioButton
+                        <View style = {{justifyContent:'center', left:40}}>
+                            <RadioButton.Android
                                 uncheckedColor={DARK_PEACH}
                                 color = {BLUE}
-                                value="first"
-                                status={ checked === 'first' ? 'checked' : 'unchecked' }
-                                onPress={() => setChecked('first')}/>
+                                // value="first"
+                                status={ checked1?'checked' : 'unchecked' }
+                                onPress={() => setChecked1(!checked1)}/>
                         </View>
                     </View>
                 
@@ -39,18 +41,17 @@ const Permission = (props) => {
                 <View style = {styles.ItemContainer}>
                 <View style = {{flexDirection:'row'}}>
                         <Image style = {{marginRight:10, marginTop:10}} source = {require('../../Assets/Images/RegisterationCarousel/notification.png')}/>
-                        <View style = {{width:'60%'}}>
+                        <View style = {{width:'60%',}}>
                             <Text style = {{fontSize:18, color:TEXT_BLACK}}>Notifications</Text>
                             <Text style = {{fontSize:14, color:TEXT_BLACK}}>So you know when your friends want to chat.</Text>
                         </View>
-                        <View style = {{flex:1,justifyContent:'center', left:40}}>
+                        <View style = {{justifyContent:'center', left:40}}>
                             <RadioButton
-                                
                                 uncheckedColor={DARK_PEACH}
                                 color = {BLUE}
-                                value="first"
-                                status={ checked === 'first' ? 'checked' : 'unchecked' }
-                                onPress={() => setChecked('first')}/>
+                                // value="first"
+                                status={ checked2 ? 'checked' : 'unchecked' }
+                                onPress={() => setChecked2(!checked2)}/>
                         </View>
                     </View>
 
@@ -63,18 +64,30 @@ const Permission = (props) => {
                             <Text style = {{fontSize:18, color:TEXT_BLACK}}>Enable Location</Text>
                             <Text style = {{fontSize:14, color:TEXT_BLACK}}>So you can find friends who are near you.</Text>
                         </View>
-                        <View style = {{flex:1,justifyContent:'center', left:40}}>
+                        <View style = {{justifyContent:'center', left:40}}>
                             <RadioButton
-                                // style = {{width:1}}
                                 uncheckedColor={DARK_PEACH}
                                 color = {BLUE}
-                                value="first"
-                                status={ checked === 'first' ? 'checked' : 'unchecked' }
-                                onPress={() => setChecked('first')}/>
+                                status={ checked3? 'checked' : 'unchecked' }
+                                onPress={() => setChecked3(!checked3)}/>
                         </View>
-                    </View>
+                    </View> 
 
-                </View>
+                 </View> 
+
+                {/* <View style={{ flexDirection: 'row', alignContent: 'center' }}>
+                    <View style={{ flex: 4, alignSelf: 'center' }}>
+                    <Text>First</Text>
+                    </View>
+                    <View style={{  }}>
+                    <RadioButton
+                        value="first"
+                        status={checked1  ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked1(!checked1)}
+                    />
+                    </View>
+                </View> */}
+
             </View>
             <View style={styles.button}>
                 <TouchableOpacity

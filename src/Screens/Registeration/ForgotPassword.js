@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet,TextInput, Text, TouchableOpacity, View } from 'react-native'
 import { PEACH, WHITE } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
-import { TEXT_BLACK, BLUE } from './../../Assets/Colors/index';
-import CustomAlertModal from '../../Components/CustomAlertModal';
-import { TextInput } from 'react-native-paper';
+import { BLUE } from './../../Assets/Colors/index';
 
 const ForgotPassword = (props) => {
     const {navigation} = props;
@@ -23,19 +21,17 @@ const ForgotPassword = (props) => {
                     <Text style = {{fontSize:18, marginTop:15,width:'70%', textAlign:'center'}}>We will email you a link to reset your password.</Text>
                 </View>
                 <View style = {{marginTop:20, width:'80%', alignSelf:'center'}}>
+                <View>
                     <TextInput
-                        style = {{backgroundColor:WHITE, height:50, borderRadius:5, borderWidth:0}}
+                        placeholder="Enter your email address"
+                        style={styles.textinput}
                         value={text}
-                        placeholder = 'Enter your email address'
-                        selectionColor = 'black'
-                        outlineColor = 'black'
-                        underlineColor= 'transparent'
-                        onChangeText={text => setText(text)}
-                        // underlineColor = 'black'          
-                        />
+                        onChangeText={(text)=>setText(text)}
+                    />
+        </View>
                 </View>
             </View>
-            <View style = {{position:'relative',width:'100%',top:65, alignItems:'center', flexDirection:'column'}}>
+            <View style = {{position:'relative',width:'100%',top:60,bottom:0, alignItems:'center', flexDirection:'column'}}>
                 
                 <View style={{height:40, width:'90%'}}>
                     <View style = {{flex:1, justifyContent:'center',height:'100%',width:'100%',  borderRadius:10}}>
@@ -63,5 +59,10 @@ const styles = StyleSheet.create({
         height:'100%',
         width:'100%',
         backgroundColor:PEACH
-    }
+    },
+    textinput: {
+        backgroundColor: WHITE,
+        borderRadius: 12,
+      },
+
 })

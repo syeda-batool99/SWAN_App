@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TextInput,
   View,
 } from 'react-native';
 import BackgroundCarousel from './../../Components/BackgroundCarousel';
@@ -11,16 +12,18 @@ import {
   PEACH,
   WHITE,
   BROWN_SHADE,
+  BLACK,
   TEXT_BLACK,
 } from './../../Assets/Colors/index';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import PhoneInput from 'react-native-phone-number-input';
 
-const PhoneNumber = props => {
-  const [value, setValue] = useState('');
-  const [valid, setValid] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
-  const phoneInput = useRef(null);
+const EnterPassword = props => {
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setconfirmPassword] = useState('');
+    const [hidePass, setHidePass] = useState(true);
+    const [hideConfPass, setHideConfPass] = useState(true);
+
 
   return (
     <View style={styles.container}>
@@ -28,64 +31,39 @@ const PhoneNumber = props => {
 
       <View style={styles.box}>
         <View style={styles.welcomeBox}>
+
           <View style={{width: '100%', flexDirection: 'row'}}>
               <TouchableOpacity onPress={() => props.navigation.goBack()}>
               <Ionicons name={'arrow-back'} size={28} />
               </TouchableOpacity>
-            <Text style={{fontSize: 20, marginLeft: 20}}>Phone Number</Text>
-          </View>
-          <Text style={{fontSize: 14, marginTop: 10}}>
-            Please verify your phone number so we know you are a real person.
-          </Text>
-          <View  style = {{marginVertical:15}}>
-              <PhoneInput
-              containerStyle={styles.phoneInputContainerStyle}
-              textInputStyle={{
-                color:TEXT_BLACK,
-                marginTop:4,
-                height:30,
-              padding:0}}
-              textContainerStyle ={{
-                backgroundColor:WHITE
-              }}
-                ref={phoneInput}
-                defaultValue={value}
-                defaultCode="PK"
-                onChangeFormattedText={text => {
-                  setValue(text);
-                }}
-                layout='first'
-                withShadow
-                autoFocus
-              />
+              <Text style={{fontSize: 20, marginLeft: 20}}>Password</Text>
           </View>
 
-          {/* <StatusBar barStyle="dark-content" />
-          {showMessage && (
-            <View style={styles.message}>
-              <Text>Value : {value}</Text>
-              <Text>Formatted Value : {formattedValue}</Text>
-              <Text>Valid : {valid ? "true" : "false"}</Text>
+          <Text style={{fontSize: 14, marginTop: 10}}> Please enter your information below in order to login to your account.</Text>
+
+          <View >
+            
+            <View style={styles.textinput}>
+                <TextInput
+                placeholder="Write Password"
+                value={password}
+                onChangeText={setPassword}
+                type="password"
+                secureTextEntry={hidePass ? true : false}
+                autoCompleteType="password"
+                />
+
+                <FontAwesome5
+                name={hidePass ? 'eye-slash' : 'eye'}
+                size={15}
+                color={BLACK}
+                style={{alignSelf: 'center', right:10}}
+                onPress={() => setHidePass(!hidePass)}
+                />
             </View>
-          )} */}
+          
+          </View>
 
-          {/* <View
-            style={{
-              marginVertical: 20,
-              flexDirection: 'row',
-              backgroundColor: WHITE,
-              paddingHorizontal: 15,
-              borderRadius: 12
-            }}>
-            <TouchableOpacity style={{alignSelf:'center'}}>
-              <Text style={{fontSize:14}}>
-                +1 {''}
-                <AntDesign name={'down'} color={BLACK} size={10}/>{' '}
-              </Text>
-            </TouchableOpacity>
-            <Text style={{alignSelf:'center', fontSize: 20}}> | </Text>
-            <TextInput style={styles.input} placeholder="9876 543 210" />
-          </View> */}
           <View style={{alignItems: 'center'}}>
             <Text style={{fontSize: 12, color: BROWN_SHADE, marginBottom: 2}}>
               We'll send you an SMS verification code.
@@ -93,21 +71,20 @@ const PhoneNumber = props => {
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
               onPress={() => {
-                // const checkValid = phoneInput.current?.isValidNumber();
-                // setShowMessage(true);
-                // setValid(checkValid ? checkValid : false);
-                props.navigation.navigate('EnterPassword')
+                props.navigation.navigate('VerifyCode')
               }}>
               <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
             </TouchableOpacity>
           </View>
+
+
+          </View>
         </View>
       </View>
-    </View>
   );
 };
 
-export default PhoneNumber;
+export default EnterPassword;
 
 const styles = StyleSheet.create({
   container: {
@@ -167,5 +144,12 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     height: 50,
     width:'100%',
-  }
+  },
+  textinput: {
+    flexDirection: 'row',
+    backgroundColor: WHITE,
+    borderRadius: 12,
+    marginVertical: 18,
+    justifyContent:'space-between',
+  },
 });

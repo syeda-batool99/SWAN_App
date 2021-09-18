@@ -93,7 +93,8 @@ class BackgroundCarousel extends React.Component {
       images : [
         require('../Assets/Images/RegisterationCarousel/carousel1.png'),
         require('../Assets/Images/RegisterationCarousel/carousel2.png'),
-        require('../Assets/Images/RegisterationCarousel/carousel3.png',) ]  
+        require('../Assets/Images/RegisterationCarousel/carousel3.png'),   
+        require('../Assets/Images/RegisterationCarousel/carousel4.png') ]  
     };
     this.scrollRef = React.createRef();
   }

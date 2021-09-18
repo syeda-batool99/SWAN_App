@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   welcomeBox: {
-    backgroundColor: WHITE,
+    backgroundColor: PEACH,
     width: '100%',
     height: '100%',
     borderTopLeftRadius: 32,

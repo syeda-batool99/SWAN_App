@@ -20,6 +20,7 @@ import Username from '../../Screens/Registeration/Username';
 import Password from '../../Screens/Registeration/Password';
 import DateofBirth from '../../Screens/Registeration/DateofBirth';
 import NewPassword from '../../Screens/Registeration/NewPassword';
+import EnterPassword from './../../Screens/Registeration/EnterPassword';
 
 const RegisterationStack = () => {
 
@@ -50,6 +51,7 @@ const RegisterationStack = () => {
         <Stack.Screen name="Password" component={Password} />
         <Stack.Screen name="DateofBirth" component={DateofBirth} />
         <Stack.Screen name="NewPassword" component={NewPassword} />
+        <Stack.Screen name="EnterPassword" component={EnterPassword} />
 
     </Stack.Navigator>
     )

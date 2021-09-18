@@ -63,7 +63,7 @@ const VerifyCode = props => {
         <View style={styles.welcomeBox}>
           <View style={{width: '100%', flexDirection: 'row'}}>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate('PhoneNumber')}>
+              onPress={() => props.navigation.goBack()}>
               <Ionicons name={'arrow-back'} size={28} />
             </TouchableOpacity>
             <Text style={{fontSize: 20, marginLeft: 20}}>Verify Code</Text>

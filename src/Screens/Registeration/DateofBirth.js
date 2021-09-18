@@ -30,7 +30,9 @@ const DateofBirth = props => {
       <View style={styles.form}>
         
         <View style={styles.formInput}>
-        <DatePicker date={date} onDateChange={setDate} mode='date' />
+        <DatePicker 
+          fadeToColor = 'none'
+          date={date} onDateChange={setDate} mode='date' />
         </View>
       </View>
 
@@ -82,10 +84,7 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   formInput: {
-    // position:'absolute',
-    bottom: 0,
-    // top: 60,
-    // marginVertical: 5,
+
     width:'100%',
     // borderRadius:12
   },
