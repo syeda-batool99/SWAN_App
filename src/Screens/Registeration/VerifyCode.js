@@ -24,6 +24,7 @@ const VerifyCode = props => {
   return (
     <View style={styles.container}>
       <BackgroundCarousel />
+      
       <Modal
         animationType="fade"
         transparent={true}
@@ -33,6 +34,7 @@ const VerifyCode = props => {
           setModalVisible(!modalVisible);
         }}
       >
+        <View style = {{height:'100%',width:'100%',backgroundColor:'rgba(0,0,0,0.8)'}}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Allow the application to read the message and enter the code?</Text>
@@ -53,6 +55,7 @@ const VerifyCode = props => {
             </View>
             
           </View>
+        </View>
         </View>
       </Modal>
 
@@ -88,7 +91,6 @@ const VerifyCode = props => {
           <View style={{alignItems: 'center'}}>
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
-
 
               onPress={() => {
                 props.navigation.navigate('FindContactScreen');
@@ -177,18 +179,20 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   centeredView: {
-    flex: 1,
-    justifyContent: "flex-end",
-    
-    // alignItems: "center",
-    // marginTop: 22
+    alignSelf: "center",
+    position:'absolute',
+    bottom:0,
+    margin:20,
+    width:'100%',
   },
   modalView: {
     margin: 10,
-    backgroundColor: WHITE,
     borderRadius: 20,
     padding: 20,
-    height:250
+    backgroundColor: PEACH,
+    borderRadius: 20,
+    // width:'95%',
+    height:250,
     // alignItems: "center",
     // shadowColor: "#000",
     // shadowOffset: {
@@ -214,11 +218,12 @@ const styles = StyleSheet.create({
     color: "white",
     // fontWeight: "bold",
     textAlign: "center",
-    fontSize: 15
+    fontSize: 15,
   },
   modalText: {
     marginBottom: 15,
-    fontSize: 25
+    fontSize: 25,
+    width:300
   },
   textStyleReject: {
     color: BLACK,
