@@ -119,7 +119,9 @@ const FacebookFriendList = (props) => {
                     renderItem = {renderItem} />
             </View>
 
-                <TouchableOpacity style= {{height:60, width:'100%',position:'absolute',bottom:0,backgroundColor:BLUE,justifyContent:'center', alignItems:'center'}}>
+                <TouchableOpacity 
+                    onPress = {()=>navigation.navigate('PermissionScreen')}
+                    style= {{height:60, width:'100%',position:'absolute',bottom:0,backgroundColor:BLUE,justifyContent:'center', alignItems:'center'}}>
                     <Text style = {{color:WHITE}}>Next</Text>
                 </TouchableOpacity>
         </View>

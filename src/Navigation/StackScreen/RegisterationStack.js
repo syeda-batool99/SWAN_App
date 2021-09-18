@@ -9,6 +9,10 @@ import FindFacebookContact from './../../Screens/Registeration/FindFacebookConta
 
 import PhoneNumber from '../../Screens/Registeration/PhoneNumber';
 import VerifyCode from '../../Screens/Registeration/VerifyCode';
+import Permission from '../../Screens/Registeration/Permission';
+import AddProfilePhoto from '../../Screens/Registeration/AddProfilePhoto';
+import ForgotPassword from './../../Screens/Registeration/ForgotPassword';
+import Verification from './../../Screens/Registeration/Verification';
 
 
 const RegisterationStack = () => {
@@ -25,6 +29,11 @@ const RegisterationStack = () => {
         <Stack.Screen name="FindFacebookFriendScreen" component={FindFacebookContact} />
         <Stack.Screen name="FacebookFriendListScreen" component={FacebookFriendList} />
         <Stack.Screen name="ContactListScreen" component={PhoneContactList} />
+        <Stack.Screen name="PermissionScreen" component={Permission} />
+        <Stack.Screen name="AddProfilePhotoScreen" component={AddProfilePhoto} />
+        <Stack.Screen name="ForgotpasswordScreen" component={ForgotPassword} />
+        <Stack.Screen name="VerificationScreen" component={Verification} />
+
 
 
         <Stack.Screen name="PhoneNumber" component={PhoneNumber} />

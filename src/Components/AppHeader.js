@@ -6,7 +6,6 @@ import { BLUE } from './../Assets/Colors/index';
 
 const AppHeader = (props) => {
     const {title, skip} = props;
-    console.log(props?.skip)
     
     return (
         <View style = {styles.container}>
