@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   TextInput,
   TouchableOpacity,
@@ -17,6 +16,7 @@ import {
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
 import DatePicker from 'react-native-date-picker'
+import AppText from './../../Components/AppText';
 
 const DateofBirth = props => {
     const [date, setDate] = useState(new Date());
@@ -32,7 +32,9 @@ const DateofBirth = props => {
         <View style={styles.formInput}>
         <DatePicker 
           fadeToColor = 'none'
-          date={date} onDateChange={setDate} mode='date' />
+          date={date} onDateChange={setDate} mode='date' 
+          locale='en_DK'
+          />
         </View>
       </View>
 
@@ -44,7 +46,7 @@ const DateofBirth = props => {
             props.navigation.navigate('FindContactScreen');
           }}
           >
-          <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+          <AppText button white>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

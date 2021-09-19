@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { Modal } from 'react-native';
 import { Pressable } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { PEACH, WHITE } from '../Assets/Colors';
 import { BLUE, TEXT_BLACK } from './../Assets/Colors/index';
+import AppText from './AppText';
 
 const CustomAlertModal = (props) => {
     const {
@@ -32,23 +33,23 @@ const CustomAlertModal = (props) => {
                             {/* ICONS */}
                             <Image source = {icon?icon:require('../Assets/Images/RegisterationCarousel/person.png')} />
                         </View>
-                        <View style= {{width:'80%', marginVertical:20}}>
+                        <View style= {{width:'70%', marginVertical:20, alignItems:'center'}}>
                             {/* TEXT */}
-                            <Text style = {{textAlign:'center', fontSize:18, lineHeight:27}}>{alertText?alertText:"Allow Swan to access your Contact list?"}</Text>
+                            <AppText alertText style center size = {18} textStyle= {{lineHeight:27}}>{alertText?alertText:"Allow Swan to access your Contact list?"}</AppText>
                         </View>
                         <View style = {{position:'absolute',width:'100%',top:160, alignItems:'center', flexDirection:'column'}}>
                             <View style = {{height:50, width:'90%'}}>
                                 <TouchableOpacity 
                                     onPress = {onPressBtn1}
                                     style = {{flex:1, justifyContent:'center',height:'100%',width:'100%', backgroundColor:BLUE, borderRadius:10}}>
-                                    <Text style = {{color:WHITE, textAlign:'center'}}>{btn1Txt?btn1Txt:"Allow"}</Text>
+                                    <AppText white center button >{btn1Txt?btn1Txt:"Allow"}</AppText>
                                 </TouchableOpacity>
                             </View>
                             <View style={{height:50, width:'90%'}}>
                                 <TouchableOpacity 
                                     onPress = {onPressBtn2}
                                     style = {{flex:1, justifyContent:'center',height:'100%',width:'100%',  borderRadius:10}}>
-                                    <Text style = {{color:TEXT_BLACK, textAlign:'center'}}>{btn2Txt?btn2Txt:"Deny"}</Text>
+                                    <AppText button center>{btn2Txt?btn2Txt:"Deny"}</AppText>
                                 </TouchableOpacity>
                             </View>
                         </View>

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   TextInput,
   TouchableOpacity,
@@ -16,6 +15,7 @@ import {
 } from './../../Assets/Colors/index';
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
+import AppText from './../../Components/AppText';
 
 const Gender = props => {
   const [firstName, setFirstName] = useState('');
@@ -36,12 +36,12 @@ const Gender = props => {
         onPress={()=> setIsPressMale(true)}>
             <View>
             <Image source={require("../../Assets/Images/Gender/male.png")} style= {isPressMale ? styles.btnPressMale : styles.maleBtn} />
-            <Text style={{textAlign:'center',marginVertical:5}}>Male</Text>
+            <AppText center size = {14}>Male</AppText>
             </View>
         </TouchableOpacity>
         <TouchableOpacity style={{flexDirection:'column',}} onPress={()=> setIsPressFemale(true)}>
             <Image source={require("../../Assets/Images/Gender/female.png")} style={isPressFemale ? styles.btnPressFemale : styles.femaleBtn}/>
-            <Text style={{textAlign:'center',marginVertical:5}}>Female</Text>
+            <AppText center size = {14}>Female</AppText>
         </TouchableOpacity>
       </View>
 
@@ -53,7 +53,7 @@ const Gender = props => {
             props.navigation.navigate('Username');
           }}
           >
-          <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+          <AppText white button>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

@@ -3,6 +3,7 @@ import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-nativ
 import { Icon } from 'react-native-elements';
 import { PEACH } from '../Assets/Colors';
 import { BLUE } from './../Assets/Colors/index';
+import AppText from './AppText';
 
 const Subtitle = (props) => {
 
@@ -14,7 +15,7 @@ const Subtitle = (props) => {
         <View style = {styles.container}>
             
             <View style={[styles.titleContainer]}>
-                <Text style = {{fontSize:14, textAlign:'center',}}>{title}</Text>
+                <AppText center size = {14} textStyle = {{lineHeight:20}}>{title}</AppText>
             </View>
             
 

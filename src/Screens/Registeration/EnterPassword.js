@@ -17,6 +17,7 @@ import {
 } from './../../Assets/Colors/index';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AppText from './../../Components/AppText';
 
 const EnterPassword = props => {
     const [password, setPassword] = useState('');
@@ -36,16 +37,16 @@ const EnterPassword = props => {
               <TouchableOpacity onPress={() => props.navigation.goBack()}>
               <Ionicons name={'arrow-back'} size={28} />
               </TouchableOpacity>
-              <Text style={{fontSize: 20, marginLeft: 20}}>Password</Text>
+              <AppText heading textContainerStyle={{marginLeft: 8,bottom:3,}}>Password</AppText>
           </View>
 
-          <Text style={{fontSize: 14, marginTop: 10}}>Please enter your information below in order to login to your account.</Text>
+          <AppText size = {14} textStyle = {{lineHeight:25}} >Please enter your information below in order to login to your account.</AppText>
 
 
             
             <View style={styles.textinput}>
                 <TextInput
-                placeholder="Write Password"
+                placeholder="  Write Password"
                 value={password}
                 onChangeText={setPassword}
                 type="password"
@@ -70,12 +71,12 @@ const EnterPassword = props => {
               onPress={() => {
                 props.navigation.navigate('VerifyCode')
               }}>
-              <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+              <AppText white button>Next</AppText>
             </TouchableOpacity>
             <TouchableOpacity
               style={[{marginVertical:10,paddingBottom:5}]}
               onPress={() => {
-                props.navigation.navigate('VerifyCode')
+                props.navigation.navigate('ForgotpasswordScreen')
               }}>
               <Text style={{color: BLUE, fontSize: 15}}>Forgot Password</Text>
             </TouchableOpacity>

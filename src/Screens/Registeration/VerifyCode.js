@@ -18,6 +18,7 @@ import {Icon} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import SMSVerifyCode from 'react-native-sms-verifycode';
+import AppText from './../../Components/AppText';
 
 const VerifyCode = props => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -37,21 +38,22 @@ const VerifyCode = props => {
         <View style = {{height:'100%',width:'100%',backgroundColor:'rgba(0,0,0,0.8)'}}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Allow the application to read the message and enter the code?</Text>
-            <Text style={styles.smallText}>kod 9809 for confirmation in the application</Text>
-            <View style={{flexDirection:'row'}}>
-            <TouchableOpacity
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => props.navigation.navigate('PhoneNumber')}
-            >
-              <Text style={styles.textStyleReject}>Reject</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.btn],{backgroundColor: BLUE, borderRadius:12, width:'50%', padding:10}}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Permission</Text>
-            </TouchableOpacity>
+            <AppText heading size = {20} textStyle = {{lineHeight:30, width:'83%'}}>Allow the application to read the message and enter the code?</AppText>
+            <AppText size = {14} textStyle = {{width:'75%', lineHeight:20, marginBottom:25, marginTop:10}} >kod 9809 for confirmation in the application</AppText>
+            
+            <View style={{flexDirection:'row', width:'90%', alignSelf:'center'}}>
+              <TouchableOpacity
+                style={[styles.button]}
+                onPress={() => props.navigation.navigate('PhoneNumber')}
+              >
+                <AppText button center>Reject</AppText>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.btn],{backgroundColor: BLUE, borderRadius:12, width:'50%', padding:10}}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <AppText center white button>Permission</AppText>
+              </TouchableOpacity>
             </View>
             
           </View>
@@ -66,12 +68,12 @@ const VerifyCode = props => {
               onPress={() => props.navigation.goBack()}>
               <Ionicons name={'arrow-back'} size={28} />
             </TouchableOpacity>
-            <Text style={{fontSize: 20, marginLeft: 20}}>Verify Code</Text>
+            <AppText heading textContainerStyle={{marginLeft: 8,bottom:3,}}>Verify Code</AppText>
           </View>
-          <Text style={{fontSize: 14, marginTop: 10}}>
+          <AppText size = {14} textStyle = {{lineHeight:25}} >
             Please enter your information below in order to login to your
             account.
-          </Text>
+          </AppText>
           <SMSVerifyCode
             //   ref={ref => (this.verifycode = ref)}
             //   onInputCompleted={this.onInputCompleted}
@@ -86,6 +88,7 @@ const VerifyCode = props => {
             codeColor={BROWN_SHADE}
             codeViewWidth={69}
             codeViewHeight={60}
+            initialCodes={[0,0,0,0]}
           />
 
           <View style={{alignItems: 'center'}}>
@@ -97,16 +100,16 @@ const VerifyCode = props => {
                 props.navigation.navigate('InputBio');
               }}
               >
-              <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+              <AppText button white>Next</AppText>
             </TouchableOpacity>
             <View style={{flexDirection: 'row'}}>
-              <Text style={{fontSize: 12, color: BROWN_SHADE}}>
+              <AppText size = {11} textStyle = {{color:BROWN_SHADE}}>
                 if you didn't recieve a code! {''}
-              </Text>
+              </AppText>
               <TouchableOpacity 
               onPress={() => setModalVisible(true)}
               >
-                <Text style={{color: BLUE, fontSize: 12}}>Resend</Text>
+                <AppText color = {BLUE} size = {11}>Resend</AppText>
               </TouchableOpacity>
             </View>
           </View>

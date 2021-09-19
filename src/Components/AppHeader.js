@@ -3,18 +3,19 @@ import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-nativ
 import { Icon } from 'react-native-elements';
 import { PEACH } from '../Assets/Colors';
 import { BLUE } from './../Assets/Colors/index';
+import AppText from './AppText';
 
 const AppHeader = (props) => {
 
-    const {title, skip} = props;
+    const {title, skip,back} = props;
     
     return (
         <View style = {styles.container}>
-            <TouchableOpacity style ={{position:'relative', left:15, top:17}} onPress = {()=>props.navigation.goBack()}>
+            {!back?(<TouchableOpacity style ={{position:'relative', left:15, top:17}} onPress = {()=>props.navigation.goBack()}>
                 <Icon name = 'arrowleft' type = 'antdesign' size = {25}/>
-            </TouchableOpacity>
+            </TouchableOpacity>):(null)}
             <View style={[styles.titleContainer]}>
-                <Text style = {{fontSize:20}}>{title}</Text>
+                <AppText heading size = {20}>{title}</AppText>
             </View>
             {skip?(
                 <View>

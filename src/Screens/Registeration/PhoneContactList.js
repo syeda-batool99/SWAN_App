@@ -127,7 +127,7 @@ const PhoneContactList = (props) => {
             </View>
 
             <View style = {{width:'90%', alignSelf:'center'}}>
-                <View style = {{marginVertical:5}}>
+                <View style = {{marginBottom:10, marginTop:19}}>
                     <Text style = {{color : TEXT_BLACK}}>Invite to Swan</Text>
                 </View>
             </View>

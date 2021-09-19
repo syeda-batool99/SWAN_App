@@ -4,6 +4,7 @@ import BackgroundCarousel from './../../Components/BackgroundCarousel';
 import {BLUE, PEACH, WHITE} from './../../Assets/Colors/index';
 import {Icon} from 'react-native-elements';
 import {TextInput} from 'react-native-paper';
+import AppText from '../../Components/AppText';
 
 const WelcomeScreen = props => {
 
@@ -14,9 +15,9 @@ const WelcomeScreen = props => {
       <View style={styles.box}>
         <View style={styles.welcomeBox}>
           <View style={{width: '80%'}}>
-            <Text style={{fontSize: 22, fontFamily:'Sharp_Grotesk_SmBold_20_Regular'}}>
-              Welcome on Swan App Sign in or Join now
-            </Text>
+            <AppText heading >
+              Welcome on swan app sign in or join now
+            </AppText>
           </View>
 
           <View style={styles.btnContainer}>
@@ -24,14 +25,14 @@ const WelcomeScreen = props => {
               style={[{borderWidth: 2}, styles.btn]}
               onPress={() => props.navigation.navigate('PhoneNumber')}>
               <View>
-                <Text>Sign in</Text>
+              <AppText button >Sign in</AppText>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
               onPress={() => props.navigation.navigate('PhoneNumber')}>
               <View>
-                <Text style={{color: WHITE}}>Join Now</Text>
+                <AppText button white>Join Now</AppText>
               </View>
             </TouchableOpacity>
           </View>
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     height: 50,
-    width: '45%',
+    width: '48%',
     marginVertical: 5,
     justifyContent: 'center',
     alignItems: 'center',

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   TextInput,
   TouchableOpacity,
@@ -16,6 +15,7 @@ import {
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import AppText from './../../Components/AppText';
 
 const Password = props => {
   const [password, setPassword] = useState('');
@@ -31,7 +31,7 @@ const Password = props => {
 
       <View style={styles.form}>
         <View style={styles.formInput}>
-          <Text>Password</Text>
+          <AppText textStyle = {{marginBottom:5}} >Password</AppText>
           <View style={styles.textinput}>
             <TextInput
               placeholder="  ****************"
@@ -52,7 +52,7 @@ const Password = props => {
           </View>
         </View>
         <View style={styles.formInput}>
-          <Text>Confirm Password</Text>
+          <AppText textStyle = {{marginBottom:5}} >Confirm Password</AppText>
           <View style={styles.textinput}>
             <TextInput
               placeholder="  ****************"
@@ -80,7 +80,7 @@ const Password = props => {
           onPress={() => {
             props.navigation.navigate('DateofBirth');
           }}>
-          <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+          <AppText button white>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

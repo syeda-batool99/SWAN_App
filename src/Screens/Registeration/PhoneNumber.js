@@ -15,6 +15,7 @@ import {
 } from './../../Assets/Colors/index';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PhoneInput from 'react-native-phone-number-input';
+import AppText from '../../Components/AppText';
 
 const PhoneNumber = props => {
   const [value, setValue] = useState('');
@@ -32,7 +33,7 @@ const PhoneNumber = props => {
               <TouchableOpacity onPress={() => props.navigation.goBack()}>
               <Ionicons name={'arrow-back'} size={28} />
               </TouchableOpacity>
-            <Text style={{fontSize: 20, marginLeft: 20}}>Phone Number</Text>
+            <AppText heading textContainerStyle={{marginLeft: 8,bottom:3,}}>Phone Number</AppText>
           </View>
           <Text style={{fontSize: 14, marginTop: 10}}>
             Please verify your phone number so we know you are a real person.
@@ -46,7 +47,11 @@ const PhoneNumber = props => {
                 height:30,
               padding:0}}
               textContainerStyle ={{
-                backgroundColor:WHITE
+                backgroundColor:WHITE,
+                borderTopRightRadius:12,
+                borderBottomRightRadius:12,
+                // borderLeftColor:'#101010',
+                // borderLeftWidth: 1,
               }}
                 ref={phoneInput}
                 defaultValue={value}
@@ -55,7 +60,6 @@ const PhoneNumber = props => {
                   setValue(text);
                 }}
                 layout='first'
-                withShadow
                 autoFocus
               />
           </View>
@@ -69,27 +73,11 @@ const PhoneNumber = props => {
             </View>
           )} */}
 
-          {/* <View
-            style={{
-              marginVertical: 20,
-              flexDirection: 'row',
-              backgroundColor: WHITE,
-              paddingHorizontal: 15,
-              borderRadius: 12
-            }}>
-            <TouchableOpacity style={{alignSelf:'center'}}>
-              <Text style={{fontSize:14}}>
-                +1 {''}
-                <AntDesign name={'down'} color={BLACK} size={10}/>{' '}
-              </Text>
-            </TouchableOpacity>
-            <Text style={{alignSelf:'center', fontSize: 20}}> | </Text>
-            <TextInput style={styles.input} placeholder="9876 543 210" />
-          </View> */}
+          
           <View style={{alignItems: 'center'}}>
-            <Text style={{fontSize: 12, color: BROWN_SHADE, marginBottom: 2}}>
+            <AppText color={BROWN_SHADE} size={12}>
               We'll send you an SMS verification code.
-            </Text>
+            </AppText>
             <TouchableOpacity
               style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
               onPress={() => {
@@ -98,7 +86,7 @@ const PhoneNumber = props => {
                 // setValid(checkValid ? checkValid : false);
                 props.navigation.navigate('EnterPassword')
               }}>
-              <Text style={{color: WHITE, fontSize: 15}}>Next</Text>
+              <AppText button white >Next</AppText>
             </TouchableOpacity>
           </View>
         </View>
@@ -144,15 +132,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
   },
-  PhoneBox: {
-    backgroundColor: PEACH,
-    width: '100%',
-    height: '100%',
-    borderTopLeftRadius: 32,
-    borderTopRightRadius: 32,
-    paddingHorizontal: 25,
-    paddingVertical: 20,
-  },
   input: {
     backgroundColor: WHITE,
     borderTopRightRadius: 12,
@@ -164,7 +143,10 @@ const styles = StyleSheet.create({
     // marginVertical: 20,
     flexDirection: 'row',
     backgroundColor: WHITE,
-    borderRadius: 12,
+    borderTopRightRadius: 12,
+    borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
     height: 50,
     width:'100%',
   }

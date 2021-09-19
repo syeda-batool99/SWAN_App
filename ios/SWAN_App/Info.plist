@@ -70,5 +70,74 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 	</array>
+
+	<key>UIAppFonts</key>
+  <array>
+    <string>SharpGrotesk-Black05.otf</string>
+	<string>SharpGrotesk-Black10.otf</string>
+	<string>SharpGrotesk-Black15.otf</string>
+	<string>SharpGrotesk-Black20.otf</string>
+	<string>SharpGrotesk-Black25.otf</string>
+	<string>SharpGrotesk-BlackItalic05.otf</string>
+	<string>SharpGrotesk-BlackItalic10.otf</string>
+	<string>SharpGrotesk-BlackItalic15.otf</string>
+	<string>SharpGrotesk-BlackItalic20.otf</string>
+	<string>SharpGrotesk-Bold05.otf</string>
+	<string>SharpGrotesk-Bold10.otf</string>
+	<string>SharpGrotesk-Bold15.otf</string>
+	<string>SharpGrotesk-Bold20.otf</string>
+	<string>SharpGrotesk-Bold25.otf</string>
+	<string>SharpGrotesk-BoldItalic05.otf</string>
+	<string>SharpGrotesk-BoldItalic10.otf</string>
+	<string>SharpGrotesk-BoldItalic15.otf</string>
+	<string>SharpGrotesk-BoldItalic20.otf</string>
+	<string>SharpGrotesk-Book05.otf</string>
+	<string>SharpGrotesk-Book10.otf</string>
+	<string>SharpGrotesk-Book15.otf</string>
+	<string>SharpGrotesk-Book20.otf</string>
+	<string>SharpGrotesk-Book25.otf</string>
+	<string>SharpGrotesk-BookItalic05.otf</string>
+	<string>SharpGrotesk-BookItalic10.otf</string>
+	<string>SharpGrotesk-BookItalic15.otf</string>
+	<string>SharpGrotesk-BookItalic20.otf</string>
+	<string>SharpGrotesk-Light05.otf</string>
+	<string>SharpGrotesk-Light10.otf</string>
+	<string>SharpGrotesk-Light15.otf</string>
+	<string>SharpGrotesk-Light20.otf</string>
+	<string>SharpGrotesk-Light25.otf</string>
+	<string>SharpGrotesk-LightItalic05.otf</string>
+	<string>SharpGrotesk-LightItalic10.otf</string>
+	<string>SharpGrotesk-LightItalic15.otf</string>
+	<string>SharpGrotesk-LightItalic20.otf</string>
+	<string>SharpGrotesk-Medium05.otf</string>
+	<string>SharpGrotesk-Medium10.otf</string>
+	<string>SharpGrotesk-Medium15.otf</string>
+	<string>SharpGrotesk-Medium20.otf</string>
+	<string>SharpGrotesk-Medium25.otf</string>
+	<string>SharpGrotesk-MediumItalic05.otf</string>
+	<string>SharpGrotesk-MediumItalic10.otf</string>
+	<string>SharpGrotesk-MediumItalic15.otf</string>
+	<string>SharpGrotesk-MediumItalic20.otf</string>
+	<string>SharpGrotesk-SemiBold05.otf</string>
+	<string>SharpGrotesk-SemiBold10.otf</string>
+	<string>SharpGrotesk-SemiBold15.otf</string>
+	<string>SharpGrotesk-SemiBold20.otf</string>
+	<string>SharpGrotesk-SemiBold25.otf</string>
+	<string>SharpGrotesk-SemiBoldItalic05.otf</string>
+	<string>SharpGrotesk-SemiBoldItalic10.otf</string>
+	<string>SharpGrotesk-SemiBoldItalic15.otf</string>
+	<string>SharpGrotesk-SemiBoldItalic20.otf</string>
+	<string>SharpGrotesk-Thin05.otf</string>
+	<string>SharpGrotesk-Thin10.otf</string>
+	<string>SharpGrotesk-Thin15.otf</string>
+	<string>SharpGrotesk-Thin20.otf</string>
+	<string>SharpGrotesk-Thin25.otf</string>
+	<string>SharpGrotesk-ThinItalic05.otf</string>
+	<string>SharpGrotesk-ThinItalic10.otf</string>
+	<string>SharpGrotesk-ThinItalic15.otf</string>
+	<string>SharpGrotesk-ThinItalic20.otf</string>
+	<string>SharpGroteskBold23-Regular.ttf</string>
+	<string>SharpGroteskMedium23-Regular.ttf</string> 
+  </array>
 </dict>
 </plist>
