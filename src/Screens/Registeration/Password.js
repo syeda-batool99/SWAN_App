@@ -80,7 +80,7 @@ const Password = props => {
           onPress={() => {
             props.navigation.navigate('DateofBirth');
           }}>
-          <AppText button white>Next</AppText>
+          <AppText button white size={15}>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

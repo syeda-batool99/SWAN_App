@@ -22,6 +22,8 @@ const AppText = props => {
     center,
     button,
     alertText,
+    width,
+    marginTop
   } = props;
   return (
     <View
@@ -39,11 +41,13 @@ const AppText = props => {
           subHeading && {fontSize: 16},
           size && {fontSize: size},
           color && {color: color},
+          marginTop && {marginTop: marginTop},
+          width && {width: width},
           // (boldFont||heading) && {fontFamily: 'Oswald-Bold'},
           textStyle,
           center && {textAlign:'center'},
           button && {fontFamily:'SharpGrotesk-Medium20'},
-          alertText && {fontFamily:'SharpGrotesk-Book20', fontSize:14}
+          alertText && {fontFamily:'SharpGrotesk-Book20'}
         ]}>
         {children}
       </Text>
@@ -54,6 +58,7 @@ const styles = StyleSheet.create({
   commonTextContainerStyles: {},
   commonTextStyles: {
     fontSize: 15,
+    // lineHeight:27,
     // color: 'white',
     fontFamily: 'SharpGrotesk-Book20',
   },

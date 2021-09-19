@@ -54,7 +54,7 @@ const InputBio = props => {
           onPress={() => {
             props.navigation.navigate('Gender');
           }}>
-          <AppText button white>Next</AppText>
+          <AppText button white size={15}>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

@@ -47,7 +47,7 @@ const Username = props => {
             props.navigation.navigate('Password');
           }}
           >
-          <AppText white button>Next</AppText>
+          <AppText button white size={15}>Next</AppText>
         </TouchableOpacity>
       </View>
     </View>

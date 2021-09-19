@@ -4,6 +4,7 @@ import { PEACH, WHITE } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import { TEXT_BLACK, BLUE } from './../../Assets/Colors/index';
 import CustomAlertModal from '../../Components/CustomAlertModal';
+import AppText from '../../Components/AppText';
 
 const AddProfilePhoto = (props) => {
     const {navigation} = props;
@@ -27,8 +28,8 @@ const AddProfilePhoto = (props) => {
                         </TouchableOpacity>
                     </View>
                     <View style = {{alignItems:'center'}}>
-                        <Text style = {{fontSize:22, color:TEXT_BLACK}}>Lets Personalize</Text>
-                        <Text style = {{fontSize:14, marginTop:15,width:'60%', textAlign:'center'}}>Add a profile photo so your friends know it's you</Text>
+                        <AppText button size={20} color={TEXT_BLACK}>Lets Personalize</AppText>
+                        <AppText alertText center size={14} textStyle = {{marginTop:15,paddingHorizontal:60, lineHeight:20}}>Add a profile photo so your friends know it's you</AppText>
                     </View>
                     </>
 
@@ -38,8 +39,8 @@ const AddProfilePhoto = (props) => {
                     <Image style = {{height:167, aspectRatio:1,}} source = {require('../../Assets/Images/RegisterationCarousel/AddImage.png')} />
                 </View>
                 <View style = {{alignItems:'center', marginTop:30}}>
-                    <Text style = {{fontSize:22, color:TEXT_BLACK}}>Lets Personalize</Text>
-                    <Text style = {{fontSize:14, marginTop:15,width:'60%', textAlign:'center'}}>Add a profile photo so your friends know it's you</Text>
+                <AppText button size={20} color={TEXT_BLACK}>Lets Personalize</AppText>
+                        <AppText alertText center size={14} textStyle = {{marginTop:15,paddingHorizontal:60, lineHeight:20}}>Add a profile photo so your friends know it's you</AppText>
                 </View>
                 </>
                 )}
@@ -50,12 +51,12 @@ const AddProfilePhoto = (props) => {
                     <TouchableOpacity 
                         onPress = {()=>profilePhoto?navigation.navigate('ForgotpasswordScreen'):setProfilePhoto(!profilePhoto)}
                         style = {{flex:1, justifyContent:'center',height:'100%',width:'100%', backgroundColor:BLUE, borderRadius:10}} >
-                        <Text style = {{color:WHITE, textAlign:'center'}}>Add a Photo</Text>
+                        <AppText button color={WHITE} center >Add a Photo</AppText>
                     </TouchableOpacity>
                 </View>
                 <View style={{height:50, width:'90%'}}>
                     <TouchableOpacity style = {{flex:1, justifyContent:'center',height:'100%',width:'100%',  borderRadius:10}}>
-                        <Text style = {{color:TEXT_BLACK, textAlign:'center'}}>Skip</Text>
+                        <AppText button color={TEXT_BLACK} center size={15} >Skip</AppText>
                     </TouchableOpacity>
                 </View>
             </View>
