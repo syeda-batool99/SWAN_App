@@ -21,6 +21,9 @@ import Password from '../../Screens/Registeration/Password';
 import DateofBirth from '../../Screens/Registeration/DateofBirth';
 import NewPassword from '../../Screens/Registeration/NewPassword';
 import EnterPassword from './../../Screens/Registeration/EnterPassword';
+import InterestedTopics from '../../Screens/Home/InterestedTopics';
+import HomeScreen from './../../Screens/Home/HomeScreen';
+import HomeStack from './HomeStack';
 
 const RegisterationStack = () => {
 
@@ -52,6 +55,8 @@ const RegisterationStack = () => {
         <Stack.Screen name="DateofBirth" component={DateofBirth} />
         <Stack.Screen name="NewPassword" component={NewPassword} />
         <Stack.Screen name="EnterPassword" component={EnterPassword} />
+        <Stack.Screen name="InterestedTopics" component={InterestedTopics} />
+        {/* <Stack.Screen name="HomeScreen" component={HomeStack} /> */}
 
     </Stack.Navigator>
     )

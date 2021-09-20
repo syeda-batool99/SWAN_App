@@ -8,7 +8,7 @@ import RegisterationStack from './src/Navigation/StackScreen/RegisterationStack'
 
 const App = () => {
  
-  const [isUser,setIsUser] = useState(false)
+  const [isUser,setIsUser] = useState(true)
 
   
   useEffect(() => {

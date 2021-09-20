@@ -13,17 +13,13 @@ const AppText = props => {
     color,
     textStyle,
     textContainerStyle,
-    onPress,
-    boldFont,
-    fontFamily,
-    primary,
-    secondary,
     white,
     center,
     button,
     alertText,
     width,
-    marginTop
+    marginTop,
+    subtitle
   } = props;
   return (
     <View
@@ -47,7 +43,8 @@ const AppText = props => {
           textStyle,
           center && {textAlign:'center'},
           button && {fontFamily:'SharpGrotesk-Medium20'},
-          alertText && {fontFamily:'SharpGrotesk-Book20'}
+          alertText && {fontFamily:'SharpGrotesk-Book20'},
+          subtitle && {fontFamily:'SharpGrotesk-SemiBold20'}
         ]}>
         {children}
       </Text>

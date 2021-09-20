@@ -49,13 +49,15 @@ const AddProfilePhoto = (props) => {
             <View style = {{position:'absolute',width:'100%',bottom:0, alignItems:'center', flexDirection:'column'}}>
                 <View style = {{height:50, width:'90%'}}>
                     <TouchableOpacity 
-                        onPress = {()=>profilePhoto?navigation.navigate('ForgotpasswordScreen'):setProfilePhoto(!profilePhoto)}
+                        onPress = {()=>profilePhoto?navigation.navigate('InterestedTopics'):setProfilePhoto(!profilePhoto)}
                         style = {{flex:1, justifyContent:'center',height:'100%',width:'100%', backgroundColor:BLUE, borderRadius:10}} >
                         <AppText button color={WHITE} center >Add a Photo</AppText>
                     </TouchableOpacity>
                 </View>
                 <View style={{height:50, width:'90%'}}>
-                    <TouchableOpacity style = {{flex:1, justifyContent:'center',height:'100%',width:'100%',  borderRadius:10}}>
+                    <TouchableOpacity 
+                    onPress = {()=>navigation.navigate('InterestedTopics')}
+                    style = {{flex:1, justifyContent:'center',height:'100%',width:'100%',  borderRadius:10}}>
                         <AppText button color={TEXT_BLACK} center size={15} >Skip</AppText>
                     </TouchableOpacity>
                 </View>
