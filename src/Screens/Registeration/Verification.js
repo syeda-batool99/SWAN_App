@@ -54,14 +54,16 @@ const Verification = props => {
           style={{backgroundColor: 'red'}}
         />
       </View>
-      <View
+      {/* <View
         style={{
-          position: 'absolute',
+          // paddingTop:50,
           width: '100%',
-          bottom: 0,
+          flex: 4,
+          justifyContent:'flex-end',
+          backgroundColor:'red',
           alignItems: 'center',
           flexDirection: 'column',
-        }}>
+        }}> 
         <View style={{height: 50, width: '90%'}}>
           <TouchableOpacity
             onPress={() => navigation.navigate('NewPassword')}
@@ -93,6 +95,48 @@ const Verification = props => {
             </Pressable>
           </View>
         </View>
+      </View> */}
+      <View
+        style={{
+          // paddingTop:50,
+          width: '90%',
+          flex: 4,
+          position:'relative',
+          top:'13%',
+          // backgroundColor:'red',
+          alignItems: 'center',
+          flexDirection: 'column',
+          alignSelf:'center',
+        }}>
+        <View style={{height: 50, width: '100%'}}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('NewPassword')}
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              height: '100%',
+              width: '100%',
+              backgroundColor: BLUE,
+              borderRadius: 10,}}>
+            <AppText  button color={WHITE} center>Verify</AppText>
+          </TouchableOpacity>
+        </View>
+        <View
+            style={{
+              paddingTop: 15,
+              flexDirection: 'row',
+              justifyContent: 'center',
+              height: 50,
+              width: '100%',
+              // backgroundColor:'yellow'
+            }}>
+            <AppText center color={TEXT_BLACK} size={14}>
+              if you didn't receive a code!{' '}
+            </AppText>
+            <Pressable>
+              <AppText color={BLUE} size={14}> Resend </AppText>
+            </Pressable>
+          </View>
       </View>
     </View>
   );

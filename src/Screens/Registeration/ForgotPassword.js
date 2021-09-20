@@ -50,8 +50,10 @@ const ForgotPassword = props => {
       </View>
       <View
         style={{
+          paddingTop:50,
           width: '100%',
-          flex: 3,
+          flex: 4,
+          // backgroundColor:'red',
           alignItems: 'center',
           flexDirection: 'column',
         }}>
