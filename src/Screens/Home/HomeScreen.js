@@ -168,13 +168,7 @@ const HomeScreen = props => {
         onPress={() => {
           props.navigation.navigate("Blog")
         }}
-        style={{
-          //   alignItems: 'center',
-          backgroundColor: WHITE,
-          marginBottom: 10,
-          borderRadius: 18,
-          padding: 8,
-        }}>
+        style={styles.blogImage}>
         <Image
           source={item.image}
           style={{
@@ -202,14 +196,7 @@ const HomeScreen = props => {
               Andrew Mitchell
             </AppText>
             <View
-              style={{
-                backgroundColor: TEXT_LIGHT_BLUE,
-                width: 4,
-                height: 4,
-                borderRadius: 50,
-                alignSelf: 'center',
-                marginHorizontal: 5,
-              }}></View>
+              style={styles.bullet}></View>
             <AppText size={12} color={TEXT_LIGHT_BLUE}>
               32 min ago
             </AppText>
@@ -232,16 +219,7 @@ const HomeScreen = props => {
         // onPress={() => {
         //   OnPressService(item._id, item.name);
         // }}
-        style={{
-          //   alignItems: 'center',
-          backgroundColor: WHITE,
-          marginBottom: 10,
-          marginRight:10,
-          borderRadius: 18,
-          padding: 8,
-          flexDirection:'row',
-        //   width:300
-        }}>
+        style={styles.sportImage}>
         <Image
           source={item.image}
           style={{
@@ -262,14 +240,7 @@ const HomeScreen = props => {
               Andrew Mitchell
             </AppText>
             <View
-              style={{
-                backgroundColor: TEXT_LIGHT_BLUE,
-                width: 4,
-                height: 4,
-                borderRadius: 50,
-                alignSelf: 'center',
-                marginHorizontal: 5,
-              }}></View>
+              style={styles.bullet}></View>
             <AppText size={12} color={TEXT_LIGHT_BLUE}>
               32 min ago
             </AppText>
@@ -314,7 +285,6 @@ const More = ({item}) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              //   marginBottom: 5,
             }}>
             <AppText subtitle size={16}>
               Live Sessions
@@ -337,7 +307,6 @@ const More = ({item}) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              //   marginBottom: 10,
             }}>
             <AppText subtitle size={16}>
               Interested Blogs
@@ -360,7 +329,6 @@ const More = ({item}) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              //   marginBottom: 10,
             }}>
             <AppText subtitle size={16}>
               Sports
@@ -390,7 +358,6 @@ const More = ({item}) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              //   marginBottom: 10,
             }}>
             <AppText subtitle size={16}>
               Discover more
@@ -426,6 +393,31 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     flexDirection: 'column',
   },
+  blogImage:{
+    //   alignItems: 'center',
+    backgroundColor: WHITE,
+    marginBottom: 10,
+    borderRadius: 18,
+    padding: 8,
+  },
+  bullet:{
+    backgroundColor: TEXT_LIGHT_BLUE,
+    width: 4,
+    height: 4,
+    borderRadius: 50,
+    alignSelf: 'center',
+    marginHorizontal: 5,
+  },
+  sportImage:{
+    //   alignItems: 'center',
+    backgroundColor: WHITE,
+    marginBottom: 10,
+    marginRight:10,
+    borderRadius: 18,
+    padding: 8,
+    flexDirection:'row',
+  //   width:300
+  }
 });
 
 export default HomeScreen;
