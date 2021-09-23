@@ -14,7 +14,7 @@ import * as Colors from '../../Assets/Colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const InterestedTopics = props => {
-  const [isSelected, setIsSelected] = useState(false);
+  
   const makeSelected = id => {
     Topics.topic.find((id)=>{
         topic.selected(!selected);
@@ -100,6 +100,7 @@ const InterestedTopics = props => {
   const renderItem = item => <Item item={item.item} />;
 
   const Item = ({item}) => {
+    const [isSelected, setIsSelected] = useState(false);
     return (
       <TouchableOpacity
         style={{marginHorizontal: 15, marginVertical: 10}}
@@ -140,7 +141,7 @@ const InterestedTopics = props => {
         textStyle={{marginVertical: 20}}>
         Please, select your interested topic
       </AppText>
-      <SafeAreaView style={{marginVertical: 10, paddingHorizontal: 5}}>
+      <SafeAreaView style={{marginVertical: 10}}>
         <FlatList
           numColumns={3}
           data={Topics.topic}

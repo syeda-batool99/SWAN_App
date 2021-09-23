@@ -43,7 +43,7 @@ const PhoneNumber = props => {
               containerStyle={styles.phoneInputContainerStyle}
               textInputStyle={{
                 color:TEXT_BLACK,
-                marginTop:4,
+                marginTop:1,
                 height:30,
               padding:0}}
               textContainerStyle ={{
@@ -141,8 +141,8 @@ const styles = StyleSheet.create({
   },
   phoneInputContainerStyle: {
     // marginVertical: 20,
-    flexDirection: 'row',
-    backgroundColor: WHITE,
+    // flexDirection: 'row',
+    // backgroundColor: WHITE,
     borderTopRightRadius: 12,
     borderTopLeftRadius: 12,
     borderBottomLeftRadius: 12,

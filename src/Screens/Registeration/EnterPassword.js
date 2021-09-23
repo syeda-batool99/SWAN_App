@@ -46,12 +46,14 @@ const EnterPassword = props => {
             
             <View style={styles.textinput}>
                 <TextInput
+                // inlineImagePadding={10}
                 placeholder="  Write Password"
                 value={password}
                 onChangeText={setPassword}
                 type="password"
                 secureTextEntry={hidePass ? true : false}
                 autoCompleteType="password"
+                // style={{paddingHorizontal:5}}
                 />
 
                 <FontAwesome5

@@ -73,7 +73,7 @@ const ForgotPassword = props => {
           <TouchableOpacity
             onPress={() => navigation.navigate('VerificationScreen')}
             style={{
-              flex: 1,
+              // flex: 1,
               justifyContent: 'center',
               height: '100%',
               width: '100%',
@@ -92,8 +92,7 @@ export default ForgotPassword;
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
-    width: '100%',
+    flex:1,
     backgroundColor: PEACH,
   },
   textinput: {

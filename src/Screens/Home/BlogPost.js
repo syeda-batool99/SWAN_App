@@ -138,18 +138,18 @@ const BlogPost = (props) => {
           <View style={{marginHorizontal: 10, marginVertical: 8, width: '60%'}}>
             {item.category == 'Sports' && (
               <View
-                style={[styles.categoryBackground,{width:'40%',backgroundColor: Colors.CYAN,}]}>
+                style={[styles.categoryBackground,{width:'50%',backgroundColor: Colors.CYAN,}]}>
                 <AppText color={Colors.WHITE}>{item.category}</AppText>
               </View>
             )}
             {item.category == 'Technology' && (
               <View
-              style={[styles.categoryBackground,{width:'60%',backgroundColor: '#208CF7'}]}>
+              style={[styles.categoryBackground,{width:'80%',backgroundColor: '#208CF7'}]}>
                 <AppText color={Colors.WHITE}>{item.category}</AppText>
               </View>
             )}
             {item.category == 'Crime' && (
-              <View style={[styles.categoryBackground,{width:'35%',backgroundColor: Colors.RED}]}>
+              <View style={[styles.categoryBackground,{width:'50%',backgroundColor: Colors.RED}]}>
                 <AppText color={Colors.WHITE}>{item.category}</AppText>
               </View>
             )}
@@ -222,7 +222,7 @@ const BlogPost = (props) => {
       <View style={styles.container}>
         <View>
           <Image
-            style={{alignSelf: 'center', width: 350}}
+            style={{alignSelf: 'center'}}
             source={require('../../Assets/Images/Single_Blog/MainImage.png')}
           />
           {/* <TouchableOpacity onPress = {()=>navigation.goBack()} > */}
@@ -343,7 +343,7 @@ const BlogPost = (props) => {
         </AppText>
         <View style={{alignItems: 'center', marginTop: 10}}>
           <Image
-            style={{width: 350}}
+            // style={{width: 350}}
             source={require('../../Assets/Images/Single_Blog/ContentImage.png')}
           />
         </View>
@@ -458,7 +458,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'hsl(20, 20%, 20%)',
     position: 'absolute',
     top: 15,
-    left: 15,
+    left: 20,
     borderRadius: 50,
     color: Colors.WHITE,
   },
@@ -490,7 +490,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'hsl(20, 20%, 20%)',
     position: 'absolute',
     bottom: 15,
-    left: 15,
+    left: 20,
     borderRadius: 50,
     backgroundColor: '#FFDFE2',
     paddingHorizontal: 15,
