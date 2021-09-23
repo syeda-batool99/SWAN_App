@@ -157,7 +157,7 @@ const InterestedTopics = props => {
           bottom: 15,
         }}>
         <TouchableOpacity
-        //   onPress = {()=>props.navigation.navigate('HomeScreen')}
+          onPress = {()=>props.navigation.navigate('MainHome')}
           style={{
             flex: 1,
             justifyContent: 'center',

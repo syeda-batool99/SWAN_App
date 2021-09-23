@@ -7,20 +7,30 @@ import AppText from './AppText';
 
 const AppHeader = (props) => {
 
-    const {title, skip,back} = props;
+    const {title, extraButton ,skip,back, onPressButton, onPressExtra} = props;
+    console.log(props.navigation)
+
+    let onPressIcon;
+    if(onPressButton){onPressIcon = onPressButton}
+    else{
+        onPressIcon =()=>props.navigation.goBack()
+    }
+
     
     return (
         <View style = {styles.container}>
-            {!back?(<TouchableOpacity style ={{position:'relative', left:15, top:17}} onPress = {()=>props.navigation.goBack()}>
+            {!back?(<TouchableOpacity style ={{position:'relative', left:15, top:17}} onPress = {onPressIcon}>
                 <Icon name = 'arrowleft' type = 'antdesign' size = {25}/>
             </TouchableOpacity>):(null)}
             <View style={[styles.titleContainer]}>
                 <AppText heading size = {20}>{title}</AppText>
             </View>
-            {skip?(
+            {skip || extraButton?(
                 <View>
-                    <TouchableOpacity style = {{position:'absolute',top:20,justifyContent:'center', alignItems:'center',right:20}}>
-                        <Text style={{color:BLUE}}>Skip</Text>
+                    <TouchableOpacity 
+                        onPress = {onPressExtra}
+                        style = {{position:'absolute',top:20,justifyContent:'center', alignItems:'center',right:20}}>
+                        <Text style={{color:BLUE}}>{extraButton || 'Skip'}</Text>
                     </TouchableOpacity>
                 </View>
             ):(null)}

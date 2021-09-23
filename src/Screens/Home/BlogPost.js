@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef,useEffect} from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   ScrollView,
   FlatList,
   SafeAreaView,
+  Modal,
   TouchableOpacity,
 } from 'react-native';
 import AppText from '../../Components/AppText';
@@ -15,9 +16,75 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import ReportBlog from './ReportBlog';
+import Select from './Select';
+import DeleteBlog from './DeleteBlog';
+import RBSheet from "react-native-raw-bottom-sheet";
+import { PEACH} from "../../Assets/Colors"
+import { Alert } from 'react-native';
 
-const BlogPost = () => {
+const SHEET_DATA = [
+  {
+      id:1,
+      icon:require('../../Assets/Images/Home/link.png'),
+      title:"Copy Link"
+  },
+  {
+      id:2,
+      icon:require('../../Assets/Images/Home/share.png'),
+      title:"Share to"
+  },
+  {
+      id:3,
+      icon:require('../../Assets/Images/Home/warning.png'),
+      title:"Report this blog post"
+  },
+  {
+      id:4,
+      icon:require('../../Assets/Images/Home/delete.png'),
+      title:"Delete"
+  },
+  {
+      id:5,
+      icon:require('../../Assets/Images/Home/edit.png'),
+      title:"Edit"
+  },
+]
+
+
+const BlogPost = (props) => {
+  const {navigation} = props
   const [following, setFollowing] = useState(false);
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalId, setModalId] = useState('')
+  const refRBSheet = useRef();
+
+  useEffect (()=>{
+    refRBSheet.current.close();
+})
+
+    //RB SHEET CODE
+  const OptionSelectBox = (props) => {
+
+      return (
+          <View style = {{padding:10}}>
+              <FlatList
+              data = {SHEET_DATA}
+              renderItem = {({item}) =>{
+                  return(
+                  <TouchableOpacity style = {styles.itemContainer} onPress = {()=>{setModalVisible(!modalVisible), setModalId(item?.id)}}>
+                      <View 
+                          style = {{marginRight:15, paddingTop:4}}
+                      ><Image source = {item.icon} /></View>
+                      <View><AppText >{item.title}</AppText></View>
+                  </TouchableOpacity>)
+              }}
+              keyExtractor = {(item)=> item?.id.toString()}
+              />
+          </View>
+      )
+}
 
   const categories = {
     category: [
@@ -105,16 +172,63 @@ const BlogPost = () => {
     );
   };
 
+  const Component = ()=>{
+    setModalVisible(!modalVisible)
+    return(null)
+  }
+
   return (
     <ScrollView style={{backgroundColor: Colors.WHITE}}>
+        
+        <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}>
+          {modalId == 2?(
+            <Select  onPressBack = {()=>{setModalVisible(!modalVisible)}}/>
+              ):(
+            modalId == 3?(
+            <ReportBlog {...props} onPressBack = {()=>{setModalVisible(!modalVisible)}}/>
+            ):(
+            modalId == 4?(
+              <DeleteBlog onPressBack = {()=>{setModalVisible(!modalVisible)}} />
+            ):(<Component />)))}
+          
+      </Modal>
+      <RBSheet
+          ref={refRBSheet}
+          closeOnDragDown={true}
+          closeOnPressMask={true}
+          customStyles={{
+            wrapper: {
+              backgroundColor: "rgba(0,0,0,0.3)",
+            },
+            draggableIcon: {
+              backgroundColor: '#DBD4D1'
+            },
+            container:{
+                backgroundColor:PEACH,
+                borderTopRightRadius:30,
+                borderTopLeftRadius:30,
+            }
+          }}
+        >
+          <OptionSelectBox {...props} />
+        </RBSheet>
+      
       <View style={styles.container}>
         <View>
           <Image
             style={{alignSelf: 'center', width: 350}}
             source={require('../../Assets/Images/Single_Blog/MainImage.png')}
           />
-          <Ionicons name={'arrow-back'} size={30} style={styles.topLeft} />
-          <Feather name={'bookmark'} size={25} style={styles.topRight} />
+          {/* <TouchableOpacity onPress = {()=>navigation.goBack()} > */}
+              <Ionicons onPress = {()=>navigation.goBack()} name={'arrow-back'} size={30} style={styles.topLeft} />
+          {/* </TouchableOpacity> */}
+            <Feather onPress = {()=>navigation.navigate('BookmarkBlog')} name={'bookmark'} size={25} style={styles.topRight} />
           <Ionicons
             name={'share-social-outline'}
             size={25}
@@ -124,6 +238,7 @@ const BlogPost = () => {
             name={'options-vertical'}
             size={23}
             style={styles.topRightCorner}
+            onPress = {()=>refRBSheet.current.open()}
           />
           <View style={styles.bottomLeft}>
             <FontAwesome name={'heart'} size={15} color={'#FC1052'} />
@@ -415,7 +530,11 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignSelf: 'center',
     marginHorizontal: 5,
-  }
+  },
+  itemContainer:{
+    flexDirection:'row',
+    padding:10,
+}
 });
 
 export default BlogPost;

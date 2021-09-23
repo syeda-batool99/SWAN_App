@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   TouchableOpacity,
   Image,
   FlatList,
   SafeAreaView,
-  ScrollView,
 } from 'react-native';
 import {
-  PEACH,
   BLUE,
   WHITE,
   TEXT_GREY,

@@ -5,6 +5,7 @@ import {NavigationContainer } from '@react-navigation/native';
 
 import MainNavigatior from './src/Navigation/index';
 import RegisterationStack from './src/Navigation/StackScreen/RegisterationStack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const App = () => {
  
@@ -16,20 +17,32 @@ const App = () => {
   }, []);
 
 
-  if (isUser){
-  return (
-    <NavigationContainer>
-      <MainNavigatior />
-      {/* <RegisterationStack /> */}
-    </NavigationContainer>
-  )
-}else{
+//   if (isUser){
+//   return (
+//     <NavigationContainer>
+//       <MainNavigatior />
+//       {/* <RegisterationStack /> */}
+//     </NavigationContainer>
+//   )
+// }else{
+//     return (
+//       <NavigationContainer>
+//         {/* <MainNavigatior /> */}
+//         <RegisterationStack />
+//       </NavigationContainer>
+//     )}
+
+    const RootStack = createNativeStackNavigator()
+
     return (
       <NavigationContainer>
-        {/* <MainNavigatior /> */}
-        <RegisterationStack />
+        <RootStack.Navigator screenOptions ={{headerShown:false}}>
+          <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/>
+          <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
+        </RootStack.Navigator>
       </NavigationContainer>
-    )}
+    )
+
 
 }
 
