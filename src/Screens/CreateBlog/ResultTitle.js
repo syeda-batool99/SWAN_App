@@ -3,10 +3,10 @@ import { StyleSheet, TextInput, View } from 'react-native'
 import { PEACH,BROWN_SHADE,DARK_PEACH } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import { Icon } from 'react-native-elements';
-import AppButton from './../../Components/AppButton';
-import { BLUE, PURPLE } from './../../Assets/Colors/index';
+import AppButton from '../../Components/AppButton';
+import { BLUE, PURPLE } from '../../Assets/Colors/index';
 
-const AddTitle = (props) => {
+const generatedTitle = (props) => {
 
     const IconTray = ()=>{
         return(
@@ -18,18 +18,21 @@ const AddTitle = (props) => {
 
     return (
         <View style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
-            <AppHeader title = "Title" IconTray = {IconTray}/>
-            <View>
-                <TextInput placeholder = "Write your blog title" style = {styles.titleText}/>
+            <AppHeader back title = "Title" IconTray = {IconTray}/>
+            <View >
+                <TextInput 
+                multiline = {true}
+                value = "Don't be afraid to give up the good to go for the great.|" 
+                style = {styles.titleText}/>
             </View>
             <View style = {{height:50, position:'absolute', bottom:10, alignSelf:'center'}}>
-                <AppButton onPress = {()=>props.navigation.navigate('GenerateTitle')} textColor={PURPLE} button label = "Generate Title with AI"/>
+                <AppButton onPress = {()=>props.navigation.navigate('ResultCreateBlog')} textColor={PURPLE} button label = "Generate Title with AI"/>
             </View>
         </View>
     )
 }
 
-export default AddTitle
+export default generatedTitle
 
 const styles = StyleSheet.create({
     titleText:{
@@ -38,6 +41,7 @@ const styles = StyleSheet.create({
         padding:10,
         fontSize:20,
         fontFamily: 'SharpGrotesk-Book20',
+        lineHeight:30
     },
 
 })

@@ -19,6 +19,7 @@ export const PINK ='#F64E80'
 export const GREEN = '#38C976'
 export const PURPLE = '#563AD7'
 
+export const LIGHT_BLUE = "#B1D0FF"
 
 
 

@@ -21,7 +21,7 @@ const AppButton = props => {
     boldFont,
     fontSize,
     textColor,
-    leftIcon,
+    icon,
     buttonContainerStyle,
     iconSize,
     iconContainerStyle,
@@ -49,14 +49,14 @@ const AppButton = props => {
           {label}
         </AppText>
 
-        {leftIcon && (
+        {icon && (
           <View style={[styles.iconContainer, iconContainerStyle]}>
             <Icon
               iconStyle={iconSize && {fontSize: iconSize}}
               color={iconColor || 'white'}
               name={iconName || 'eye-with-line'}
               type={iconType || 'entypo'}
-              onPress={() => setShowPassword(!showPassword)}
+              onPress={onPress}
             />
           </View>
         )}

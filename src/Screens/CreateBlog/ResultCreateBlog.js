@@ -8,29 +8,32 @@ import { BROWN_SHADE } from './../../Assets/Colors/index';
 import Loader from './../../Components/Loader';
 import { useState } from 'react';
 
-const CreateBlog = (props) => {
+const ResultCreateBlog = (props) => {
 
     const {navigation} = props;
 
     const IconTray = ()=>{
         return(
             <View style = {{ position:'absolute', right:5, flexDirection:'row', justifyContent:'space-around', marginVertical:20}}>
-                <Icon onPress = {()=>props.navigation.navigate('AddBlogTitle')} color = {BROWN_SHADE} style = {{paddingHorizontal:5}} name = "send" type = 'feather'/>
-                <Icon color = {BROWN_SHADE} style = {{paddingHorizontal:5}} name = "dots-three-vertical" type = 'entypo'/>
+                <Icon  style = {{paddingHorizontal:5}} name = "send" type = 'feather'/>
+                <Icon  style = {{paddingHorizontal:5}} name = "dots-three-vertical" type = 'entypo'/>
             </View>
         )
     }
 
     return (
         <View style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
-            <AppHeader title = "Create Blog"  IconTray = {IconTray}/>
+            <AppHeader {...props} title = "Create Blog"  IconTray = {IconTray}/>
             <View style = {styles.mainContainer}>
 
-                <View>
-                    <TextInput placeholder = "Give me a tilte" style = {styles.titleText}/>
-                </View>
+            <View >
+                <TextInput 
+                multiline = {true}
+                value = "Don't be afraid to give up the good to go for the great.|" 
+                style = {styles.titleText}/>
+            </View>
 
-                <View style = {styles.uploadContainer}>
+                <TouchableOpacity style = {styles.uploadContainer}>
                     <View style = {styles.upload}>
                         <Image source = {require('../../Assets/Images/CreateBlog/uploadcloud.png')}/>
                         <View style = {{marginTop:20}}>
@@ -38,7 +41,7 @@ const CreateBlog = (props) => {
                             <AppText center textStyle = {{color:BROWN_SHADE, lineHeight:22}} textContainerStyle = {{width:'78%'}}>this image shown on thumbnail & main image</AppText>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
 
                 <View>
                     <TextInput multiline placeholder = "Write what went in this blog..." style = {styles.blogText}/>
@@ -55,7 +58,7 @@ const CreateBlog = (props) => {
     )
 }
 
-export default CreateBlog
+export default ResultCreateBlog
 
 const styles = StyleSheet.create({
     mainContainer :{
@@ -66,6 +69,7 @@ const styles = StyleSheet.create({
     titleText:{
         borderBottomColor:DARK_PEACH,
         borderBottomWidth:1,
+        lineHeight:30,
         padding:10,
         fontSize:20,
         fontFamily: 'SharpGrotesk-Book20',
@@ -76,7 +80,6 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderWidth:2,
         padding:10,
-        // backgroundColor:'red',
         marginVertical:20
     },
     upload:{

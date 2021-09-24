@@ -7,12 +7,19 @@ import AppText from '../../Components/AppText'
 import { RadioButton } from 'react-native-paper';
 import AppButton from '../../Components/AppButton'
 import { PURPLE } from './../../Assets/Colors/index';
+import Loader from './../../Components/Loader';
 
-const GenerateTitle = () => {
+const GenerateTitle = (props) => {
+    const {navigation} = props
+    const [isLoading, setIsLoading] = useState(false)
     const [checked, setChecked] = useState('first');
+
     return (
         <View style = {{backgroundColor:PEACH, height:'100%', width:'100%'}}>
-                <AppHeader title = "Generate Title" />
+                <AppHeader {...props} title = "Generate Title" />
+
+                <Loader visible = {isLoading} onPressOnPress = {()=>{navigation.navigate('ResultScreen'),setIsLoading(!isLoading)}}/>
+
                 <KeyboardAwareScrollView style = {{ width:'90%',  alignSelf:'center'}}>
                     <View >
                         <AppText>Product/Brand name/Blog (optional)</AppText>
@@ -67,7 +74,7 @@ const GenerateTitle = () => {
                 <View style={{ width:'90%', alignSelf:'center', flex:1 }}>
 
                     <View style = {{height:50}}>
-                        <AppButton buttonContainerStyle = {{backgroundColor:PURPLE}} white button borderRadius={20} label = "Generate"/>
+                        <AppButton onPress= {()=>setIsLoading(!isLoading)} buttonContainerStyle = {{backgroundColor:PURPLE}} white button borderRadius={20} label = "Generate"/>
                     </View>
 
                 </View>

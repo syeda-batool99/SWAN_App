@@ -8,7 +8,6 @@ import AppText from './AppText';
 const AppHeader = (props) => {
 
     const {title, extraButton ,skip,back, onPressButton, onPressExtra, IconTray} = props;
-    console.log(props.navigation)
 
     let onPressIcon;
     if(onPressButton){onPressIcon = onPressButton}
