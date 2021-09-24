@@ -7,7 +7,7 @@ import AppText from './AppText';
 
 const AppHeader = (props) => {
 
-    const {title, extraButton ,skip,back, onPressButton, onPressExtra} = props;
+    const {title, extraButton ,skip,back, onPressButton, onPressExtra, IconTray} = props;
     console.log(props.navigation)
 
     let onPressIcon;
@@ -33,7 +33,7 @@ const AppHeader = (props) => {
                         <Text style={{color:BLUE}}>{extraButton || 'Skip'}</Text>
                     </TouchableOpacity>
                 </View>
-            ):(null)}
+            ):(IconTray?<IconTray/>:(null))}
 
         </View>
     )

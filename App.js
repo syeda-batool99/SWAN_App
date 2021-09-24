@@ -6,6 +6,7 @@ import {NavigationContainer } from '@react-navigation/native';
 import MainNavigatior from './src/Navigation/index';
 import RegisterationStack from './src/Navigation/StackScreen/RegisterationStack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CreateBlogStack from './src/Navigation/StackScreen/CreateBlogStack';
 
 const App = () => {
  
@@ -36,10 +37,11 @@ const App = () => {
 
     return (
       <NavigationContainer>
-        <RootStack.Navigator screenOptions ={{headerShown:false}}>
+        {/* <RootStack.Navigator screenOptions ={{headerShown:false}}>
           <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/>
           <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
-        </RootStack.Navigator>
+        </RootStack.Navigator> */}
+        <CreateBlogStack />
       </NavigationContainer>
     )
 

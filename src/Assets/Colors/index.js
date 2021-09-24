@@ -17,6 +17,7 @@ export const BLACK = "#000000"
 export const CYAN ='#049AA9'
 export const PINK ='#F64E80'
 export const GREEN = '#38C976'
+export const PURPLE = '#563AD7'
 
 
 
