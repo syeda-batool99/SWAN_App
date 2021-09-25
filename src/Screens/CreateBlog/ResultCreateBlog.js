@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, TextInput, TouchableOpacity,ScrollView, View } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { DARK_PEACH, PEACH } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
@@ -7,10 +7,36 @@ import AppText from '../../Components/AppText'
 import { BROWN_SHADE } from './../../Assets/Colors/index';
 import Loader from './../../Components/Loader';
 import { useState } from 'react';
+import ImagePicker from 'react-native-image-crop-picker';
+
 
 const ResultCreateBlog = (props) => {
 
     const {navigation} = props;
+
+
+    const [state,setState] = useState({
+        images:'',
+    })
+    const onOpenGallery = props =>{
+        ImagePicker.openPicker({
+            cropping: true,
+          }).then(image => {
+            setState({images:image})
+            //   Alert.alert("A")
+            console.log("image",image);
+          });
+    }
+    // const onOpenCamera = props => {
+    //     ImagePicker.openCamera({
+    //         width: 300,
+    //         height: 400,
+    //       }).then(image => {
+    //         setState({...state,images:[...state.images,image]})
+    //       });
+    // }
+
+
 
     const IconTray = ()=>{
         return(
@@ -22,7 +48,7 @@ const ResultCreateBlog = (props) => {
     }
 
     return (
-        <View style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
+        <ScrollView style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
             <AppHeader {...props} title = "Create Blog"  IconTray = {IconTray}/>
             <View style = {styles.mainContainer}>
 
@@ -33,14 +59,21 @@ const ResultCreateBlog = (props) => {
                 style = {styles.titleText}/>
             </View>
 
-                <TouchableOpacity style = {styles.uploadContainer}>
-                    <View style = {styles.upload}>
-                        <Image source = {require('../../Assets/Images/CreateBlog/uploadcloud.png')}/>
-                        <View style = {{marginTop:20}}>
-                            <AppText center>Upload Image</AppText>
-                            <AppText center textStyle = {{color:BROWN_SHADE, lineHeight:22}} textContainerStyle = {{width:'78%'}}>this image shown on thumbnail & main image</AppText>
+                <TouchableOpacity style = {styles.uploadContainer} onPress = {onOpenGallery}>
+                        {state?.images?(
+                                    <View style={styles.image}>
+                                        <Image source={{uri:state.images.path}} style={{width:'100%',height:'100%'}} />
+                                    </View>
+                                    
+                        ):(
+                        <View style = {styles.upload}>
+                            <Image source = {require('../../Assets/Images/CreateBlog/uploadcloud.png')}/>
+                            <View style = {{marginTop:20}}>
+                                <AppText center>Upload Image</AppText>
+                                <AppText center textStyle = {{color:BROWN_SHADE, lineHeight:22}} textContainerStyle = {{width:'78%'}}>this image shown on thumbnail & main image</AppText>
+                            </View>
                         </View>
-                    </View>
+                        )}
                 </TouchableOpacity>
 
                 <View>
@@ -54,7 +87,7 @@ const ResultCreateBlog = (props) => {
                 </View>
 
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -100,5 +133,10 @@ const styles = StyleSheet.create({
         borderBottomColor:DARK_PEACH, 
         justifyContent:'space-between',
         marginVertical:15
+    },
+    image:{
+        width:'100%',
+        height:200,
+        alignSelf:'center'
     }
 })
