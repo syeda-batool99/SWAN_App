@@ -222,32 +222,33 @@ const BlogPost = (props) => {
       <View style={styles.container}>
         <View>
           <Image
-            style={{alignSelf: 'center'}}
+            style={{alignSelf: 'center',width:'100%', height:320}}
             source={require('../../Assets/Images/Single_Blog/MainImage.png')}
           />
-          {/* <TouchableOpacity onPress = {()=>navigation.goBack()} > */}
-              <Ionicons onPress = {()=>navigation.goBack()} name={'arrow-back'} size={30} style={styles.topLeft} />
-          {/* </TouchableOpacity> */}
+          {/* <View style = {{backgroundColor:'red', position:'absolute'}}> */}
+          <Ionicons onPress = {()=>navigation.goBack()} name={'arrow-back'} size={30} style={styles.topLeft} />
             <Feather onPress = {()=>navigation.navigate('BookmarkBlog')} name={'bookmark'} size={25} style={styles.topRight} />
-          <Ionicons
-            name={'share-social-outline'}
-            size={25}
-            style={styles.topRightCenter}
-          />
-          <SimpleLineIcons
-            name={'options-vertical'}
-            size={23}
-            style={styles.topRightCorner}
-            onPress = {()=>refRBSheet.current.open()}
-          />
-          <View style={styles.bottomLeft}>
-            <FontAwesome name={'heart'} size={15} color={'#FC1052'} />
-            <AppText size={12} color={'#FC1052'}>
-              {' '}
-              175
-            </AppText>
+            <Ionicons
+              name={'share-social-outline'}
+              size={25}
+              style={styles.topRightCenter}
+              onPress = {()=>{setModalVisible(!modalVisible), setModalId(2)}}
+            />
+            <SimpleLineIcons
+              name={'options-vertical'}
+              size={23}
+              style={styles.topRightCorner}
+              onPress = {()=>refRBSheet.current.open()}
+            />
+            <View style={styles.bottomLeft}>
+              <FontAwesome name={'heart'} size={15} color={'#FC1052'} />
+              <AppText size={12} color={'#FC1052'}>
+                {' '}
+                175
+              </AppText>
+            </View>
           </View>
-        </View>
+        {/* </View> */}
         <View style={{flexDirection: 'row', alignSelf: 'center'}}>
           <SafeAreaView style={{marginTop: 10}}>
             <FlatList
@@ -287,11 +288,12 @@ const BlogPost = (props) => {
             </View>
           </View>
           {following ? (
-            <View style={{flexDirection: 'row', marginTop: 15}}>
+            <TouchableOpacity style={{flexDirection: 'row', marginTop: 15}}
+              onPress={() => setFollowing(!following)}>
               <AppText size={13} color={Colors.TEXT_DARK_BLACK}>
                 Following
               </AppText>
-            </View>
+            </TouchableOpacity>
           ) : (
             <TouchableOpacity
               style={{marginVertical: 8}}

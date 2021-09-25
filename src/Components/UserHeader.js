@@ -16,7 +16,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const UserHeader = props => {
   return (
-    <View style={{height: '15%'}}>
+    <View style={{height: 100}}>
       <View style={styles.container}>
         <Image
           source={require('../Assets/Images/RegisterationCarousel/profPhoto.png')}
@@ -38,7 +38,7 @@ const UserHeader = props => {
         </View>
       </View>
       <View style={styles.subContainer}>
-        <TouchableOpacity style={{flexDirection: 'row'}}>
+        <TouchableOpacity style={{flexDirection: 'row'}} onPress = {()=>props.navigation.navigate('CreateBlogStack')}>
           <Image source={require('../Assets/Images/Icons/blog.png')} />
           <AppText button size={14}>
             {' '}

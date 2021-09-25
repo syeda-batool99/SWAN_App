@@ -30,10 +30,11 @@ const DeleteBlog = (props) => {
             container:{
                 backgroundColor:PEACH,
                 marginBottom:20,
-                height:'30%',
                 width:'90%',
                 alignSelf:'center',
                 borderRadius:10,
+                paddingTop:10
+
             }
           }}
         >
@@ -67,7 +68,8 @@ const styles = StyleSheet.create({
 modalView: {
   borderRadius: 20,
   width:'80%',
-  alignSelf:'center'
+  alignSelf:'center',
+  // backgroundColor:'red',
 },
 
 btn: {

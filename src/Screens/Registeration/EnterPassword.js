@@ -53,14 +53,14 @@ const EnterPassword = props => {
                 type="password"
                 secureTextEntry={hidePass ? true : false}
                 autoCompleteType="password"
-                // style={{paddingHorizontal:5}}
+                style={{flex:1, paddingLeft:20 }}
                 />
 
                 <FontAwesome5
                 name={hidePass ? 'eye-slash' : 'eye'}
                 size={15}
                 color={BLACK}
-                style={{alignSelf: 'center', right:10}}
+                style={{width:20,alignSelf: 'center', right:10}}
                 onPress={() => setHidePass(!hidePass)}
                 />
             </View>

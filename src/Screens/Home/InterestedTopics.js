@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {
   StyleSheet,
-  Text,
+  ScrollView,
   View,
   TouchableOpacity,
   SafeAreaView,
@@ -103,7 +103,7 @@ const InterestedTopics = props => {
     const [isSelected, setIsSelected] = useState(false);
     return (
       <TouchableOpacity
-        style={{marginHorizontal: 15, marginVertical: 10}}
+        style={{marginHorizontal:5, marginVertical: 10}}
         onPress={() => {
           setIsSelected(!isSelected);
         }}>
@@ -141,20 +141,19 @@ const InterestedTopics = props => {
         textStyle={{marginVertical: 20}}>
         Please, select your interested topic
       </AppText>
-      <SafeAreaView style={{marginVertical: 10}}>
+      <ScrollView contentContainerStyle={{paddingBottom:20,width:'100%', alignSelf:'center', alignItems:'center'}}>
         <FlatList
           numColumns={3}
           data={Topics.topic}
           renderItem={renderItem}
           keyExtractor={item => item.id}
         />
-      </SafeAreaView>
+      </ScrollView>
       <View
         style={{
           height: 50,
           width: '90%',
           alignSelf: 'center',
-          position: 'absolute',
           bottom: 15,
         }}>
         <TouchableOpacity

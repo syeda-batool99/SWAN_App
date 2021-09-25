@@ -134,13 +134,13 @@ const BookmarkBlog = (props) => {
               data={Blogs.Blog.slice(0,4)}
               renderItem={renderBlogs}
               keyExtractor={item => item.id}
-              contentContainerStyle = {{paddingBottom:50}}
+              contentContainerStyle = {{paddingBottom:75}}
             />
 
           </SafeAreaView>
         </View>
         {selectState?(
-                      <TouchableOpacity
+                    <TouchableOpacity
                     //   onPress={() => navigation.navigate('PermissionScreen')}
                       style={{
                         height: 60,

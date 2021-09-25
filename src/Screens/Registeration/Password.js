@@ -16,6 +16,8 @@ import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import AppText from './../../Components/AppText';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
+import AppButton from './../../Components/AppButton';
 
 const Password = props => {
   const [password, setPassword] = useState('');
@@ -27,6 +29,7 @@ const Password = props => {
     <View style={styles.container}>
       <AppHeader title="Set Password" {...props} />
 
+      <KeyboardAwareScrollView>
       <Subtitle title="Please enter your information below in order to login to your account." />
 
       <View style={styles.form}>
@@ -34,8 +37,8 @@ const Password = props => {
           <AppText textStyle = {{marginBottom:5}} >Password</AppText>
           <View style={styles.textinput}>
             <TextInput
-              placeholder="  ****************"
-              // style={styles.textinput}
+              placeholder="****************"
+              style={{paddingLeft:10 ,width:"90%"}}
               value={password}
               onChangeText={setPassword}
               type="password"
@@ -55,8 +58,8 @@ const Password = props => {
           <AppText textStyle = {{marginBottom:5}} >Confirm Password</AppText>
           <View style={styles.textinput}>
             <TextInput
-              placeholder="  ****************"
-              // style={styles.textinput}
+              placeholder="****************"              
+              style={{paddingLeft:10 ,width:"90%"}}
               value={confirmPassword}
               onChangeText={setconfirmPassword}
               type="password"
@@ -73,15 +76,10 @@ const Password = props => {
           </View>
         </View>
       </View>
+      </KeyboardAwareScrollView>
 
       <View style={styles.button}>
-        <TouchableOpacity
-          style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
-          onPress={() => {
-            props.navigation.navigate('DateofBirth');
-          }}>
-          <AppText button white size={15}>Next</AppText>
-        </TouchableOpacity>
+          <AppButton borderRadius= {12} onPress = {()=>props.navigation.navigate('DateofBirth')} buttonContainerStyle = {{backgroundColor:BLUE}} label = "Next" button white />
       </View>
     </View>
   );
@@ -89,18 +87,17 @@ const Password = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height:'100%',
+    width:'100%',
     backgroundColor: PEACH,
   },
   form: {
-    flex: 2,
-    padding: 30,
+    padding: '5%',
     alignContent: 'center',
+    marginTop:'3%',
+    height:'100%',
   },
   formInput: {
-    // position:'absolute',
-    bottom: 0,
-    top: 80,
     marginVertical: 5,
   },
   textinput: {
@@ -110,21 +107,12 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     justifyContent:'space-between'
   },
-  button: {
-    flex: 3,
-    padding: 30,
-    alignItems: 'center',
-  },
-  btn: {
-    height: 50,
-    width: '100%',
-    marginVertical: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 12,
-    position: 'absolute',
-    bottom: 0,
-  },
+  button:{
+    height:50,
+    width:'90%',
+    alignSelf:'center',
+    bottom:5
+  }
 });
 
 export default Password;

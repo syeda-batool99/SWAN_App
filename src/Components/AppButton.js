@@ -26,10 +26,12 @@ const AppButton = props => {
     iconSize,
     iconContainerStyle,
     button,
+    disabled
   } = props;
   return (
     <>
       <TouchableOpacity
+        disabled = {disabled}
         onPress={onPress}
         style={[
           styles.buttonContainerStyle,

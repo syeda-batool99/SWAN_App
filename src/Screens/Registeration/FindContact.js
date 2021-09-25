@@ -18,11 +18,11 @@ const FindContact = (props) => {
                 onPressBtn1 = {()=>{navigation.navigate('ContactListScreen')}} 
                 onPressBtn2 = {()=>(setModalVisible(!modalVisible))}/>
 
-            <View style = {{marginVertical:'25%'}}>
+            <View style = {{marginVertical:'15%'}}>
                 <View style = {{ alignItems:'center'}}>
                     <Image source = {require('../../Assets/Images/RegisterationCarousel/Rectangle66.png')} />
                 </View>
-                <View style = {{alignItems:'center', marginTop:20}}>
+                <View style = {{ width:'80%', alignSelf:'center',alignItems:'center', marginTop:20}}>
                     <AppText button color = {TEXT_BLACK} textStyle = {{fontSize:24}}>See who is on Swan</AppText>
                     <AppText textStyle = {{fontSize:14, marginTop:15 ,lineHeight:20, textAlign:'center'}}>See which of your friends are already on swan & choose who to follow.</AppText>
                 </View>

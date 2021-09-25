@@ -18,8 +18,6 @@ import Subtitle from '../../Components/Subtitle';
 import AppText from './../../Components/AppText';
 
 const Gender = props => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const [isPressMale, setIsPressMale] = useState(false);
   const [isPressFemale, setIsPressFemale] = useState(false);
  
@@ -62,11 +60,12 @@ const Gender = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height:'100%',
+    width:'100%',
     backgroundColor: PEACH,
   },
   form: {
-    marginVertical:150,
+    marginTop:'25%',
     flexDirection:'row',
     justifyContent:'space-around',
     paddingHorizontal: 30,

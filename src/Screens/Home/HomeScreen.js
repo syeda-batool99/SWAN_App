@@ -256,8 +256,9 @@ const More = ({item}) => {
     // onPress={() => {
     //   OnPressService(item._id, item.name);
     // }}
+    style = {{paddingHorizontal:2,marginVertical:8}}
     >
-      <Image source={item.image} style={{marginRight:30}} />
+      <Image source={item.image} />
       <AppText
           alertText
           size={14}
@@ -275,7 +276,7 @@ const More = ({item}) => {
 
   return (
     <View style={styles.container}>
-      <UserHeader />
+      <UserHeader  {...props}/>
       <Card>
         <View>
           <View
@@ -363,12 +364,13 @@ const More = ({item}) => {
               <SimpleLineIcons name={'options-vertical'} size={20} />
             </TouchableOpacity>
           </View>
-          <SafeAreaView style={{marginTop: 10, marginBottom:15}}>
+          <SafeAreaView style={{marginTop: 10,alignItems:'center', marginBottom:15}}>
             <FlatList
             numColumns={3}
               data={Topics.topic}
               renderItem={renderMore}
               keyExtractor={item => item.id}
+              contentContainerStyle = {{alignSelf:'center'}}
             />
           </SafeAreaView>
           <SafeAreaView style={{marginTop: 10, marginBottom:30}}>

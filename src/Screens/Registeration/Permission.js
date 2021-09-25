@@ -31,20 +31,22 @@ const Permission = props => {
           paddingTop: 20,
         }}>
         <View style={styles.ItemContainer}>
-          <View style={{flexDirection: 'row'}}>
-            <Image
-              style={{marginRight: 10, marginTop: 10}}
-              source={require('../../Assets/Images/RegisterationCarousel/camera.png')}
-            />
-            <View style={{width: '60%'}}>
-              <AppText button size={16} color={TEXT_BLACK} >
-                Camera and Mic
-              </AppText>
-              <AppText  size={14} color={TEXT_BLACK} textStyle={{lineHeight:20}}>
-                So your friends can see and hear you.
-              </AppText>
+          <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+            <View style = {{flexDirection:'row'}}>
+              <Image
+                style={{marginRight: 10, marginTop: 10}}
+                source={require('../../Assets/Images/RegisterationCarousel/camera.png')}
+              />
+              <View style={{width: '70%'}}>
+                <AppText button size={16} color={TEXT_BLACK} >
+                  Camera and Mic
+                </AppText>
+                <AppText  size={14} color={TEXT_BLACK} textStyle={{lineHeight:20}}>
+                  So your friends can see and hear you.
+                </AppText>
+              </View>
             </View>
-            <View style={{justifyContent: 'center', left: 40}}>
+            <View style={{justifyContent: 'center',}}>
               <RadioButton.Android
                 uncheckedColor={DARK_PEACH}
                 color={BLUE}
@@ -57,20 +59,24 @@ const Permission = props => {
         </View>
 
         <View style={styles.ItemContainer}>
-          <View style={{flexDirection: 'row'}}>
-            <Image
-              style={{marginRight: 10, marginTop: 10}}
-              source={require('../../Assets/Images/RegisterationCarousel/notification.png')}
-            />
-            <View style={{width: '60%'}}>
-            <AppText button size={16} color={TEXT_BLACK} >
-                Notifications
-              </AppText>
-              <AppText  size={14} color={TEXT_BLACK} textStyle={{lineHeight:20}}>
-                So you know when your friends want to chat.
-              </AppText>
+          <View style={{flexDirection: 'row', justifyContent:'space-between' }}>
+
+            <View style = {{flexDirection:'row'}} >
+                <Image
+                  style={{marginRight: 10, marginTop: 10}}
+                  source={require('../../Assets/Images/RegisterationCarousel/notification.png')}
+                />
+                <View style={{width: '70%'}}>
+                <AppText button size={16} color={TEXT_BLACK} >
+                    Notifications
+                  </AppText>
+                  <AppText  size={14} color={TEXT_BLACK} textStyle={{lineHeight:20}}>
+                    So you know when your friends want to chat.
+                  </AppText>
+                </View>
             </View>
-            <View style={{justifyContent: 'center', left: 40}}>
+
+            <View style={{justifyContent: 'center'}}>
               <RadioButton
                 uncheckedColor={DARK_PEACH}
                 color={BLUE}
@@ -81,21 +87,25 @@ const Permission = props => {
             </View>
           </View>
         </View>
+
+
         <View style={styles.ItemContainer}>
-          <View style={{flexDirection: 'row'}}>
-            <Image
-              style={{marginRight: 10, marginTop: 10}}
-              source={require('../../Assets/Images/RegisterationCarousel/location.png')}
-            />
-            <View style={{width: '60%'}}>
-            <AppText button size={16} color={TEXT_BLACK} >
-                Enable Location
-              </AppText>
-              <AppText  size={14} color={TEXT_BLACK} textStyle={{lineHeight:20}}>
-                So you can find friends who are near you.
-              </AppText>
+          <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+            <View style = {{flexDirection:'row'}}>
+              <Image
+                style={{marginRight: 10, marginTop: 10}}
+                source={require('../../Assets/Images/RegisterationCarousel/location.png')}
+              />
+              <View style={{width: '70%'}}>
+              <AppText button size={16} color={TEXT_BLACK} >
+                  Enable Location
+                </AppText>
+                <AppText  size={14} color={TEXT_BLACK} textStyle={{lineHeight:20}}>
+                  So you can find friends who are near you.
+                </AppText>
+              </View>
             </View>
-            <View style={{justifyContent: 'center', left: 40}}>
+            <View style={{justifyContent: 'center'}}>
               <RadioButton
                 uncheckedColor={DARK_PEACH}
                 color={BLUE}

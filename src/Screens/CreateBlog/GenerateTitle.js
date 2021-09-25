@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, ScrollView, TextInput, View } from 'react-native'
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import { PEACH, TEXT_BLACK, WHITE } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
@@ -69,7 +69,6 @@ const GenerateTitle = (props) => {
                         <TextInput placeholder = 'e.g. 15% off' style = {styles.optionalTextinput}/>
                     </View>
                     
-                </KeyboardAwareScrollView>
 
                 <View style={{ width:'90%', alignSelf:'center', flex:1 }}>
 
@@ -78,6 +77,8 @@ const GenerateTitle = (props) => {
                     </View>
 
                 </View>
+                </KeyboardAwareScrollView>
+
 
         </View>
     )

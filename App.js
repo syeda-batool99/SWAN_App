@@ -37,11 +37,11 @@ const App = () => {
 
     return (
       <NavigationContainer>
-        {/* <RootStack.Navigator screenOptions ={{headerShown:false}}>
+        <RootStack.Navigator screenOptions ={{headerShown:false}}>
           <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/>
           <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
-        </RootStack.Navigator> */}
-        <CreateBlogStack />
+        </RootStack.Navigator>
+        {/* <CreateBlogStack /> */}
       </NavigationContainer>
     )
 

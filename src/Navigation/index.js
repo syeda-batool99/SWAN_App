@@ -20,8 +20,9 @@ const MainNavigatior = () => {
         tabBarShowLabel:false,
         tabBarStyle:{
             backgroundColor:'black',
-            height:60
-        }
+            height:60,
+        },
+        "tabBarHideOnKeyboard":"true",
     }}>
         <Tab.Screen name={HOME_STACK} component={HomeStack}
          options = {{tabBarIcon:({focused})=>(

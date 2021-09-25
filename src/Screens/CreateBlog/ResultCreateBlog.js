@@ -8,6 +8,7 @@ import { BROWN_SHADE } from './../../Assets/Colors/index';
 import Loader from './../../Components/Loader';
 import { useState } from 'react';
 import ImagePicker from 'react-native-image-crop-picker';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 
 
 const ResultCreateBlog = (props) => {
@@ -62,7 +63,7 @@ const ResultCreateBlog = (props) => {
                 <TouchableOpacity style = {styles.uploadContainer} onPress = {onOpenGallery}>
                         {state?.images?(
                                     <View style={styles.image}>
-                                        <Image source={{uri:state.images.path}} style={{width:'100%',height:'100%'}} />
+                                        <Image source={{uri:state.images?.path}} style={{width:'100%',height:'100%'}} />
                                     </View>
                                     
                         ):(
@@ -76,8 +77,10 @@ const ResultCreateBlog = (props) => {
                         )}
                 </TouchableOpacity>
 
+                <KeyboardAwareScrollView>
+
                 <View>
-                    <TextInput multiline placeholder = "Write what went in this blog..." style = {styles.blogText}/>
+                    <TextInput multiline scrollEnabled=  {true} placeholder = "Write what went in this blog..." style = {styles.blogText}/>
                 </View>
 
                 <View style = {styles.tagsView}>
@@ -85,6 +88,8 @@ const ResultCreateBlog = (props) => {
                     <TextInput style = {{flex:1, paddingLeft:15}} placeholder = 'Write tags here'/>
                     <Icon style = {{justifyContent:'center',flex:1, marginRight:10}} name = 'info' type='feather'/>
                 </View>
+
+                </KeyboardAwareScrollView>
 
             </View>
         </ScrollView>
