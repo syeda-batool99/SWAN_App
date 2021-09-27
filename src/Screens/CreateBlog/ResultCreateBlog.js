@@ -1,19 +1,27 @@
-import React from 'react'
-import { Image, StyleSheet, TextInput, TouchableOpacity,ScrollView, View } from 'react-native'
+import React, { useState } from 'react';
+import { Image, StyleSheet, TextInput, TouchableOpacity, ScrollView, View } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { DARK_PEACH, PEACH } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import AppText from '../../Components/AppText'
 import { BROWN_SHADE } from './../../Assets/Colors/index';
-import Loader from './../../Components/Loader';
-import { useState } from 'react';
 import ImagePicker from 'react-native-image-crop-picker';
+import Tooltip from 'react-native-walkthrough-tooltip'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 
 
 const ResultCreateBlog = (props) => {
 
+    const [toolTipVisible, setToolTipVisible] = useState(false)
     const {navigation} = props;
+
+    const Popover = ()=>{
+        return(
+            <View style = {{backgroundColor:'white'}}>
+                <AppText textStyle = {{lineHeight:20}}>Labels are used to categorise post on your blog. Use enter to separate labels.</AppText>
+            </View>
+        )
+    }
 
 
     const [state,setState] = useState({
@@ -42,16 +50,16 @@ const ResultCreateBlog = (props) => {
     const IconTray = ()=>{
         return(
             <View style = {{ position:'absolute', right:5, flexDirection:'row', justifyContent:'space-around', marginVertical:20}}>
-                <Icon  style = {{paddingHorizontal:5}} name = "send" type = 'feather'/>
+                <Icon onPress = {()=>props.navigation.navigate('DescriptionBlog')} style = {{paddingHorizontal:5}} name = "send" type = 'feather'/>
                 <Icon  style = {{paddingHorizontal:5}} name = "dots-three-vertical" type = 'entypo'/>
             </View>
         )
     }
 
     return (
-        <ScrollView style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
+        <View style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
             <AppHeader {...props} title = "Create Blog"  IconTray = {IconTray}/>
-            <View style = {styles.mainContainer}>
+            <ScrollView style = {styles.mainContainer}>
 
             <View >
                 <TextInput 
@@ -86,13 +94,26 @@ const ResultCreateBlog = (props) => {
                 <View style = {styles.tagsView}>
                     <AppText textContainerStyle = {{marginLeft:10,justifyContent:'center'}}>Add Tags</AppText>
                     <TextInput style = {{flex:1, paddingLeft:15}} placeholder = 'Write tags here'/>
-                    <Icon style = {{justifyContent:'center',flex:1, marginRight:10}} name = 'info' type='feather'/>
+                    <View style = {{ justifyContent:'center'}} >
+                    <Tooltip
+                    backgroundColor = "transparent"
+                          isVisible={toolTipVisible}
+                          childContentSpacing = {25}
+                          arrowSize = {{width:0, height:0}}
+                          content={<Popover />}
+                          placement="bottom"
+                          onClose={() => setToolTipVisible(!toolTipVisible)}
+                          contentStyle= {[{width:290,height:100, borderRadius:12, padding:20}]} 
+                    >
+                        <Icon onPress ={() => setToolTipVisible(!toolTipVisible)}  style = {{justifyContent:'center',flex:1,marginRight:10}} name = 'info' type='feather'/>
+                    </Tooltip>
+                    </View>
                 </View>
 
                 </KeyboardAwareScrollView>
 
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
 

@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Image, StyleSheet, TextInput, TouchableOpacity, View,ScrollView } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { DARK_PEACH, PEACH } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import AppText from '../../Components/AppText'
 import { BROWN_SHADE } from './../../Assets/Colors/index';
-import Loader from './../../Components/Loader';
 import ImagePicker from 'react-native-image-crop-picker';
-import { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
+import Tooltip from 'react-native-walkthrough-tooltip'
 
 const CreateBlog = (props) => {
+
+    const [toolTipVisible, setToolTipVisible] = useState(false)
+
+    const Popover = ()=>{
+        return(
+            <View style = {{backgroundColor:'white'}}>
+                <AppText textStyle = {{lineHeight:20}}>Labels are used to categorise post on your blog. Use enter to separate labels.</AppText>
+            </View>
+        )
+    }
 
     const {navigation} = props;
 
@@ -78,7 +87,20 @@ const CreateBlog = (props) => {
                 <View style = {styles.tagsView}>
                     <AppText textContainerStyle = {{marginLeft:10,justifyContent:'center'}}>Add Tags</AppText>
                     <TextInput style = {{flex:1, paddingLeft:15}} placeholder = 'Write tags here'/>
-                    <Icon style = {{justifyContent:'center',flex:1, marginRight:10}} name = 'info' type='feather'/>
+                    <View style = {{ justifyContent:'center'}} >
+                    <Tooltip
+                    backgroundColor = "transparent"
+                          isVisible={toolTipVisible}
+                          childContentSpacing = {25}
+                          arrowSize = {{width:0, height:0}}
+                          content={<Popover />}
+                          placement="bottom"
+                          onClose={() => setToolTipVisible(!toolTipVisible)}
+                          contentStyle= {[{width:290,height:100, borderRadius:12, padding:20}]} 
+                    >
+                        <Icon onPress ={() => setToolTipVisible(!toolTipVisible)}  style = {{justifyContent:'center',flex:1,marginRight:10}} name = 'info' type='feather'/>
+                    </Tooltip>
+                    </View>
                 </View>
 
                 </KeyboardAwareScrollView>
@@ -135,5 +157,5 @@ const styles = StyleSheet.create({
         width:'100%',
         height:200,
         alignSelf:'center'
-    }
+    },
 })

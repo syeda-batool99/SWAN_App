@@ -6,6 +6,8 @@ import GenerateTitle from './../../Screens/CreateBlog/GenerateTitle';
 import Result from './../../Screens/CreateBlog/Result';
 import generatedTitle from '../../Screens/CreateBlog/ResultTitle';
 import ResultCreateBlog from './../../Screens/CreateBlog/ResultCreateBlog';
+import BlogDescription from '../../Screens/CreateBlog/BlogDescription';
+import GenerateDescription from './../../Screens/CreateBlog/GenerateDescription';
 
 const CreateBlogStack = () => {
 
@@ -21,6 +23,8 @@ const CreateBlogStack = () => {
         <Stack.Screen name="GeneratedTitle" component={generatedTitle} />
         <Stack.Screen name="GenerateTitle" component={GenerateTitle} />
         <Stack.Screen name="ResultScreen" component={Result} />
+        <Stack.Screen name="DescriptionBlog" component={BlogDescription} />
+        <Stack.Screen name="GenerateDescriptionBlog" component={GenerateDescription} />
     </Stack.Navigator>
     )
 }
