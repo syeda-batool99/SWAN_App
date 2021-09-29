@@ -43,7 +43,7 @@ const NewPassword = props => {
           <Image
             source={require('../../Assets/Images/password_change_success.png')}
           />
-          <AppText button Textstyle={styles.modalText} center size={16}  color={TEXT_BLACK} textStyle = {{width:300}}>
+          <AppText button center size={16}  color={TEXT_BLACK} textStyle = {{width:300}}>
             Your password has been changed successfully.
           </AppText>
           <TouchableOpacity

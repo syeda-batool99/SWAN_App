@@ -1,19 +1,30 @@
 import React, {useState,useRef,useEffect} from 'react'
-import { Image, StyleSheet, TextInput, TouchableOpacity, View,ScrollView } from 'react-native'
+import { Image, StyleSheet, TextInput, Dimensions,TouchableOpacity, View,ScrollView } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { DARK_PEACH, PEACH } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import AppText from '../../Components/AppText'
-import { BROWN_SHADE } from './../../Assets/Colors/index';
+import { BROWN_SHADE, PURPLE } from './../../Assets/Colors/index';
 import ImagePicker from 'react-native-image-crop-picker';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 import Tooltip from 'react-native-walkthrough-tooltip'
 import RBSheet from "react-native-raw-bottom-sheet";
+import TagInput from 'react-native-tags-input';
 
 const CreateBlog = (props) => {
 
   const refRBSheet = useRef();
-  const [toolTipVisible, setToolTipVisible] = useState(false)
+  const [toolTipVisible, setToolTipVisible] = useState(false)    
+  const [state,setState] = useState({
+    tagsColor: "#3ca897",
+    tagsText: '#fff',
+    images:''})
+
+  const [tags,setTags]= useState ({
+      tag:'',
+      tagsArray:[],
+  })
+
 
   useEffect (()=>{
     refRBSheet.current.close();
@@ -56,11 +67,8 @@ const OptionSelectBox = () => {
         )
     }
 
-    const {navigation} = props;
 
-    const [state,setState] = useState({
-        images:'',
-    })
+
     const onOpenGallery = props =>{
         ImagePicker.openPicker({
             cropping: true,
@@ -125,22 +133,42 @@ const OptionSelectBox = () => {
                 </View>
 
                 <View style = {styles.tagsView}>
-                    <AppText textContainerStyle = {{marginLeft:10,justifyContent:'center'}}>Add Tags</AppText>
-                    <TextInput style = {{flex:1, paddingLeft:15}} placeholder = 'Write tags here'/>
-                    <View style = {{ justifyContent:'center'}} >
-                    <Tooltip
-                    backgroundColor = "transparent"
-                          isVisible={toolTipVisible}
-                          childContentSpacing = {25}
-                          arrowSize = {{width:0, height:0}}
-                          content={<Popover />}
-                          placement="bottom"
-                          onClose={() => setToolTipVisible(!toolTipVisible)}
-                          contentStyle= {[{width:290,height:100, borderRadius:12, padding:20}]} 
-                    >
-                        <Icon onPress ={() => setToolTipVisible(!toolTipVisible)}  style = {{justifyContent:'center',flex:1,marginRight:10}} name = 'info' type='feather'/>
-                    </Tooltip>
-                    </View>
+                    {/* <TextInput style = {{flex:1, paddingLeft:15}} placeholder = 'Write tags here'/> */}
+
+                    <TagInput
+                        updateState={setTags}
+                        tags={tags}
+                        placeholder={tags.tagsArray.length>0?(null):('Add Tags')}                           
+                        leftElement={<AppText textContainerStyle = {{justifyContent:'center'}}>Add Tags</AppText>}
+                        leftElementContainerStyle={{marginVertical: 8}}
+                        containerStyle={[{width:'90%'},tags.tagsArray.length>0 && {width:'100%'}]}
+                        // inputContainerStyle={{backgroundColor:'pink'}}
+                        inputStyle={{ marginVertical:5}}
+                        onFocus={() => setState({tagsColor: '#fff', tagsText: '#3ca897'})}
+                        onBlur={() => setState({tagsColor: '#3ca897', tagsText: '#fff'})}
+                        autoCorrect={false}
+                        tagsViewStyle = {{  position:'relative'}}
+                        tagStyle={styles.tag}
+                        tagTextStyle={styles.tagText}
+                        keysForTag={"\n"}/>
+
+                    {!tags.tagsArray.length>0?(
+                        <View style = {{ justifyContent:'center'}} >
+                        <Tooltip
+                        backgroundColor = "transparent"
+                                isVisible={toolTipVisible}
+                                childContentSpacing = {25}
+                                arrowSize = {{width:0, height:0}}
+                                content={<Popover />}
+                                placement="bottom"
+                                onClose={() => setToolTipVisible(!toolTipVisible)}
+                                contentStyle= {[{width:290,height:100, borderRadius:12, padding:20}]} 
+                        >
+                            <Icon onPress ={() => setToolTipVisible(!toolTipVisible)}  style = {{justifyContent:'center',flex:1,marginRight:10}} name = 'info' type='feather'/>
+                        </Tooltip>
+                        </View>
+                    ):(null)}
+
                 </View>
 
                 </KeyboardAwareScrollView>
@@ -227,4 +255,20 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       padding:10,
   },
+  textInput: {
+    height: 40,
+  },
+  tag: {
+      backgroundColor: 'transparent',
+      borderColor:PURPLE,
+      padding:2,
+      borderWidth:2,
+    //   paddingVertical:5
+    },
+  tagText: {
+      color: PURPLE,
+    //   marginVertical:5,
+    // backgroundColor:'orange'
+    },
+
 })

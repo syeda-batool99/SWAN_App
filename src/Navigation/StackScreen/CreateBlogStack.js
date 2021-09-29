@@ -10,6 +10,7 @@ import BlogDescription from '../../Screens/CreateBlog/BlogDescription';
 import GenerateDescription from './../../Screens/CreateBlog/GenerateDescription';
 import ResultDescription from './../../Screens/CreateBlog/ResultDescription';
 import ResultCreateBlog2 from './../../Screens/CreateBlog/ResultCreateBlog2';
+import PusblishScreen from '../../Screens/CreateBlog/PusblishScreen';
 
 const CreateBlogStack = () => {
 
@@ -31,6 +32,8 @@ const CreateBlogStack = () => {
         <Stack.Screen name="DescriptionBlog" component={BlogDescription} />
         <Stack.Screen name="ResultDescription" component={ResultDescription} />
         <Stack.Screen name="GenerateDescriptionBlog" component={GenerateDescription} />
+        <Stack.Screen name="PublishScreen" component={PusblishScreen} />
+
     </Stack.Navigator>
     )
 }

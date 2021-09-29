@@ -73,7 +73,7 @@ const ResultDescription = (props) => {
 
             </ScrollView>
             <View style = {{height:50,position:'absolute', bottom:10, alignSelf:'center'}}>
-                <AppButton onPress = {()=>props.navigation.navigate('GenerateDescriptionBlog')} textColor={PURPLE} button label = "Generate Title with AI"/>
+                <AppButton textColor={PURPLE} button label = "Generate Title with AI"/>
             </View>
         </View>
     )
