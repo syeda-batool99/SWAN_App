@@ -9,8 +9,8 @@ import ImagePicker from 'react-native-image-crop-picker';
 import EditorComponent from './../../Components/EditorComponent';
 import AppButton from './../../Components/AppButton';
 
-const BlogDescription = (props) => {
-    const [text,onChangeText] = useState('')
+const ResultDescription = (props) => {
+    const [text,onChangeText] = useState("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.",)
 
     const [state,setState] = useState({
         images:'',
@@ -47,7 +47,7 @@ const BlogDescription = (props) => {
     const IconTray = ()=>{
         return(
             <View style = {{ position:'absolute', right:5, flexDirection:'row', justifyContent:'space-around', marginVertical:20}}>
-                <Icon onPress = {()=>props.navigation.navigate('ResultDescription')} color = {BROWN_SHADE} style = {{paddingHorizontal:10}} name = "check" type = 'feather'/>
+                <Icon onPress = {()=>props.navigation.navigate("ResultCreateBlog2")} color = {BROWN_SHADE} style = {{paddingHorizontal:10}} name = "check" type = 'feather'/>
             </View>
         )
     }
@@ -79,7 +79,7 @@ const BlogDescription = (props) => {
     )
 }
 
-export default BlogDescription
+export default ResultDescription
 
 const styles = StyleSheet.create({
     container:{

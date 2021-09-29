@@ -1,52 +1,20 @@
-import React, {useState,useRef,useEffect} from 'react'
-import { Image, StyleSheet, TextInput, TouchableOpacity, View,ScrollView } from 'react-native'
+import React, { useState } from 'react';
+import { Image, StyleSheet, TextInput, TouchableOpacity, ScrollView, View } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { DARK_PEACH, PEACH } from '../../Assets/Colors'
 import AppHeader from '../../Components/AppHeader'
 import AppText from '../../Components/AppText'
 import { BROWN_SHADE } from './../../Assets/Colors/index';
 import ImagePicker from 'react-native-image-crop-picker';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 import Tooltip from 'react-native-walkthrough-tooltip'
-import RBSheet from "react-native-raw-bottom-sheet";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 
-const CreateBlog = (props) => {
 
-  const refRBSheet = useRef();
-  const [toolTipVisible, setToolTipVisible] = useState(false)
+const ResultCreateBlog2 = (props) => {
 
-  useEffect (()=>{
-    refRBSheet.current.close();
-})
-
-const OptionSelectBox = () => {
-
-    return (
-        <View style = {{padding:10}}>
-            <TouchableOpacity onPress = {()=>{refRBSheet.current.close(),setIsEdit(!isEdit)}}
-            style = {styles.itemContainer}>
-                
-                <View style = {{marginRight:15, paddingTop:4}}>
-                    <Image source = {require('../../Assets/Images/CreateBlog/draft.png')} />
-                </View>
-                <View>
-                    <AppText >Save to Draft</AppText>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity 
-            onPress = {()=>refRBSheet.current.close()}
-            style = {styles.itemContainer}>
-                <View style = {{marginRight:15, paddingTop:4}}>
-                    <Image source = {require('../../Assets/Images/Home/delete.png')} />
-                </View>
-                <View>
-                    <AppText >Delete</AppText>
-                </View>
-            </TouchableOpacity>
-        </View>
-    )
-}
-
+    const [toolTipVisible, setToolTipVisible] = useState(false)
+    const {navigation} = props;
+    const [text,setText] = useState("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.",)
 
     const Popover = ()=>{
         return(
@@ -56,7 +24,6 @@ const OptionSelectBox = () => {
         )
     }
 
-    const {navigation} = props;
 
     const [state,setState] = useState({
         images:'',
@@ -79,49 +46,57 @@ const OptionSelectBox = () => {
     //       });
     // }
 
+
+
     const IconTray = ()=>{
         return(
-            <View style = {{ position:'absolute', right:5, flexDirection:'row', justifyContent:'space-between', marginVertical:20}}>
-                <View style = {{ marginHorizontal:5}}>
-                    <Icon onPress = {()=>props.navigation.navigate('AddBlogTitle')} color = {BROWN_SHADE}  name = "send" type = 'feather'/>
-                </View>
-                <View style = {{ marginHorizontal:5}}>
-                    <Icon onPress = {()=>refRBSheet.current.open()}  color = {BROWN_SHADE} style = {{paddingHorizontal:15}} name = "dots-three-vertical" type = 'entypo'/>
-                </View>
+            <View style = {{ position:'absolute', right:5, flexDirection:'row', justifyContent:'space-around', marginVertical:20}}>
+                <Icon onPress = {()=>props.navigation.navigate('DescriptionBlog')} style = {{paddingHorizontal:5}} name = "send" type = 'feather'/>
+                <Icon  style = {{paddingHorizontal:5}} name = "dots-three-vertical" type = 'entypo'/>
             </View>
         )
     }
 
     return (
-        <ScrollView style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
-    
+        <View style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
             <AppHeader {...props} title = "Create Blog"  IconTray = {IconTray}/>
-            <View style = {styles.mainContainer}>
+            <ScrollView style = {styles.mainContainer}>
 
-                <View>
-                    <TextInput placeholder = "Give me a tilte" style = {styles.titleText}/>
-                </View>
+            <View >
+                <TextInput 
+                multiline = {true}
+                value = "Don't be afraid to give up the good to go for the great.|" 
+                style = {styles.titleText}/>
+            </View>
 
-                <TouchableOpacity style = {styles.uploadContainer} onPress = {onOpenGallery}>
+                <View style = {styles.uploadContainer} >
                         {state?.images?(
+                            <>
                                     <View style={styles.image}>
                                         <Image source={{uri:state.images?.path}} style={{width:'100%',height:'100%'}} />
                                     </View>
+                                    <TouchableOpacity onPress = {onOpenGallery} style = {styles.editIcon}>
+                                        <Image source = {require('../../Assets/Images/RegisterationCarousel/editPhoto.png')} />
+                                    </TouchableOpacity >
+                            </>
                                     
                         ):(
+                            <>
                         <View style = {styles.upload}>
-                            <Image source = {require('../../Assets/Images/CreateBlog/uploadcloud.png')}/>
-                            <View style = {{marginTop:20}}>
-                                <AppText center>Upload Image</AppText>
-                                <AppText center textStyle = {{color:BROWN_SHADE, lineHeight:22}} textContainerStyle = {{width:'78%'}}>this image shown on thumbnail & main image</AppText>
-                            </View>
+                                <Image source = {require('../../Assets/Images/Single_Blog/MainImage.png')} />
                         </View>
+                        
+                        <TouchableOpacity onPress = {onOpenGallery} style = {styles.editIcon}>
+                            <Image source = {require('../../Assets/Images/RegisterationCarousel/editPhoto.png')} />
+                        </TouchableOpacity >
+                        </>
                         )}
-                </TouchableOpacity>
+                </View>
+
                 <KeyboardAwareScrollView>
 
                 <View>
-                    <TextInput multiline placeholder = "Write what went in this blog..." style = {styles.blogText}/>
+                    <TextInput value = {text} multiline scrollEnabled=  {true} placeholder = "Write what went in this blog..." style = {styles.blogText}/>
                 </View>
 
                 <View style = {styles.tagsView}>
@@ -145,37 +120,12 @@ const OptionSelectBox = () => {
 
                 </KeyboardAwareScrollView>
 
-            </View>
-
-            <RBSheet
-          ref={refRBSheet}
-          closeOnDragDown={true}
-          closeOnPressMask={true}
-          customStyles={{
-            wrapper: {
-              backgroundColor: "rgba(0,0,0,0.3)",
-            },
-            draggableIcon: {
-              backgroundColor: '#DBD4D1'
-            },
-            container:{
-                backgroundColor:PEACH,
-                borderTopRightRadius:30,
-                borderTopLeftRadius:30,
-                height:150
-            }
-          }}
-        >
-          <OptionSelectBox />
-        </RBSheet>
-
-
-
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
 
-export default CreateBlog
+export default ResultCreateBlog2
 
 const styles = StyleSheet.create({
     mainContainer :{
@@ -186,6 +136,7 @@ const styles = StyleSheet.create({
     titleText:{
         borderBottomColor:DARK_PEACH,
         borderBottomWidth:1,
+        lineHeight:30,
         padding:10,
         fontSize:20,
         fontFamily: 'SharpGrotesk-Book20',
@@ -196,13 +147,11 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderWidth:2,
         padding:10,
-        // backgroundColor:'red',
         marginVertical:20
     },
     upload:{
         alignItems:'center',
         alignSelf:'center',
-        paddingVertical:30,
     },
     blogText:{
         borderBottomColor:DARK_PEACH,
@@ -223,8 +172,8 @@ const styles = StyleSheet.create({
         height:200,
         alignSelf:'center'
     },
-    itemContainer:{
-      flexDirection:'row',
-      padding:10,
-  },
+    editIcon:{
+        position:'absolute',
+        right:0
+    }
 })

@@ -70,6 +70,8 @@ const GenerateTitle = (props) => {
                     </View>
                     
 
+
+                </KeyboardAwareScrollView>
                 <View style={{ width:'90%', alignSelf:'center', flex:1 }}>
 
                     <View style = {{height:50}}>
@@ -77,7 +79,6 @@ const GenerateTitle = (props) => {
                     </View>
 
                 </View>
-                </KeyboardAwareScrollView>
 
 
         </View>

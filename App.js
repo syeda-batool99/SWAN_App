@@ -50,8 +50,9 @@ const App = () => {
         {/* <RootStack.Navigator screenOptions ={{headerShown:false}}>
           <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/>
           <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
-        </RootStack.Navigator> */}
-        <HomeStack />
+        </RootStack.Navigator>
+        <HomeStack /> */}
+        <CreateBlogStack />
       </NavigationContainer>
     )
 
