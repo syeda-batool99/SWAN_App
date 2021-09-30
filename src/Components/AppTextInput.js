@@ -81,12 +81,13 @@ const AppTextInput = ({text,onChangeText, onOpenCamera}) => {
                         multiline = {true}
                         onChangeText={(text)=>onChangeText(text)}
                         value = {text}
+                        placeholderTextColor = 'grey'
                         />
                     <View style = {styles.iconContainer}>
                         <Icon onPress = {()=>refRBSheet.current.open()} name = 'menu' type = "entypo" raised size = {12}/>
                     </View>
                     {isEdit?(
-                        <TouchableOpacity onPress = {()=>{setIsEdit(!isEdit), text?.data?(onOpenCamera):null}} style = {styles.editContainer}>
+                        <TouchableOpacity onPress = {()=>{console.log("PRESSED")}} style = {styles.editContainer}>
                             <Image  source = {require('../Assets/Images/RegisterationCarousel/editPhoto.png')} style = {{height:25, width:25}}/>
                         </TouchableOpacity>
                     ):(null)}
@@ -136,7 +137,8 @@ export default AppTextInput
 
 const styles = StyleSheet.create({
     textInput:{
-        padding:10
+        padding:10,
+        color:'black',
     },
     container:{
         borderWidth:2,

@@ -34,10 +34,12 @@ const Username = props => {
       <View style={styles.form}>
         <View style={styles.formInput}>
           <TextInput
-            placeholder="Write username"
+              placeholderTextColor = "grey"
+              placeholder="Write username"
             style={styles.textinput}
             value={userName}
-            onChangeText={setUserName}
+              placeholderTextColor = "grey"
+              onChangeText={setUserName}
           />
         </View>
       </View>
@@ -79,7 +81,8 @@ const styles = StyleSheet.create({
     backgroundColor: WHITE,
     borderRadius: 12,
     marginVertical: 5,
-    paddingLeft:10
+    paddingLeft:10,
+    color:'black'
   },
   button: {
     paddingBottom:10,

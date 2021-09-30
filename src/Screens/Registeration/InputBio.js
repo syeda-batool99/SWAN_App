@@ -35,6 +35,7 @@ const InputBio = props => {
             <AppText>Firstname</AppText>
             <TextInput
               placeholder="Write firstname"
+              placeholderTextColor = "grey"
               style={styles.textinput}
               value={firstName}
               onChangeText={setFirstName}
@@ -43,6 +44,7 @@ const InputBio = props => {
           <View style={styles.formInput}>
             <AppText >Lastname</AppText>
             <TextInput
+              placeholderTextColor = "grey"
               placeholder="Write lastname"
               style={styles.textinput}
               value={lastName}
@@ -81,7 +83,8 @@ const styles = StyleSheet.create({
     backgroundColor: WHITE,
     borderRadius: 12,
     marginVertical: 5,
-    paddingLeft:10
+    paddingLeft:10,
+    color:'black'
   },
   button:{
     height:50,

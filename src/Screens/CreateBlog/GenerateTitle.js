@@ -26,7 +26,7 @@ const GenerateTitle = (props) => {
                     </View>
 
                     <View style ={{marginVertical:10}}>
-                        <TextInput placeholder = 'e.g. How to use AI for your blog' style = {styles.optionalTextinput}/>
+                        <TextInput placeholderTextColor='grey' placeholder = 'e.g. How to use AI for your blog' style = {styles.optionalTextinput}/>
                     </View>
 
 
@@ -35,7 +35,7 @@ const GenerateTitle = (props) => {
                     </View>
 
                     <View style ={{marginVertical:10}}>
-                        <TextInput placeholder = 'e.g. Break through writers block' multiline={true} numberOfLines={10} style = {[styles.optionalTextinput,{textAlignVertical: 'top'}]}/>
+                        <TextInput placeholderTextColor='grey' placeholder = 'e.g. Break through writers block' multiline={true} numberOfLines={10} style = {[styles.optionalTextinput,{textAlignVertical: 'top'}]}/>
                     </View>
 
                         <View style={{flexDirection: 'row', marginVertical:15}}>
@@ -58,7 +58,7 @@ const GenerateTitle = (props) => {
                     </View>
 
                     <View style ={{marginVertical:10}}>
-                        <TextInput placeholder = 'e.g. Black Friday' style = {styles.optionalTextinput}/>
+                        <TextInput placeholderTextColor='grey' placeholder = 'e.g. Black Friday' style = {styles.optionalTextinput}/>
                     </View>
 
                     <View >
@@ -66,7 +66,7 @@ const GenerateTitle = (props) => {
                     </View>
 
                     <View style ={{marginVertical:10}}>
-                        <TextInput placeholder = 'e.g. 15% off' style = {styles.optionalTextinput}/>
+                        <TextInput placeholderTextColor='grey' placeholder = 'e.g. 15% off' style = {styles.optionalTextinput}/>
                     </View>
                     
 
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
         backgroundColor:WHITE,
         borderRadius:20,
         padding:10,
+        color:'black'
         
     },
     ItemContainer: {

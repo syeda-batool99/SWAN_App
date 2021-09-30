@@ -38,8 +38,9 @@ const Password = props => {
           <View style={styles.textinput}>
             <TextInput
               placeholder="****************"
-              style={{paddingLeft:10 ,width:"90%"}}
+              style={{paddingLeft:10 ,width:"90%",color:'black'}}
               value={password}
+              placeholderTextColor = "grey"
               onChangeText={setPassword}
               type="password"
               secureTextEntry={hidePass ? true : false}
@@ -59,9 +60,10 @@ const Password = props => {
           <View style={styles.textinput}>
             <TextInput
               placeholder="****************"              
-              style={{paddingLeft:10 ,width:"90%"}}
+              style={{paddingLeft:10 ,width:"90%", color:'black'}}
               value={confirmPassword}
               onChangeText={setconfirmPassword}
+              placeholderTextColor = "grey"
               type="password"
               secureTextEntry={hideConfPass ? true : false}
               autoCompleteType="password"

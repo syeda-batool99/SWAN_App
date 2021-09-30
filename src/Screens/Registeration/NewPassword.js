@@ -65,6 +65,8 @@ const NewPassword = props => {
           <View style={styles.textinput}>
             <TextInput
               placeholder="  ****************"
+              placeholderTextColor = "grey"
+              style = {{color:'black'}}
               // style={styles.textinput}
               value={password}
               onChangeText={setPassword}
@@ -87,8 +89,10 @@ const NewPassword = props => {
           </AppText>
           <View style={styles.textinput}>
             <TextInput
+              placeholderTextColor = "grey"
               placeholder="  ****************"
               // style={styles.textinput}
+              style = {{color:'black'}}
               value={confirmPassword}
               onChangeText={setconfirmPassword}
               type="password"

@@ -70,6 +70,7 @@ const ResultCreateBlog = (props) => {
 
             <View >
                 <TextInput 
+                placeholderTextColor='grey'
                 multiline = {true}
                 value = "Don't be afraid to give up the good to go for the great.|" 
                 style = {styles.titleText}/>
@@ -95,7 +96,7 @@ const ResultCreateBlog = (props) => {
                 <KeyboardAwareScrollView>
 
                 <View>
-                    <TextInput multiline scrollEnabled=  {true} placeholder = "Write what went in this blog..." style = {styles.blogText}/>
+                    <TextInput placeholderTextColor='grey' multiline scrollEnabled=  {true} placeholder = "Write what went in this blog..." style = {styles.blogText}/>
                 </View>
 
                 <View style = {styles.tagsView}>
@@ -159,6 +160,7 @@ const styles = StyleSheet.create({
         padding:10,
         fontSize:20,
         fontFamily: 'SharpGrotesk-Book20',
+        color:'black'
     },
     uploadContainer:{
         borderStyle:'dashed',
@@ -179,6 +181,7 @@ const styles = StyleSheet.create({
         padding:10,
         fontSize:14,
         fontFamily: 'SharpGrotesk-Book20',
+        color:'black'
     },
     tagsView:{
         flexDirection:'row', 

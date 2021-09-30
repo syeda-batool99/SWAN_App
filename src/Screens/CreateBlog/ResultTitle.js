@@ -22,6 +22,7 @@ const generatedTitle = (props) => {
             <View >
                 <TextInput 
                 multiline = {true}
+                placeholderTextColor='grey'
                 value = "Don't be afraid to give up the good to go for the great.|" 
                 style = {styles.titleText}/>
             </View>
@@ -41,7 +42,8 @@ const styles = StyleSheet.create({
         padding:10,
         fontSize:20,
         fontFamily: 'SharpGrotesk-Book20',
-        lineHeight:30
+        lineHeight:30,
+        color:'black'
     },
 
 })

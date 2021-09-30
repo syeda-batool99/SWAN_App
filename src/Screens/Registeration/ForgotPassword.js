@@ -45,8 +45,9 @@ const ForgotPassword = props => {
         <View style={{marginTop: 20, width: '80%', alignSelf: 'center'}}>
           <View>
             <TextInput
-              placeholder="  Enter your email address"
+              placeholder="Enter your email address"
               style={styles.textinput}
+              placeholderTextColor = "grey"
               value={text}
               onChangeText={text => setText(text)}
             />
@@ -115,7 +116,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginTop: 20,
     fontFamily:'SharpGrotesk-Book20',
-    fontSize:14
+    fontSize:14,
+    color:'black'
   },
   buttonGroup:{
     // backgroundColor:'pink',

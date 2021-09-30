@@ -205,7 +205,8 @@ const Home = () => {
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: 'white',
-          borderRadius: 12,
+            color:'black',
+            borderRadius: 12,
         }}>
         <AntDesign
           name="search1"
@@ -213,12 +214,15 @@ const Home = () => {
           style={{padding: 10, color: '#8F9CA9'}}
         />
         <TextInput
+              placeholderTextColor = "grey"
+
           onChangeText={search => setSearch(search)}
           style={{
             backgroundColor: 'white',
             flex: 1,
             borderRadius: 12,
             fontSize: 14,
+            color:'black'
           }}
           placeholder="what are you looking for"
           placeholderTextColor="#8F9CA9"
