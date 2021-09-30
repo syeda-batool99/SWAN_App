@@ -8,6 +8,7 @@ import RegisterationStack from './src/Navigation/StackScreen/RegisterationStack'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreateBlogStack from './src/Navigation/StackScreen/CreateBlogStack';
 import HomeStack from './src/Navigation/StackScreen/HomeStack';
+import VbookStack from './src/Navigation/StackScreen/VbookStack';
 
 const App = () => {
  
@@ -48,10 +49,11 @@ const App = () => {
     return (
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
         <RootStack.Navigator screenOptions ={{headerShown:false}}>
-          <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/>
+          {/* <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/> */}
           <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
         </RootStack.Navigator>
-        {/* <HomeStack /> */}
+        {/* <HomeStack />
+        {/* <VbookStack /> */}
       </NavigationContainer>
     )
 
