@@ -46,19 +46,22 @@ const EnterPassword = props => {
             
             <View style={styles.textinput}>
                 <TextInput
-                placeholder="  Write Password"
-                value={password}
+                // inlineImagePadding={10}
+                placeholder="Write Password"
+              placeholderTextColor = "grey"
+              value={password}
                 onChangeText={setPassword}
                 type="password"
                 secureTextEntry={hidePass ? true : false}
                 autoCompleteType="password"
+                style={{flex:1, paddingLeft:20, color:'black' }}
                 />
 
                 <FontAwesome5
                 name={hidePass ? 'eye-slash' : 'eye'}
                 size={15}
                 color={BLACK}
-                style={{alignSelf: 'center', right:10}}
+                style={{width:20,alignSelf: 'center', right:10}}
                 onPress={() => setHidePass(!hidePass)}
                 />
             </View>

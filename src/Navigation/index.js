@@ -20,8 +20,9 @@ const MainNavigatior = () => {
         tabBarShowLabel:false,
         tabBarStyle:{
             backgroundColor:'black',
-            height:60
-        }
+            height:60,
+        },
+        "tabBarHideOnKeyboard":"true",
     }}>
         <Tab.Screen name={HOME_STACK} component={HomeStack}
          options = {{tabBarIcon:({focused})=>(
@@ -31,7 +32,7 @@ const MainNavigatior = () => {
                    resizeMode ='contain'
                    style = {{height:25,aspectRatio:1,tintColor: focused ? 'white':'#66737F'}}
                 />
-                <Text style = {{color: focused? 'white':'#66737F' , fontSize:12}}>{HOME_STACK}</Text>
+                <Text style = {{color: focused? 'white':'#66737F' , fontSize:12}}>Home</Text>
             </View>
         )}} 
         />

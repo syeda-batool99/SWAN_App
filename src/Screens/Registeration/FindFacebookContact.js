@@ -18,11 +18,11 @@ const FindFacebookContact = (props) => {
                 onPressBtn1 = {()=>{navigation.navigate('FacebookFriendListScreen')}} 
                 onPressBtn2 = {()=>(setModalVisible(!modalVisible))}/>
 
-            <View style = {{marginVertical:'25%'}}>
+            <View style = {{marginVertical:'15%'}}>
                 <View style = {{ alignItems:'center'}}>
                     <Image source = {require('../../Assets/Images/RegisterationCarousel/Rectangle66.png')} />
                 </View>
-                <View style = {{alignItems:'center', marginTop:20}}>
+                <View style = {{ width:'90%', alignSelf:'center',alignItems:'center', marginTop:20}}>
                     <AppText button size={20} color={TEXT_BLACK} >Find Facebook Friends</AppText>
                     <AppText size={14} center textStyle = {{marginTop:15,paddingHorizontal:55, lineHeight:20}}>You choose which friends to follow. We will never post to facebook without your permission.</AppText>
                 </View>

@@ -6,11 +6,14 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ScrollView,
 } from 'react-native';
 import {PEACH, WHITE} from '../../Assets/Colors';
 import AppHeader from '../../Components/AppHeader';
 import {BLUE} from './../../Assets/Colors/index';
 import AppText from '../../Components/AppText';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
+import AppButton from './../../Components/AppButton';
 
 const ForgotPassword = props => {
   const {navigation} = props;
@@ -19,8 +22,10 @@ const ForgotPassword = props => {
   return (
     <View style={styles.container}>
       <AppHeader title="Forgot Password" {...props} />
+      <ScrollView contentContainerStyle = {{height:'100%'}}>
 
-      <View style={{marginVertical: '25%'}}>
+      <KeyboardAwareScrollView >
+      <View style={{marginVertical: '2%'}}>
         <View style={{alignItems: 'center'}}>
           <Image
             source={require('../../Assets/Images/RegisterationCarousel/forgotPassword.png')}
@@ -40,23 +45,18 @@ const ForgotPassword = props => {
         <View style={{marginTop: 20, width: '80%', alignSelf: 'center'}}>
           <View>
             <TextInput
-              placeholder="  Enter your email address"
+              placeholder="Enter your email address"
               style={styles.textinput}
+              placeholderTextColor = "grey"
               value={text}
               onChangeText={text => setText(text)}
             />
           </View>
-        </View>
+        </View>s
       </View>
-      <View
-        style={{
-          paddingTop:50,
-          width: '100%',
-          flex: 4,
-          // backgroundColor:'red',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }}>
+      </KeyboardAwareScrollView>
+
+          {/*
         <View style={{height: 40, width: '90%'}}>
           <View
             style={{
@@ -75,7 +75,7 @@ const ForgotPassword = props => {
           <TouchableOpacity
             onPress={() => navigation.navigate('VerificationScreen')}
             style={{
-              flex: 1,
+              // flex: 1,
               justifyContent: 'center',
               height: '100%',
               width: '100%',
@@ -84,8 +84,21 @@ const ForgotPassword = props => {
             }}>
             <AppText  button color={WHITE} center>Send OTP</AppText>
           </TouchableOpacity>
+        </View>*/}
+      <View style = {styles.buttonGroup}>
+        <View style = {styles.btn}>
+            <AppButton disabled alertText color={'#8F9CA9'} center size={12} label = "We'll send you an SMS verification code." />
         </View>
-      </View>
+        <View style = {styles.btn}>
+            <AppButton
+            onPress={() => navigation.navigate('VerificationScreen')}
+             borderRadius= {20} buttonContainerStyle = {{backgroundColor:BLUE}} white button color={'#8F9CA9'} center size={12} label = "Send OTP" />
+        </View>
+      </View> 
+
+
+
+      </ScrollView>
     </View>
   );
 };
@@ -94,8 +107,8 @@ export default ForgotPassword;
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
-    width: '100%',
+    height:'100%',
+    width:'100%',
     backgroundColor: PEACH,
   },
   textinput: {
@@ -103,6 +116,20 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginTop: 20,
     fontFamily:'SharpGrotesk-Book20',
-    fontSize:14
+    fontSize:14,
+    color:'black'
   },
+  buttonGroup:{
+    // backgroundColor:'pink',
+    alignSelf:'center',
+    alignItems:'center',
+    width:'90%',
+    paddingBottom:10,
+
+    // flex:4
+  },
+  btn:{
+    height:50,
+    width:'100%'
+  }
 });

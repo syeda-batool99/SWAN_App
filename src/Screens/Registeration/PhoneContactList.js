@@ -168,7 +168,7 @@ const PhoneContactList = props => {
 
       <View style={{width: '90%', alignSelf: 'center'}}>
         <View style={{marginVertical: 5}}>
-          <Text style={{color: TEXT_BLACK}}>3 Friends are on Swan</Text>
+          <AppText button>3 Friends are on Swan</AppText>
         </View>
       </View>
       <View style={{height: '30%'}}>
@@ -182,7 +182,7 @@ const PhoneContactList = props => {
 
       <View style={{width: '90%', alignSelf: 'center'}}>
         <View style={{marginBottom: 10, marginTop: 19}}>
-          <Text style={{color: TEXT_BLACK}}>Invite to Swan</Text>
+          <AppText button>Invite to Swan</AppText>
         </View>
       </View>
       <View style={{height: '49%'}}>

@@ -88,7 +88,7 @@ const VerifyCode = props => {
             codeColor={BROWN_SHADE}
             codeViewWidth={69}
             codeViewHeight={60}
-            initialCodes={[0,0,0,0]}
+            // initialCodes={[0,0,0,0]}
           />
 
           <View style={{alignItems: 'center'}}>

@@ -16,6 +16,8 @@ import {
 import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
 import AppText from './../../Components/AppText';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
+import AppButton from '../../Components/AppButton';
 
 const InputBio = props => {
   const [firstName, setFirstName] = useState('');
@@ -24,79 +26,72 @@ const InputBio = props => {
   return (
     <View style={styles.container}>
       <AppHeader back title="Write your name" {...props} />
+      <KeyboardAwareScrollView style = {{height:'100%'}}>
 
       <Subtitle title="Please enter your information below in order to login to your account." />
 
-      <View style={styles.form}>
-        <View style={styles.formInput}>
-          <AppText>Firstname</AppText>
-          <TextInput
-            placeholder="  Write firstname"
-            style={styles.textinput}
-            value={firstName}
-            onChangeText={setFirstName}
-          />
+        <View style={styles.form}>
+          <View style={styles.formInput}>
+            <AppText>Firstname</AppText>
+            <TextInput
+              placeholder="Write firstname"
+              placeholderTextColor = "grey"
+              style={styles.textinput}
+              value={firstName}
+              onChangeText={setFirstName}
+            />
+          </View>
+          <View style={styles.formInput}>
+            <AppText >Lastname</AppText>
+            <TextInput
+              placeholderTextColor = "grey"
+              placeholder="Write lastname"
+              style={styles.textinput}
+              value={lastName}
+              onChangeText={setLastName}
+            />
+          </View>
         </View>
-        <View style={styles.formInput}>
-          <AppText >Lastname</AppText>
-          <TextInput
-            placeholder="  Write lastname"
-            style={styles.textinput}
-            value={lastName}
-            onChangeText={setLastName}
-          />
-        </View>
+      </KeyboardAwareScrollView>
+      
+      <View style = {styles.button}>
+        <AppButton borderRadius= {12} onPress = {()=>props.navigation.navigate('Gender')} buttonContainerStyle = {{backgroundColor:BLUE}} label = "Next" button white />
       </View>
 
-      <View style={styles.button}>
-        <TouchableOpacity
-          style={[{backgroundColor: BLUE, borderWidth: 0}, styles.btn]}
-          onPress={() => {
-            props.navigation.navigate('Gender');
-          }}>
-          <AppText button white size={15}>Next</AppText>
-        </TouchableOpacity>
-      </View>
+
     </View>
   );
 };
-
+           // props.navigation.navigate('Gender');
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height:'100%',
+    width:'100%',
     backgroundColor: PEACH,
   },
   form: {
-    flex: 2,
-    padding: 30,
+    padding: '5%',
     alignContent: 'center',
+    marginTop:'3%',
+    height:'100%',
   },
   formInput: {
-    // position:'absolute',
-    bottom: 0,
-    top: 80,
     marginVertical: 5,
+    // backgroundColor:'red'
   },
   textinput: {
     backgroundColor: WHITE,
     borderRadius: 12,
     marginVertical: 5,
+    paddingLeft:10,
+    color:'black'
   },
-  button: {
-    flex: 3,
-    padding: 30,
-    alignItems: 'center',
-  },
-  btn: {
-    height: 50,
-    width: '100%',
-    marginVertical: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 12,
-    position: 'absolute',
-    bottom: 0,
-  },
+  button:{
+    height:50,
+    width:'90%',
+    alignSelf:'center',
+    bottom:10
+  }
 });
 
 export default InputBio;

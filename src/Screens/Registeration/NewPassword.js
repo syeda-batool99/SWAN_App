@@ -21,6 +21,7 @@ import AppHeader from '../../Components/AppHeader';
 import Subtitle from '../../Components/Subtitle';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import AppText from '../../Components/AppText';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 
 const NewPassword = props => {
   const [password, setPassword] = useState('');
@@ -42,7 +43,7 @@ const NewPassword = props => {
           <Image
             source={require('../../Assets/Images/password_change_success.png')}
           />
-          <AppText button Textstyle={styles.modalText} center size={16}  color={TEXT_BLACK} textStyle = {{width:300}}>
+          <AppText button center size={16}  color={TEXT_BLACK} textStyle = {{width:300}}>
             Your password has been changed successfully.
           </AppText>
           <TouchableOpacity
@@ -53,7 +54,7 @@ const NewPassword = props => {
         </View>
       </Modal>
       <AppHeader title="Set new password" {...props} />
-
+        <KeyboardAwareScrollView>
       <Subtitle title="Please enter your information below in order to login to your account." />
 
       <View style={styles.form}>
@@ -64,6 +65,8 @@ const NewPassword = props => {
           <View style={styles.textinput}>
             <TextInput
               placeholder="  ****************"
+              placeholderTextColor = "grey"
+              style = {{color:'black'}}
               // style={styles.textinput}
               value={password}
               onChangeText={setPassword}
@@ -86,8 +89,10 @@ const NewPassword = props => {
           </AppText>
           <View style={styles.textinput}>
             <TextInput
+              placeholderTextColor = "grey"
               placeholder="  ****************"
               // style={styles.textinput}
+              style = {{color:'black'}}
               value={confirmPassword}
               onChangeText={setconfirmPassword}
               type="password"
@@ -104,6 +109,7 @@ const NewPassword = props => {
           </View>
         </View>
       </View>
+      </KeyboardAwareScrollView>
 
       <View style={styles.button}>
         <TouchableOpacity
@@ -122,18 +128,17 @@ const NewPassword = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height:'100%',
+    width:'100%',
     backgroundColor: PEACH,
   },
   form: {
-    flex: 2,
-    padding: 30,
+    padding: '5%',
     alignContent: 'center',
+    marginTop:'3%',
+    height:'100%',
   },
   formInput: {
-    // position:'absolute',
-    bottom: 0,
-    top: 80,
     marginVertical: 5,
   },
   textinput: {
@@ -141,12 +146,13 @@ const styles = StyleSheet.create({
     backgroundColor: WHITE,
     borderRadius: 12,
     marginVertical: 5,
-    justifyContent: 'space-between',
+    justifyContent:'space-between'
   },
-  button: {
-    flex: 3,
-    padding: 30,
-    alignItems: 'center',
+  button:{
+    height:50,
+    width:'90%',
+    alignSelf:'center',
+    bottom:5
   },
   btn: {
     height: 50,

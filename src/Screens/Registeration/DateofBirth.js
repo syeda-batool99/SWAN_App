@@ -59,11 +59,12 @@ const styles = StyleSheet.create({
     backgroundColor: PEACH,
   },
   form: {
-    marginVertical:150,
-    flexDirection:'row',
-    justifyContent:'space-around',
-    paddingHorizontal: 30,
+    padding: '5%',
+    alignSelf:'center',
     alignContent: 'center',
+    marginTop:'5%',
+    // height:'100%',
+    // backgroundColor:'red'
   },
   textinput: {
     backgroundColor: WHITE,
