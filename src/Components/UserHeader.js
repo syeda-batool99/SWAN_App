@@ -30,19 +30,28 @@ const UserHeader = props => {
             letterSpacing: 2,
             marginLeft: 20,
           }}>
-          SWAN
+          {props?.chat?'Chat':'SWAN'}
         </AppText>
-        <View style={{flexDirection: 'row'}}>
-          <AntDesign name={'search1'} size={28} style={{marginRight: 10}} />
-          <Feather name={'bell'} size={28} />
+        <View style={{flexDirection: 'row', marginTop:7}}>
+          <AntDesign name={'search1'} size={20} style={{marginRight: 10}} />
+          {!props?.chat?(
+          <Feather name={'bell'} size={20} />
+          ):(
+          <Icon type = 'entypo' name='dots-three-vertical' size={20} />
+          )}
+          
         </View>
       </View>
       <View style={styles.subContainer}>
         <TouchableOpacity style={{flexDirection: 'row'}} onPress = {()=>props.navigation.navigate('CreateBlogStack')}>
+          {!props.chat?(
           <Image source={require('../Assets/Images/Icons/blog.png')} />
+          ):(
+          <Image source={require('../Assets/Images/Icons/chat.png')} />
+          )}
           <AppText button size={14}>
             {' '}
-            Blog
+            {props?.chat?'Chat':'Blog'}
           </AppText>
         </TouchableOpacity>
         <View style={styles.verticleLine}></View>
@@ -50,15 +59,19 @@ const UserHeader = props => {
           <Image source={require('../Assets/Images/Icons/videos.png')} />
           <AppText button size={14}>
             {' '}
-            Video
+            {props?.chat?'Status':'Video'}
           </AppText>
         </TouchableOpacity>
         <View style={styles.verticleLine}></View>
         <TouchableOpacity style={{flexDirection: 'row'}}>
+          {!props?.chat?(
           <Image source={require('../Assets/Images/Icons/live.png')} />
+          ):(
+          <Image source={require('../Assets/Images/Icons/call.png')} />
+          )}
           <AppText button size={14}>
             {' '}
-            Go Live
+            {props?.chat?'Call':'Go Live'}
           </AppText>
         </TouchableOpacity>
       </View>
