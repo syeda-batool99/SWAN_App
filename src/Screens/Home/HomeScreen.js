@@ -170,6 +170,9 @@ const HomeScreen = props => {
           source={item.image}
           style={{
             marginBottom: 8,
+            alignSelf:'center',
+            width:"98%",
+            borderRadius:10
           }}
         />
         <AppText
@@ -394,10 +397,11 @@ const styles = StyleSheet.create({
   },
   blogImage:{
     //   alignItems: 'center',
-    backgroundColor: WHITE,
+    backgroundColor: 'white',
     marginBottom: 10,
     borderRadius: 18,
     padding: 8,
+    // alignItems:'center'
   },
   bullet:{
     backgroundColor: TEXT_LIGHT_BLUE,

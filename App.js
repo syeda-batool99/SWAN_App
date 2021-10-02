@@ -9,7 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreateBlogStack from './src/Navigation/StackScreen/CreateBlogStack';
 import HomeStack from './src/Navigation/StackScreen/HomeStack';
 import VbookStack from './src/Navigation/StackScreen/VbookStack';
-import ChatStack from './src/Navigation/StackScreen/ChatStack';
+import AudioRoomStack from './src/Navigation/StackScreen/AudioRoomStack';
 
 const App = () => {
  
@@ -49,11 +49,11 @@ const App = () => {
 
     return (
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
-        {/* <RootStack.Navigator screenOptions ={{headerShown:false}}>
-          <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/> 
+        <RootStack.Navigator screenOptions ={{headerShown:false}}>
+          {/* <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/>  */}
           <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
-        </RootStack.Navigator> */}
-        <ChatStack />
+        </RootStack.Navigator>
+        {/* <AudioRoomStack /> */}
 
       </NavigationContainer>
     )

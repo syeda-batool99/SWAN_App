@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react'
 import AudioroomScreen from './../../Screens/Audioroom/index';
 
-const AudioStack = () => {
+const AudioRoomStack = () => {
 
     const Stack = createNativeStackNavigator();
 
@@ -15,4 +15,4 @@ const AudioStack = () => {
     )
 }
 
-export default AudioStack
+export default AudioRoomStack
