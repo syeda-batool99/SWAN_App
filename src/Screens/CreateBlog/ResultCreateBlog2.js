@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     mainContainer :{
         alignSelf:'center',
         width:'93%',
-        height:'100%',
+        // height:'100%',
     },
     titleText:{
         borderBottomColor:DARK_PEACH,

@@ -19,7 +19,7 @@ const GenerateTitle = (props) => {
                 <AppHeader {...props} title = "Generate Title" />
 
                 <Loader visible = {isLoading} onPressOnPress = {()=>{navigation.navigate('ResultScreen'),setIsLoading(!isLoading)}}/>
-
+            <ScrollView contentContainerStyle = {{paddingBottom:40}}>
                 <KeyboardAwareScrollView style = {{ width:'90%',  alignSelf:'center'}}>
                     <View >
                         <AppText>Product/Brand name/Blog (optional)</AppText>
@@ -79,6 +79,7 @@ const GenerateTitle = (props) => {
                     </View>
 
                 </View>
+                </ScrollView>
 
 
         </View>

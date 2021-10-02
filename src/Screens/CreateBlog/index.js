@@ -101,7 +101,7 @@ const OptionSelectBox = () => {
     }
 
     return (
-        <ScrollView style = {{height:'100%', width:'100%', backgroundColor:PEACH}}>
+        <ScrollView style = {{ width:'100%', backgroundColor:PEACH}}>
     
             <AppHeader {...props} title = "Create Blog"  IconTray = {IconTray}/>
             <View style = {styles.mainContainer}>

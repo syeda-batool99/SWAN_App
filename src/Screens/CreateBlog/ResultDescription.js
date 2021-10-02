@@ -73,7 +73,7 @@ const ResultDescription = (props) => {
 
             </ScrollView>
             <View style = {{height:50,position:'absolute', bottom:10, alignSelf:'center'}}>
-                <AppButton textColor={PURPLE} button label = "Generate Title with AI"/>
+                <AppButton textColor={PURPLE} button label = "Generate blog text with AI"/>
             </View>
         </View>
     )
