@@ -26,7 +26,8 @@ const AppButton = props => {
     iconSize,
     iconContainerStyle,
     button,
-    disabled
+    disabled,
+    textStyle
   } = props;
   return (
     <>
@@ -47,6 +48,7 @@ const AppButton = props => {
           color={textColor}
           white={white}
           button = {button}
+          textStyle = {textStyle}
           >
           {label}
         </AppText>

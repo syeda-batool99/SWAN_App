@@ -3,7 +3,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { StyleSheet, TextInput, View } from 'react-native'
 
-const SearchBar = ({search,setSearch,onFocus}) => {
+const SearchBar = ({search,setSearch,onFocus, placeholder,noMic}) => {
     return (
         <View
         style={{
@@ -30,14 +30,16 @@ const SearchBar = ({search,setSearch,onFocus}) => {
             fontSize: 14,
             color:'black'
           }}
-          placeholder="what are you looking for"
+          placeholder={placeholder?(placeholder):("what are you looking for")}
           placeholderTextColor="#8F9CA9"
         />
-        <MaterialCommunityIcons
-          name="microphone"
-          size={25}
-          style={{paddingVertical: 10, paddingRight: 20, color: '#8F9CA9'}}
-        />
+        {noMic?(null):(
+              <MaterialCommunityIcons
+              name="microphone"
+              size={25}
+              style={{paddingVertical: 10, paddingRight: 20, color: '#8F9CA9'}}
+            />
+        )}
       </View>
     )
 }

@@ -6,9 +6,9 @@ import { TEXT_GREY, BROWN_SHADE } from './../Assets/Colors/index';
 import  Ionicons  from 'react-native-vector-icons/Ionicons';
 import SmallImageCircleList from './SmallImageCircleList';
 
-const PodcastComponent = () => {
+const PodcastComponent = ({onPressDown}) => {
     return (
-        <View style = {styles.container}>
+        <TouchableOpacity onPress = {onPressDown} style = {styles.container}>
             <View style = {{width:'100%', borderBottomColor:DARK_PEACH, paddingBottom:20 ,borderBottomWidth:1}}>
                 <AppText color = {TEXT_GREY}>UX UI Designer Club 🌈</AppText>
                 <AppText button>What A UX Designer Does Every Day💫🔮</AppText>
@@ -50,7 +50,7 @@ const PodcastComponent = () => {
             </View>
 
 
-        </View>
+        </TouchableOpacity>
     )
 }
 

@@ -5,6 +5,7 @@ const AppText = props => {
   const {
     children,
     bold,
+    lineHeight,
     italic,upperCase,lowerCase,
     underline,
     size,
@@ -46,7 +47,8 @@ const AppText = props => {
           button && {fontFamily:'SharpGrotesk-Medium20'},
           alertText && {fontFamily:'SharpGrotesk-Book20'},
           subtitle && {fontFamily:'SharpGrotesk-SemiBold20'},
-          semiBoldItalic && {fontFamily:'SharpGrotesk-SemiBoldItalic20'}
+          semiBoldItalic && {fontFamily:'SharpGrotesk-SemiBoldItalic20'},
+          lineHeight && {lineHeight:lineHeight}
         ]}>
         {children}
       </Text>

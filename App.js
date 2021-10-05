@@ -49,11 +49,11 @@ const App = () => {
 
     return (
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <RootStack.Navigator screenOptions ={{headerShown:false}}>
+        {/* <RootStack.Navigator screenOptions ={{headerShown:false}}>
           <RootStack.Screen name = "RegisterationFlow" component = {RegisterationStack}/> 
           <RootStack.Screen name = "MainHome" component = {MainNavigatior}/>
-        </RootStack.Navigator>
-        {/* <AudioRoomStack /> */}
+        </RootStack.Navigator> */}
+        <AudioRoomStack />
 
       </NavigationContainer>
     )
